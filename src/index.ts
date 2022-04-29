@@ -57,9 +57,5 @@ export { default as Snapshots } from './components/presets/Snapshots/Snapshots'
 // Hooks
 export { default as useDebounce } from './components/hooks/useDebounce'
 export { default as useLoader } from './components/hooks/useLoader'
-export { default as useNotification } from './components/hooks/useNotification'
 export { default as useTimeout } from './components/hooks/useTimeout'
 export { default as useWindowSize } from './components/hooks/useWindowSize'
-
-// HOCs
-export { default as withNotification } from './components/hocs/withNotification/withNotification'

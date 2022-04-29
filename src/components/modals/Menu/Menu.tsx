@@ -1,4 +1,3 @@
-// @ts-ignore
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
@@ -43,13 +42,7 @@ type MenuPostition = {
   transform?: string
 }
 
-const Menu = ({
-  className,
-  isOpen,
-  position,
-  handleClose,
-  children
-}: MenuProps): JSX.Element | null => {
+const Menu = ({ className, isOpen, position, handleClose, children }: MenuProps): JSX.Element | null => {
   const transition = useTransition(isOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -224,11 +217,7 @@ const Menu = ({
       item &&
       createPortal(
         <animated.div style={springStyles}>
-          <div
-            className={`mu-overlay ${styles.Overlay}`}
-            onClick={handleClose}
-            aria-hidden="true"
-          />
+          <div className={`mu-overlay ${styles.Overlay}`} onClick={handleClose} aria-hidden="true" />
           <div ref={menuRef} className={classes} style={{ ...modalPos }}>
             {children}
           </div>

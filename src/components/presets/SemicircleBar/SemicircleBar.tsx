@@ -88,6 +88,15 @@ type BottomSpace = {
   }
 }
 
+type Spaces = {
+  container: ContainerStyles
+  spaces: SpacesStyles
+  circle: CircleStyles
+  dot: DotStyles
+  texts: TextsStyles
+  bottomSpace: BottomSpace
+}
+
 const SemicircleBar = ({
   barPercent,
   markPercent,
@@ -163,7 +172,7 @@ const SemicircleBar = ({
     }
   }, [markPercent, size])
 
-  const { container, spaces, circle, dot, texts, bottomSpace } = useMemo(() => {
+  const { container, spaces, circle, dot, texts, bottomSpace }: Spaces = useMemo(() => {
     const container: ContainerStyles = {
       width: size || 0,
       height: size ? size * 0.7 : 0
@@ -226,11 +235,7 @@ const SemicircleBar = ({
   }, [size])
 
   const getDashesState = (index: number): 'active' | 'default' => {
-    if (
-      (index === 0 && barPercent >= 20) ||
-      (index <= 1 && barPercent >= 50) ||
-      (index <= 2 && barPercent >= 82)
-    )
+    if ((index === 0 && barPercent >= 20) || (index <= 1 && barPercent >= 50) || (index <= 2 && barPercent >= 82))
       return 'active'
     return 'default'
   }
@@ -250,6 +255,7 @@ const SemicircleBar = ({
               <svg
                 key={`space-${index}`}
                 className={`${styles.Space} ${styles[`Space${index + 1}`]}`}
+                // @ts-ignore
                 style={{ ...spaces[`space${index + 1}`], backgroundColor: spaceColor }}
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -299,24 +305,12 @@ const SemicircleBar = ({
         </div>
 
         <div className={styles.BottomCircles}>
-          <svg
-            style={{ ...bottomSpace.space1, backgroundColor: spaceColor }}
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg style={{ ...bottomSpace.space1, backgroundColor: spaceColor }} xmlns="http://www.w3.org/2000/svg">
             <ellipse ry="60%" rx="40%" cy="0" cx="50%" fill="#23CDC3" />
           </svg>
 
-          <svg
-            style={{ ...bottomSpace.space2, backgroundColor: spaceColor }}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <ellipse
-              ry="60%"
-              rx="40%"
-              cy="0"
-              cx="50%"
-              fill={barPercent >= 100 ? '#23CDC3' : '#E8E8EB'}
-            />
+          <svg style={{ ...bottomSpace.space2, backgroundColor: spaceColor }} xmlns="http://www.w3.org/2000/svg">
+            <ellipse ry="60%" rx="40%" cy="0" cx="50%" fill={barPercent >= 100 ? '#23CDC3' : '#E8E8EB'} />
           </svg>
         </div>
       </div>
