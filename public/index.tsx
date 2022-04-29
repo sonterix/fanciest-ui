@@ -2,54 +2,54 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import '../src/scss/styles.scss'
-import { CircleButton, Icon } from '../src/components'
+import { CircleLink, Icon } from '../src/components'
 
 const Preview = (): JSX.Element => {
   return (
     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-      <CircleButton color="black">
+      <CircleLink href="#" color="black">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="white">
+      <CircleLink href="#" color="white">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="yellow">
+      <CircleLink href="#" color="yellow">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="orange">
+      <CircleLink href="#" color="orange">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="rose">
+      <CircleLink href="#" color="rose">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="red">
+      <CircleLink href="#" color="red">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="green" layout="outlined" disabled>
+      <CircleLink href="#" color="green" layout="outlined">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="teal" disabled>
+      <CircleLink href="#" color="teal">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="turquoise" layout="outlined">
+      <CircleLink href="#" color="turquoise" layout="outlined">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="blue" size="sm">
+      <CircleLink href="#" color="blue" size="sm">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
 
-      <CircleButton color="purple" size="sm" layout="outlined">
+      <CircleLink href="#" color="purple" size="sm" layout="outlined">
         <Icon icon="icon-chat" />
-      </CircleButton>
+      </CircleLink>
     </div>
   )
 }
