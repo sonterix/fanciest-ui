@@ -24,7 +24,14 @@ export default {
     }),
     typescript(),
     styles({
-      modules: true
+      modules: {
+        generateScopedName: (name, file, css) => {
+          if (file.includes('.module.')) {
+            return `fui${name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`
+          }
+          return name
+        }
+      }
     })
   ]
 }

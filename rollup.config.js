@@ -29,8 +29,15 @@ export default [
         include: ['src/**/*']
       }),
       styles({
-        modules: true,
-        minimize: true
+        minimize: true,
+        modules: {
+          generateScopedName: (name, file, css) => {
+            if (file.includes('.module.')) {
+              return `fui${name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`
+            }
+            return name
+          }
+        }
       }),
       typescript({ include: 'src/**/*', tsconfig: './tsconfig.json' }),
       terser()

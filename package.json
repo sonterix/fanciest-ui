@@ -22,7 +22,7 @@
   "scripts": {
     "build": "rm -rf ./dist && rollup -c",
     "pub": "npm publish --access public",
-    "dev-build": "rollup -c rollup.server.config.js"
+    "dev-build": "rm -rf ./.dev && rollup -c rollup.server.config.js"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
