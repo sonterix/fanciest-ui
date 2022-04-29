@@ -32,7 +32,7 @@ export default [
         modules: true,
         minimize: true
       }),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ include: 'src/**/*', tsconfig: './tsconfig.json' }),
       terser()
     ]
   },

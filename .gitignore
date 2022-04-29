@@ -3,6 +3,7 @@ build
 dist
 tmp
 out-tsc
+.dev
 
 # Runtime data
 pids
