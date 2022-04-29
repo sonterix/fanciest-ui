@@ -1,0 +1,144 @@
+@import '../../../scss/variables';
+
+.Label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  color: var(--color-black);
+}
+
+.TextareaWrapper {
+  position: relative;
+
+  .Textarea {
+    padding: 12px 16px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--color-black4);
+    background-color: var(--color-black9);
+    border: 1px solid var(--color-black8);
+    transition: color var(--trans), background-color var(--trans), border-color var(--trans);
+
+    &.SizeMd {
+      padding: 12px 16px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 24px;
+    }
+
+    &.SizeSm {
+      padding: 8px 16px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 22px;
+    }
+
+    &.Rounded {
+      border-radius: 26px;
+    }
+
+    &.Squared {
+      border-radius: 6px;
+    }
+
+    &.Filled {
+      color: var(--color-black);
+      background-color: var(--color-white);
+      border-color: var(--color-black8);
+
+      &.Success {
+        border-color: var(--color-green);
+      }
+
+      &.Error {
+        border-color: var(--color-red);
+      }
+
+      &:not(:disabled):not(.Success):not(.Error):hover,
+      &:not(:disabled):not(.Success):not(.Error):focus {
+        border-color: var(--color-black5);
+      }
+    }
+
+    &.Outlined {
+      padding-left: 0;
+      padding-right: 0;
+      color: var(--color-black);
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid var(--color-black8);
+      border-radius: 0;
+
+      &.Success {
+        border-bottom-color: var(--color-green);
+      }
+
+      &.Error {
+        border-bottom-color: var(--color-red);
+      }
+
+      &:not(:disabled):not(.Success):not(.Error):hover,
+      &:not(:disabled):not(.Success):not(.Error):focus {
+        border-bottom-color: var(--color-black5);
+      }
+    }
+
+    &.NoResize {
+      resize: none;
+    }
+
+    &::placeholder {
+      color: var(--color-black5);
+    }
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+
+      &::placeholder {
+        color: var(--color-black7);
+      }
+
+      &.Filled {
+        color: var(--color-black4);
+        background-color: var(--color-black9);
+        border-color: var(--color-black8);
+      }
+
+      &.Outlined {
+        color: var(--color-black8);
+        background-color: transparent;
+        border-bottom-color: var(--color-black8);
+      }
+    }
+  }
+}
+
+.Msg,
+.SuccessMsg,
+.ErrorMsg {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+.Msg {
+  color: var(--color-black4);
+}
+
+.SuccessMsg {
+  color: var(--color-green);
+}
+
+.ErrorMsg {
+  color: var(--color-red);
+}

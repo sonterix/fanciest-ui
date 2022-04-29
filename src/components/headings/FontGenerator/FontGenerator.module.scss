@@ -1,0 +1,70 @@
+@import '../../../scss/variables';
+
+.Font {
+  display: block;
+  color: var(--color-black);
+
+  &.NestedStyles {
+    *:not(strong):not(b):not(i):not(a):not(:global(.ignore-nested-styles)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    strong:not(:global(.ignore-nested-styles)),
+    b:not(:global(.ignore-nested-styles)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    i:not(:global(.ignore-nested-styles)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    a:not(:global(.ignore-nested-styles)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+
+  &.Light {
+    font-weight: 400;
+  }
+
+  &.Normal {
+    font-weight: 500;
+  }
+
+  &.Semibold {
+    font-weight: 700;
+  }
+
+  &.Bold {
+    font-weight: 800;
+  }
+
+  &.Main {
+    font-family: var(--font-main);
+  }
+
+  &.Heading {
+    font-family: var(--font-heading);
+  }
+
+  &.Banner {
+    font-family: var(--font-banner);
+  }
+}

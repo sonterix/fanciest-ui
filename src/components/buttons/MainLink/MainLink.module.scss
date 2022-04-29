@@ -1,0 +1,252 @@
+@import '../../../scss/variables';
+
+.MainLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 32px;
+  font-size: 18px;
+  line-height: 24px;
+  font-style: normal;
+  white-space: nowrap;
+  color: var(--color-white);
+  background-color: var(--color-black6);
+  border: 1px solid var(--color-black6);
+  border-radius: 24px;
+  transition: color var(--trans), background-color var(--trans), border-color var(--trans);
+  cursor: pointer;
+
+  &.Primary {
+    &.Filled {
+      color: var(--color-white);
+      background-color: var(--color-red5);
+      border-color: var(--color-red5);
+    }
+
+    &.Outlined {
+      color: var(--color-red5);
+      background-color: transparent;
+      border-color: var(--color-red5);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-white);
+      background-color: var(--color-black);
+      border-color: var(--color-black);
+    }
+  }
+
+  &.Blue {
+    &.Filled {
+      color: var(--color-white);
+      background-color: var(--color-navy-blue);
+      border-color: var(--color-navy-blue);
+    }
+
+    &.Outlined {
+      color: var(--color-navy-blue);
+      background-color: transparent;
+      border-color: var(--color-navy-blue);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-white);
+      background-color: var(--color-black);
+      border-color: var(--color-black);
+    }
+  }
+
+  &.Dark {
+    &.Filled {
+      color: var(--color-white);
+      background-color: var(--color-black2);
+      border-color: var(--color-black2);
+    }
+
+    &.Outlined {
+      color: var(--color-black2);
+      background-color: transparent;
+      border-color: var(--color-black2);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-white);
+      background-color: var(--color-black);
+      border-color: var(--color-black);
+    }
+  }
+
+  &.White {
+    &.Filled {
+      color: var(--color-black2);
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    &.Outlined {
+      color: var(--color-white);
+      background-color: transparent;
+      border-color: var(--color-white);
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-black);
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+    }
+  }
+
+  &.SizeXs {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 16px;
+
+    &.Rounded {
+      border-radius: 20px;
+    }
+
+    &.Squared {
+      border-radius: 5px;
+    }
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  &.SizeSm {
+    padding: 8px 16px;
+    font-size: 16px;
+    line-height: 22px;
+
+    &.Rounded {
+      border-radius: 20px;
+    }
+
+    &.Squared {
+      border-radius: 6px;
+    }
+
+    &.Bold {
+      padding: 8px 20px;
+    }
+
+    i {
+      font-size: 18px;
+
+      &.Bold {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &.SizeMd {
+    padding: 12px 24px;
+    font-size: 18px;
+    line-height: 24px;
+
+    &.Rounded {
+      border-radius: 24px;
+    }
+
+    &.Squared {
+      border-radius: 8px;
+    }
+
+    &.Bold {
+      padding: 12px 32px;
+    }
+
+    i {
+      font-size: 20px;
+
+      &.Bold {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &.SizeLg {
+    padding: 20px 32px;
+    font-size: 20px;
+    line-height: 24px;
+
+    &.Rounded {
+      border-radius: 32px;
+    }
+
+    &.Squared {
+      border-radius: 10px;
+    }
+
+    i {
+      font-size: 24px;
+    }
+  }
+
+  &.Light {
+    font-weight: 400;
+  }
+
+  &.Normal {
+    font-weight: 500;
+  }
+
+  &.Semibold {
+    font-weight: 700;
+  }
+
+  &.Bold {
+    font-weight: 800;
+  }
+
+  &.FontMani {
+    font-family: var(--font-main);
+  }
+
+  &.FontHeading {
+    font-family: var(--font-heading);
+  }
+
+  &.FontBanner {
+    font-family: var(--font-banner);
+  }
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+
+    &.Filled {
+      color: var(--color-white);
+      background-color: var(--color-black6);
+      border-color: var(--color-black6);
+    }
+
+    &.Outlined {
+      color: var(--color-black6);
+      background-color: transparent;
+      border-color: var(--color-black6);
+    }
+  }
+
+  .Content {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+
+    &.LeftSpace {
+      margin-left: 8px;
+    }
+
+    &.RightSpace {
+      margin-right: 8px;
+    }
+  }
+
+  i {
+    color: inherit;
+  }
+}
