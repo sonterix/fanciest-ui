@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { arrayToClasslist } from 'helpers'
-import { ButtonProps } from './Button.type'
+import { ButtonLinkProps, ButtonProps } from './Button.type'
 import styles from './Button.module.scss'
 
 const Button = ({
@@ -9,14 +9,14 @@ const Button = ({
   shape,
   size,
   layout,
+  textFamily,
   textWeight,
   before,
   after,
-  type,
   className,
   children,
   ...props
-}: ButtonProps): JSX.Element => {
+}: ButtonProps | ButtonLinkProps): JSX.Element => {
   const classes = arrayToClasslist([
     styles.Button,
 
@@ -43,6 +43,9 @@ const Button = ({
     ...(size === 'md' ? [styles.Md] : []),
     ...(size === 'lg' ? [styles.Lg] : []),
 
+    ...(textFamily === 'main' ? [styles.Main] : []),
+    ...(textFamily === 'heading' ? [styles.Heading] : []),
+
     ...(textWeight === 100 ? [styles.Weight100] : []),
     ...(textWeight === 200 ? [styles.Weight200] : []),
     ...(textWeight === 300 ? [styles.Weight300] : []),
@@ -56,8 +59,14 @@ const Button = ({
     className || ''
   ])
 
-  return (
-    <button type={type || 'button'} className={classes} {...props}>
+  return (props as ButtonLinkProps)?.href ? (
+    <a className={classes} {...(props as ButtonLinkProps)}>
+      {!!before && before}
+      <span className={styles.Children}>{children}</span>
+      {!!after && after}
+    </a>
+  ) : (
+    <button type={(props as ButtonProps)?.type || 'button'} className={classes} {...(props as ButtonProps)}>
       {!!before && before}
       <span className={styles.Children}>{children}</span>
       {!!after && after}

@@ -18,3 +18,5 @@ export type Size = 'sm' | 'md'
 export type Layout = 'filled' | 'outlined'
 
 export type TextWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+
+export type TextFamiy = 'main' | 'heading'

@@ -6,23 +6,7 @@ import './index.scss'
 import '../src/styles/index.scss'
 import '../src/styles/icons.css'
 
-import {
-  Button,
-  ButtonLink,
-  CircleButton,
-  CircleButtonLink,
-  Font,
-  H1,
-  H2,
-  H3,
-  H4,
-  H5,
-  Icon,
-  P1,
-  P2,
-  P3,
-  P4
-} from '../src/components'
+import { Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
 
 const Dev = (): JSX.Element => {
   return (
@@ -34,11 +18,11 @@ const Dev = (): JSX.Element => {
 
         <div className="dev__block__preview">
           <Button>Button</Button>
-          <ButtonLink href="#">Button Link</ButtonLink>
+          <Button href="#">Button Link</Button>
           <CircleButton>
             <Icon icon="icon-email" />
           </CircleButton>
-          <CircleButtonLink href="#">N</CircleButtonLink>
+          <CircleButton href="#">L</CircleButton>
         </div>
 
         <h2 className="dev__block__subtitle">Props</h2>
@@ -53,13 +37,17 @@ const Dev = (): JSX.Element => {
             <span>t</span>
           </Button>
 
-          <CircleButton color="yellow">{12}</CircleButton>
+          <CircleButton color="yellow" textWeight={800}>
+            {12}
+          </CircleButton>
 
-          <Button color="orange">{['Hello', 'World']}</Button>
+          <Button color="orange" textFamily="heading">
+            {['Hello', 'World']}
+          </Button>
 
-          <ButtonLink href="#" color="rose">
+          <Button href="#" color="rose" textWeight={100}>
             Nick
-          </ButtonLink>
+          </Button>
 
           <CircleButton color="red">
             <Icon icon="icon-chat" />
@@ -73,17 +61,21 @@ const Dev = (): JSX.Element => {
             Click me
           </Button>
 
-          <Button color="turquoise" layout="outlined" after={<Icon icon="icon-chat" />}>
+          <Button color="turquoise" layout="outlined" textWeight={300} after={<Icon icon="icon-chat" />}>
             <span>Push me</span>
             <span>Pull me</span>
           </Button>
 
-          <CircleButtonLink href="#" color="blue" size="sm">
+          <CircleButton href="#" color="blue" size="sm">
             <Icon icon="icon-chat" />
-          </CircleButtonLink>
+          </CircleButton>
 
           <Button color="purple" size="sm" layout="outlined">
             <Icon icon="icon-chat" />
+          </Button>
+
+          <Button type="reset" disabled>
+            Disbled
           </Button>
         </div>
       </div>
