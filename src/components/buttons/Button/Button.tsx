@@ -1,11 +1,22 @@
 import React from 'react'
 
-import { CircleButtonProps } from './CircleButton.type'
-import styles from './CircleButton.module.scss'
+import { ButtonProps } from './Button.type'
+import styles from './Button.module.scss'
 
-const CircleButton = ({ color, size, layout, className, children, ...props }: CircleButtonProps): JSX.Element => {
+const Button = ({
+  color,
+  shape,
+  size,
+  layout,
+  textWeight,
+  before,
+  after,
+  className,
+  children,
+  ...props
+}: ButtonProps): JSX.Element => {
   const classes = [
-    styles.CircleButton,
+    styles.Button,
 
     ...(color === 'black' ? [styles.Black] : []),
     ...(color === 'white' ? [styles.White] : []),
@@ -19,27 +30,42 @@ const CircleButton = ({ color, size, layout, className, children, ...props }: Ci
     ...(color === 'blue' ? [styles.Blue] : []),
     ...(color === 'purple' ? [styles.Purple] : []),
 
+    ...(shape === 'rounded' ? [styles.Rounded] : []),
+    ...(shape === 'squared' ? [styles.Squared] : []),
+
+    ...(size === 'xs' ? [styles.Xs] : []),
     ...(size === 'sm' ? [styles.Sm] : []),
     ...(size === 'md' ? [styles.Md] : []),
+    ...(size === 'lg' ? [styles.Lg] : []),
 
     ...(layout === 'filled' ? [styles.Filled] : []),
     ...(layout === 'outlined' ? [styles.Outlined] : []),
+
+    ...(textWeight === 'light' ? [styles.Light] : []),
+    ...(textWeight === 'normal' ? [styles.Normal] : []),
+    ...(textWeight === 'semibold' ? [styles.Semibold] : []),
+    ...(textWeight === 'bold' ? [styles.Bold] : []),
 
     className || ''
   ].join(' ')
 
   return (
     <button className={classes} {...props}>
-      {children}
+      {!!before && before}
+      {<span className={styles.Children}>{children}</span>}
+      {!!after && after}
     </button>
   )
 }
 
-CircleButton.defaultProps = {
-  className: '',
+Button.defaultProps = {
   color: 'rose',
+  shape: 'rounded',
   size: 'md',
-  layout: 'filled'
+  layout: 'filled',
+  textWeight: 'normal',
+  before: null,
+  after: null
 }
 
-export default CircleButton
+export default Button

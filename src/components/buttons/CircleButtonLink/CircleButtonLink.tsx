@@ -1,11 +1,18 @@
 import React from 'react'
 
-import { CircleLinkProps } from './CircleLink.type'
-import styles from './CircleLink.module.scss'
+import { CircleButtonLinkProps } from './CircleButtonLink.type'
+import styles from './CircleButtonLink.module.scss'
 
-const CircleLink = ({ children, className, color, size, layout, ...props }: CircleLinkProps): JSX.Element => {
+const CircleButtonLink = ({
+  color,
+  size,
+  layout,
+  className,
+  children,
+  ...props
+}: CircleButtonLinkProps): JSX.Element => {
   const classes = [
-    styles.CircleLink,
+    styles.CircleButtonLink,
 
     ...(color === 'black' ? [styles.Black] : []),
     ...(color === 'white' ? [styles.White] : []),
@@ -25,7 +32,7 @@ const CircleLink = ({ children, className, color, size, layout, ...props }: Circ
     ...(layout === 'filled' ? [styles.Filled] : []),
     ...(layout === 'outlined' ? [styles.Outlined] : []),
 
-    className
+    className || ''
   ].join(' ')
 
   return (
@@ -35,11 +42,10 @@ const CircleLink = ({ children, className, color, size, layout, ...props }: Circ
   )
 }
 
-CircleLink.defaultProps = {
-  className: '',
+CircleButtonLink.defaultProps = {
   color: 'rose',
   size: 'md',
   layout: 'filled'
 }
 
-export default CircleLink
+export default CircleButtonLink

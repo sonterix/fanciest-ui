@@ -2,55 +2,54 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import '../src/scss/styles.scss'
-import { CircleLink, Icon } from '../src/components'
+import { Button, Icon } from '../src/components'
 
 const Preview = (): JSX.Element => {
   return (
-    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-      <CircleLink href="#" color="black">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+    <section style={{ padding: '15px', width: '100vw', minHeight: '100vh', backgroundColor: '#f7f7f7' }}>
+      <h1 style={{ marginBottom: '15px' }}>Buttons</h1>
 
-      <CircleLink href="#" color="white">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+      <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+        <Button color="black">A</Button>
 
-      <CircleLink href="#" color="yellow">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="white">
+          <span></span>
+          <span>V</span>
+          <span></span>
+        </Button>
 
-      <CircleLink href="#" color="orange">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="yellow">{12}</Button>
 
-      <CircleLink href="#" color="rose">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="orange">{null}</Button>
 
-      <CircleLink href="#" color="red">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="rose">Nick</Button>
 
-      <CircleLink href="#" color="green" layout="outlined">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="red">
+          <Icon icon="icon-chat" />
+        </Button>
 
-      <CircleLink href="#" color="teal">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="green" layout="outlined">
+          <Icon icon="icon-chat" />
+        </Button>
 
-      <CircleLink href="#" color="turquoise" layout="outlined">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="teal" before={<Icon icon="icon-chat" />}>
+          Click me
+        </Button>
 
-      <CircleLink href="#" color="blue" size="sm">
-        <Icon icon="icon-chat" />
-      </CircleLink>
+        <Button color="turquoise" layout="outlined" after={<Icon icon="icon-chat" />}>
+          <span>Push me</span>
+          <span>Pull me</span>
+        </Button>
 
-      <CircleLink href="#" color="purple" size="sm" layout="outlined">
-        <Icon icon="icon-chat" />
-      </CircleLink>
-    </div>
+        <Button color="blue" size="sm">
+          <Icon icon="icon-chat" />
+        </Button>
+
+        <Button color="purple" size="sm" layout="outlined">
+          <Icon icon="icon-chat" />
+        </Button>
+      </div>
+    </section>
   )
 }
 
