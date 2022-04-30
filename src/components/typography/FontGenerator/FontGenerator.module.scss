@@ -1,0 +1,86 @@
+.Font {
+  display: block;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  color: var(--color-black);
+
+  &.Main {
+    font-family: var(--font-main);
+  }
+
+  &.Heading {
+    font-family: var(--font-heading);
+  }
+
+  &.Weight100 {
+    font-weight: 100;
+  }
+
+  &.Weight200 {
+    font-weight: 200;
+  }
+
+  &.Weight300 {
+    font-weight: 300;
+  }
+
+  &.Weight400 {
+    font-weight: 400;
+  }
+
+  &.Weight500 {
+    font-weight: 500;
+  }
+
+  &.Weight600 {
+    font-weight: 600;
+  }
+
+  &.Weight700 {
+    font-weight: 700;
+  }
+
+  &.Weight800 {
+    font-weight: 800;
+  }
+
+  &.Weight900 {
+    font-weight: 900;
+  }
+
+  &.InheritToChildren {
+    *:not(strong):not(b):not(i):not(a):not(:global(.fui-ignore)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    strong:not(:global(.fui-ignore)),
+    b:not(:global(.fui-ignore)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    i:not(:global(.fui-ignore)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+      color: inherit;
+    }
+
+    a:not(:global(.fui-ignore)) {
+      font-family: inherit !important;
+      font-size: inherit !important;
+      font-weight: inherit !important;
+      font-style: inherit !important;
+      line-height: inherit !important;
+    }
+  }
+}

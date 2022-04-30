@@ -31,6 +31,9 @@ const ButtonLink = ({
     ...(color === 'blue' ? [styles.Blue] : []),
     ...(color === 'purple' ? [styles.Purple] : []),
 
+    ...(layout === 'filled' ? [styles.Filled] : []),
+    ...(layout === 'outlined' ? [styles.Outlined] : []),
+
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
@@ -39,13 +42,15 @@ const ButtonLink = ({
     ...(size === 'md' ? [styles.Md] : []),
     ...(size === 'lg' ? [styles.Lg] : []),
 
-    ...(layout === 'filled' ? [styles.Filled] : []),
-    ...(layout === 'outlined' ? [styles.Outlined] : []),
-
-    ...(textWeight === 'light' ? [styles.Light] : []),
-    ...(textWeight === 'normal' ? [styles.Normal] : []),
-    ...(textWeight === 'semibold' ? [styles.Semibold] : []),
-    ...(textWeight === 'bold' ? [styles.Bold] : []),
+    ...(textWeight === 100 ? [styles.Weight100] : []),
+    ...(textWeight === 200 ? [styles.Weight200] : []),
+    ...(textWeight === 300 ? [styles.Weight300] : []),
+    ...(textWeight === 400 ? [styles.Weight400] : []),
+    ...(textWeight === 500 ? [styles.Weight500] : []),
+    ...(textWeight === 600 ? [styles.Weight600] : []),
+    ...(textWeight === 700 ? [styles.Weight700] : []),
+    ...(textWeight === 800 ? [styles.Weight800] : []),
+    ...(textWeight === 900 ? [styles.Weight900] : []),
 
     className || ''
   ])
@@ -64,7 +69,7 @@ ButtonLink.defaultProps = {
   shape: 'rounded',
   size: 'md',
   layout: 'filled',
-  textWeight: 'normal',
+  textWeight: 500,
   before: null,
   after: null
 }

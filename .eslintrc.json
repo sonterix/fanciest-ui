@@ -36,6 +36,7 @@
     "react/button-has-type": "off",
     "react/no-danger": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/no-unresolved": "off",
     "no-nested-ternary": "off",
     "no-undef": "off"
   }
