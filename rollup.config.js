@@ -5,6 +5,7 @@ import babel from '@rollup/plugin-babel'
 import typescript from '@rollup/plugin-typescript'
 import styles from 'rollup-plugin-styles'
 import { terser } from 'rollup-plugin-terser'
+import copy from 'rollup-plugin-copy'
 import dts from 'rollup-plugin-dts'
 
 const packageJson = require('./package.json')
@@ -31,7 +32,7 @@ export default [
       styles({
         minimize: true,
         modules: {
-          generateScopedName: (name, file, css) => {
+          generateScopedName: (name, file) => {
             if (file.includes('.module.')) {
               return `fui${name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`
             }
@@ -40,12 +41,15 @@ export default [
         }
       }),
       typescript({ include: 'src/**/*', tsconfig: './tsconfig.json' }),
-      terser()
+      terser(),
+      copy({
+        targets: [{ src: './src/styles/icons.css', dest: 'dist/public' }]
+      })
     ]
   },
   {
-    input: 'dist/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    input: './dist/types/index.d.ts',
+    output: [{ file: './dist/index.d.ts', format: 'esm' }],
     external: [/\.scss$/],
     plugins: [dts()]
   }

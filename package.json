@@ -22,7 +22,7 @@
   "scripts": {
     "build": "rm -rf ./dist && rollup -c",
     "pub": "npm publish --access public",
-    "dev-build": "rm -rf ./.dev && rollup -c rollup.server.config.js"
+    "dev-build": "rm -rf ./demo && rollup -c rollup.server.config.js"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
@@ -60,6 +60,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rollup": "^2.70.2",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-dts": "^4.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-styles": "^4.0.0",

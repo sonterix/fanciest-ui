@@ -1,0 +1,460 @@
+@font-face {
+  font-family: 'MM-Symbols';
+  src: url('https://assets.moneymade.io/fonts/MMIconFont/MM-Symbols.woff') format('woff'),
+    url('https://assets.moneymade.io/fonts/MMIconFont/MM-Symbols.eot') format('embedded-opentype'),
+    url('https://assets.moneymade.io/fonts/MMIconFont/MM-Symbols.ttf') format('truetype'),
+    url('https://assets.moneymade.io/fonts/MMIconFont/MM-Symbols.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'MM-Symbols' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.icon-shield:before {
+  content: '\e989';
+}
+.icon-bulb:before {
+  content: '\e988';
+}
+.icon-court:before {
+  content: '\e987';
+}
+.icon-chain:before {
+  content: '\e984';
+}
+.icon-hand-trusted:before {
+  content: '\e985';
+}
+.icon-chat:before {
+  content: '\e982';
+}
+.icon-email:before {
+  content: '\e983';
+}
+.icon-fancy-check-mark:before {
+  content: '\e980';
+}
+.icon-empty-fancy-check-mark:before {
+  content: '\e986';
+}
+.icon-blick:before {
+  content: '\e926';
+}
+.icon-fire-filled:before {
+  content: '\e981';
+}
+.icon-fire:before {
+  content: '\e929';
+}
+.icon-boots:before {
+  content: '\e97f';
+}
+.icon-musical:before {
+  content: '\e97e';
+}
+.icon-border-circle:before {
+  content: '\e97d';
+}
+.icon-lock:before {
+  content: '\e97c';
+}
+.icon-solana:before {
+  content: '\e95b';
+}
+.icon-tether:before {
+  content: '\e95c';
+}
+.icon-litecoin:before {
+  content: '\e95d';
+}
+.icon-cardano:before {
+  content: '\e95f';
+}
+.icon-polkadot:before {
+  content: '\e960';
+}
+.icon-xrp:before {
+  content: '\e964';
+}
+.icon-uniswap:before {
+  content: '\e965';
+}
+.icon-chainlink:before {
+  content: '\e968';
+}
+.icon-dogecoin:before {
+  content: '\e969';
+}
+.icon-ethereum:before {
+  content: '\e96a';
+}
+.icon-oil:before {
+  content: '\e96b';
+}
+.icon-gas:before {
+  content: '\e96d';
+}
+.icon-sugar:before {
+  content: '\e96f';
+}
+.icon-coffee:before {
+  content: '\e970';
+}
+.icon-silver:before {
+  content: '\e971';
+}
+.icon-platinum:before {
+  content: '\e972';
+}
+.icon-bonds:before {
+  content: '\e973';
+}
+.icon-car:before {
+  content: '\e974';
+}
+.icon-comic-books:before {
+  content: '\e975';
+}
+.icon-defi:before {
+  content: '\e976';
+}
+.icon-metaverse:before {
+  content: '\e977';
+}
+.icon-whiskey:before {
+  content: '\e978';
+}
+.icon-sports-memorabilia:before {
+  content: '\e979';
+}
+.icon-watches:before {
+  content: '\e97a';
+}
+.icon-globe:before {
+  content: '\e95a';
+}
+.icon-apartments:before {
+  content: '\e955';
+}
+.icon-tractor:before {
+  content: '\e956';
+}
+.icon-blockchain:before {
+  content: '\e957';
+}
+.icon-controls:before {
+  content: '\e958';
+}
+.icon-bitcoin:before {
+  content: '\e959';
+}
+.icon-art:before {
+  content: '\e944';
+}
+.icon-baseball-cap:before {
+  content: '\e945';
+}
+.icon-get-coin:before {
+  content: '\e946';
+}
+.icon-gold:before {
+  content: '\e947';
+}
+.icon-robot:before {
+  content: '\e948';
+}
+.icon-rocket:before {
+  content: '\e949';
+}
+.icon-wineglass:before {
+  content: '\e94a';
+}
+.icon-bear:before {
+  content: '\e92b';
+}
+.icon-bull:before {
+  content: '\e930';
+}
+.icon-hand:before {
+  content: '\e931';
+}
+.icon-hand-click:before {
+  content: '\e935';
+}
+.icon-hand-ok:before {
+  content: '\e937';
+}
+.icon-location:before {
+  content: '\e905';
+}
+.icon-cash:before {
+  content: '\e90f';
+}
+.icon-scales:before {
+  content: '\e916';
+}
+.icon-success:before {
+  content: '\e917';
+}
+.icon-not-sure:before {
+  content: '\e918';
+}
+.icon-error:before {
+  content: '\e919';
+}
+.icon-growth:before {
+  content: '\e91a';
+}
+.icon-icon-growth-big:before {
+  content: '\e91d';
+}
+.icon-growth-medium:before {
+  content: '\e91e';
+}
+.icon-growth-small:before {
+  content: '\e920';
+}
+.icon-settings:before {
+  content: '\e921';
+}
+.icon-point-up:before {
+  content: '\e915';
+}
+.icon-point-right:before {
+  content: '\e914';
+}
+.icon-point-down:before {
+  content: '\e912';
+}
+.icon-point-left:before {
+  content: '\e913';
+}
+.icon-dropdown-down:before {
+  content: '\e909';
+}
+.icon-dropdown-up:before {
+  content: '\e90a';
+}
+.icon-arrow-left:before {
+  content: '\e906';
+}
+.icon-arrow-right:before {
+  content: '\e907';
+}
+.icon-check-mark:before {
+  content: '\e91b';
+}
+.icon-x-mark:before {
+  content: '\e91c';
+}
+.icon-plus:before {
+  content: '\e936';
+}
+.icon-minus:before {
+  content: '\e932';
+}
+.icon-heart-filled:before {
+  content: '\e92d';
+}
+.icon-heart:before {
+  content: '\e92e';
+}
+.icon-star-filled:before {
+  content: '\e938';
+}
+.icon-star:before {
+  content: '\e939';
+}
+.icon-dots-vertical:before {
+  content: '\e934';
+}
+.icon-dots-horizontal:before {
+  content: '\e933';
+}
+.icon-sort:before {
+  content: '\e93e';
+}
+.icon-hamburger-menu:before {
+  content: '\e92a';
+}
+.icon-info:before {
+  content: '\e92c';
+}
+.icon-warning:before {
+  content: '\e942';
+}
+.icon-emoji-negative:before {
+  content: '\e922';
+}
+.icon-emoji-neutral:before {
+  content: '\e923';
+}
+.icon-emoji-positive:before {
+  content: '\e924';
+}
+.icon-low-speed:before {
+  content: '\e90d';
+}
+.icon-medium-speed:before {
+  content: '\e90e';
+}
+.icon-hight-speed:before {
+  content: '\e90c';
+}
+.icon-edit:before {
+  content: '\e962';
+}
+.icon-copy:before {
+  content: '\e95e';
+}
+.icon-delete:before {
+  content: '\e961';
+}
+.icon-search:before {
+  content: '\e93b';
+}
+.icon-eye-hide:before {
+  content: '\e96c';
+}
+.icon-external-link:before {
+  content: '\e925';
+}
+.icon-link:before {
+  content: '\e92f';
+}
+.icon-share:before {
+  content: '\e93d';
+}
+.icon-filter:before {
+  content: '\e927';
+}
+.icon-user:before {
+  content: '\e940';
+}
+.icon-play:before {
+  content: '\e941';
+}
+.icon-play-top:before {
+  content: '\e93a';
+}
+.icon-play-bottom:before {
+  content: '\e93c';
+}
+.icon-poke:before {
+  content: '\e963';
+}
+.icon-thumb-up-lined:before {
+  content: '\e98a';
+}
+.icon-thumb-up:before {
+  content: '\e93f';
+}
+.icon-part-of:before {
+  content: '\e90b';
+}
+.icon-use-of-money:before {
+  content: '\e910';
+}
+.icon-rising:before {
+  content: '\e911';
+}
+.icon-compass:before {
+  content: '\e91f';
+}
+.icon-quote:before {
+  content: '\e96e';
+}
+.icon-gift:before {
+  content: '\e928';
+}
+.icon-apple:before {
+  content: '\e943';
+}
+.icon-twitter:before {
+  content: '\e900';
+}
+.icon-reddit:before {
+  content: '\e901';
+}
+.icon-linkedIn:before {
+  content: '\e902';
+}
+.icon-instagram:before {
+  content: '\e903';
+}
+.icon-facebook:before {
+  content: '\e904';
+}
+.icon-mm-logo:before {
+  content: '\e908';
+}
+.icon-verified-mark:before {
+  content: '\e97b';
+  color: #ed2348;
+}
+.icon-location-featured .path1:before {
+  content: '\e953';
+  color: rgb(255, 151, 0);
+}
+.icon-location-featured .path2:before {
+  content: '\e954';
+  margin-left: -0.7333984375em;
+  color: rgb(255, 255, 255);
+}
+.icon-mm-old-logo .path1:before {
+  content: '\e966';
+  color: rgb(66, 72, 235);
+}
+.icon-mm-old-logo .path2:before {
+  content: '\e967';
+  margin-left: -1em;
+  color: rgb(51, 205, 113);
+}
+.icon-google .path1:before {
+  content: '\e94b';
+  color: rgb(66, 133, 244);
+}
+.icon-google .path2:before {
+  content: '\e94c';
+  margin-left: -1em;
+  color: rgb(52, 168, 83);
+}
+.icon-google .path3:before {
+  content: '\e94d';
+  margin-left: -1em;
+  color: rgb(251, 188, 4);
+}
+.icon-google .path4:before {
+  content: '\e94e';
+  margin-left: -1em;
+  color: rgb(234, 67, 53);
+}
+.icon-microsoft .path1:before {
+  content: '\e94f';
+  color: rgb(246, 83, 20);
+}
+.icon-microsoft .path2:before {
+  content: '\e950';
+  margin-left: -1em;
+  color: rgb(127, 187, 65);
+}
+.icon-microsoft .path3:before {
+  content: '\e951';
+  margin-left: -1em;
+  color: rgb(0, 161, 241);
+}
+.icon-microsoft .path4:before {
+  content: '\e952';
+  margin-left: -1em;
+  color: rgb(255, 187, 0);
+}

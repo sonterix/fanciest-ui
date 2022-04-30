@@ -4,11 +4,12 @@ import commonjs from '@rollup/plugin-commonjs'
 import babel from '@rollup/plugin-babel'
 import typescript from '@rollup/plugin-typescript'
 import styles from 'rollup-plugin-styles'
+import copy from 'rollup-plugin-copy'
 
 export default {
-  input: './public/index.tsx',
+  input: './dev/index.tsx',
   output: {
-    file: '.dev/index.js',
+    file: './demo/script.js',
     format: 'iife',
     sourcemap: true
   },
@@ -25,13 +26,16 @@ export default {
     typescript(),
     styles({
       modules: {
-        generateScopedName: (name, file, css) => {
+        generateScopedName: (name, file) => {
           if (file.includes('.module.')) {
             return `fui${name.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`)}`
           }
           return name
         }
       }
+    }),
+    copy({
+      targets: [{ src: './src/styles/icons.css', dest: 'demo/public' }]
     })
   ]
 }
