@@ -28,14 +28,14 @@
     "jest": true
   },
   "rules": {
-    "@typescript-eslint/rule-name": "error",
     "@typescript-eslint/ban-ts-comment": "off",
     "plugin:react/jsx-runtime": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": "off",
-    "no-undef": "off",
+    "react/button-has-type": "off",
     "react/no-danger": "off",
     "no-nested-ternary": "off",
+    "no-undef": "off"
   }
 }

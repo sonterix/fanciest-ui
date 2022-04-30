@@ -1,4 +1,4 @@
-import { Color, Shape, Size, TextWeight, Layout } from 'types/commonProps'
+import { Color, Shape, Size, TextWeight, Layout } from 'types'
 
 export interface ButtonProps extends React.ComponentProps<'button'> {
   color?: Color

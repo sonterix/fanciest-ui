@@ -1,4 +1,4 @@
-import { Color, Layout, Size } from 'types/commonProps'
+import { Color, Layout, Size } from 'types'
 
 export interface CircleButtonProps extends React.ComponentProps<'button'> {
   color?: Color

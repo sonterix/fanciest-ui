@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { arrayToClasslist } from 'helpers'
 import { ButtonLinkProps } from './ButtonLink.type'
 import styles from './ButtonLink.module.scss'
 
@@ -15,7 +16,7 @@ const ButtonLink = ({
   children,
   ...props
 }: ButtonLinkProps): JSX.Element => {
-  const classes = [
+  const classes = arrayToClasslist([
     styles.ButtonLink,
 
     ...(color === 'black' ? [styles.Black] : []),
@@ -47,14 +48,14 @@ const ButtonLink = ({
     ...(textWeight === 'bold' ? [styles.Bold] : []),
 
     className || ''
-  ].join(' ')
+  ])
 
   return (
-    <button className={classes} {...props}>
+    <a className={classes} {...props}>
       {!!before && before}
-      {<span className={styles.Children}>{children}</span>}
+      <span className={styles.Children}>{children}</span>
       {!!after && after}
-    </button>
+    </a>
   )
 }
 

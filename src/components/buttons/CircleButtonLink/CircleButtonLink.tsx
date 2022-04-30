@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { arrayToClasslist } from 'helpers'
 import { CircleButtonLinkProps } from './CircleButtonLink.type'
 import styles from './CircleButtonLink.module.scss'
 
@@ -11,7 +12,7 @@ const CircleButtonLink = ({
   children,
   ...props
 }: CircleButtonLinkProps): JSX.Element => {
-  const classes = [
+  const classes = arrayToClasslist([
     styles.CircleButtonLink,
 
     ...(color === 'black' ? [styles.Black] : []),
@@ -33,7 +34,7 @@ const CircleButtonLink = ({
     ...(layout === 'outlined' ? [styles.Outlined] : []),
 
     className || ''
-  ].join(' ')
+  ])
 
   return (
     <a className={classes} {...props}>

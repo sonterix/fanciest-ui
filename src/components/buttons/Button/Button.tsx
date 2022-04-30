@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { arrayToClasslist } from 'helpers'
 import { ButtonProps } from './Button.type'
 import styles from './Button.module.scss'
 
@@ -11,11 +12,12 @@ const Button = ({
   textWeight,
   before,
   after,
+  type,
   className,
   children,
   ...props
 }: ButtonProps): JSX.Element => {
-  const classes = [
+  const classes = arrayToClasslist([
     styles.Button,
 
     ...(color === 'black' ? [styles.Black] : []),
@@ -47,12 +49,12 @@ const Button = ({
     ...(textWeight === 'bold' ? [styles.Bold] : []),
 
     className || ''
-  ].join(' ')
+  ])
 
   return (
-    <button className={classes} {...props}>
+    <button type={type || 'button'} className={classes} {...props}>
       {!!before && before}
-      {<span className={styles.Children}>{children}</span>}
+      <span className={styles.Children}>{children}</span>
       {!!after && after}
     </button>
   )

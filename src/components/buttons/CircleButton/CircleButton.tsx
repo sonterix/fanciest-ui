@@ -1,10 +1,11 @@
 import React from 'react'
 
+import { arrayToClasslist } from 'helpers'
 import { CircleButtonProps } from './CircleButton.type'
 import styles from './CircleButton.module.scss'
 
-const CircleButton = ({ color, size, layout, className, children, ...props }: CircleButtonProps): JSX.Element => {
-  const classes = [
+const CircleButton = ({ color, size, layout, type, className, children, ...props }: CircleButtonProps): JSX.Element => {
+  const classes = arrayToClasslist([
     styles.CircleButton,
 
     ...(color === 'black' ? [styles.Black] : []),
@@ -26,10 +27,10 @@ const CircleButton = ({ color, size, layout, className, children, ...props }: Ci
     ...(layout === 'outlined' ? [styles.Outlined] : []),
 
     className || ''
-  ].join(' ')
+  ])
 
   return (
-    <button className={classes} {...props}>
+    <button type={type || 'button'} className={classes} {...props}>
       {children}
     </button>
   )
