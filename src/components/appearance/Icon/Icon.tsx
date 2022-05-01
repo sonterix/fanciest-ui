@@ -3,11 +3,11 @@ import React from 'react'
 import { arrayToClasslist } from 'helpers'
 import { IconPropsType } from './Icon.type'
 
-const Icon = ({ icon, size, pathNumber, className, style, ...props }: IconPropsType): JSX.Element => {
+const Icon = ({ icon, iconSize, pathNumber, className, style, ...props }: IconPropsType): JSX.Element => {
   const classes = arrayToClasslist([icon, className || ''])
 
   return (
-    <i className={classes} style={{ ...style, fontSize: size }} {...props}>
+    <i className={classes} style={{ ...style, fontSize: iconSize }} {...props}>
       {Number.isInteger(pathNumber) &&
         Array.from(Array(pathNumber).keys()).map(key => <span key={`path-${key}`} className={`path${key + 1}`} />)}
     </i>
@@ -15,7 +15,7 @@ const Icon = ({ icon, size, pathNumber, className, style, ...props }: IconPropsT
 }
 
 Icon.defaultProps = {
-  size: '20px',
+  iconSize: '20px',
   pathNumber: undefined
 }
 
