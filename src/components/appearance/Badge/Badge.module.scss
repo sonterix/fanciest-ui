@@ -1,72 +1,14 @@
-@import '../../../scss/variables';
+@import '../../../styles/helper.scss';
 
 .Badge {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 4px 12px;
-  font-size: 18px;
-  line-height: 24px;
-  color: var(--color-white);
-  background-color: var(--color-red5);
-  border-radius: 6px;
+  gap: 5px;
+  padding: 5px 12px;
   cursor: default;
 
-  &.Primary {
-    color: var(--color-white);
-    background-color: var(--color-red5);
-
-    .XMarkBtn {
-      color: var(--color-white);
-    }
-  }
-
-  &.Green {
-    color: var(--color-white);
-    background-color: var(--color-green);
-
-    .XMarkBtn {
-      color: var(--color-white);
-    }
-  }
-
-  &.Yellow {
-    color: var(--color-black);
-    background-color: var(--color-yellow);
-
-    .XMarkBtn {
-      color: var(--color-black);
-    }
-  }
-
-  &.Blue {
-    color: var(--color-white);
-    background-color: var(--color-blue);
-
-    .XMarkBtn {
-      color: var(--color-white);
-    }
-  }
-
-  &.Turquoise {
-    color: var(--color-white);
-    background-color: var(--color-turquoise);
-
-    .XMarkBtn {
-      color: var(--color-white);
-    }
-  }
-
-  &.Grey {
-    color: var(--color-black);
-    background-color: var(--color-black8);
-
-    .XMarkBtn {
-      color: var(--color-black);
-    }
-  }
-
-  &.SizeSm {
+  &.Sm {
     padding: 3px 8px;
     font-size: 12px;
     font-weight: normal;
@@ -82,7 +24,7 @@
     }
   }
 
-  &.SizeMd {
+  &.Md {
     padding: 4px 12px;
     font-size: 18px;
     font-weight: normal;
@@ -99,34 +41,41 @@
     }
   }
 
-  .XMarkBtn {
+  @include colorStyles();
+
+  @include textFamilyStyles();
+
+  @include textWeightStyles();
+
+  .Children {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    white-space: nowrap;
+    color: inherit;
+  }
+
+  .XMark {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10px;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 20px;
-    color: var(--color-white);
+    padding: 5px;
+    padding-right: 0;
+    color: inherit;
     border: none;
     background-color: transparent;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity var(--trans);
     cursor: pointer;
+
+    > svg {
+      width: 10px;
+      height: 10px;
+      fill: currentColor;
+    }
 
     &:hover {
       opacity: 1;
     }
-  }
-
-  .Content,
-  * {
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    line-height: inherit;
-    white-space: nowrap;
-    color: inherit;
   }
 }

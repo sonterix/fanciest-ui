@@ -14,4 +14,5 @@ export { default as P3 } from 'components/typography/P3'
 export { default as P4 } from 'components/typography/P4'
 
 export { default as Avatar } from 'components/appearance/Avatar'
+export { default as Badge } from 'components/appearance/Badge'
 export { default as Icon } from 'components/appearance/Icon'

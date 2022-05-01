@@ -6,7 +6,7 @@ import './index.scss'
 import '../src/styles/index.scss'
 import '../src/styles/icons.css'
 
-import { Avatar, Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
+import { Avatar, Badge, Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
 
 const Dev = (): JSX.Element => {
   return (
@@ -136,6 +136,34 @@ const Dev = (): JSX.Element => {
           <Avatar color="green" width={80} height={80} textWeight={300} radius="50%">
             Test 3
           </Avatar>
+        </div>
+
+        <h2 className="dev__block__subtitle">Badge</h2>
+
+        <div className="dev__block__preview">
+          <Badge color="black">Black</Badge>
+          <Badge color="white">White</Badge>
+          <Badge color="yellow">Yellow</Badge>
+          <Badge color="orange">Orange</Badge>
+          <Badge color="red">Red</Badge>
+          <Badge color="rose">Rose</Badge>
+          <Badge color="green">Green</Badge>
+          <Badge color="teal">Teal</Badge>
+          <Badge color="turquoise">Turquoise</Badge>
+          <Badge color="blue">Blue</Badge>
+          <Badge color="purple">Purplr</Badge>
+
+          <Badge color="red" onClose={() => alert('Clicked')}>
+            Click me
+          </Badge>
+
+          <Badge textFamily="heading" textSize={20} textWeight={300}>
+            Custom Text
+          </Badge>
+
+          <Badge shape="rounded" size="sm">
+            Custom Shape and Size
+          </Badge>
         </div>
       </div>
     </section>

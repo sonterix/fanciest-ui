@@ -1,56 +1,49 @@
 import React from 'react'
 
-import Icon from '../Icon/Icon'
+import { arrayToClasslist, getColorClasses, getTextFamily, getTextWeight } from 'helpers'
+import { BadgeProps } from './Badge.type'
 import styles from './Badge.module.scss'
 
-type BadgeProps = {
-  [key: string]: any
-  className?: string
-  color?: 'primary' | 'green' | 'yellow' | 'blue' | 'turquoise' | 'grey'
-  shape?: 'rounded' | 'squared'
-  size?: 'sm' | 'md'
-  close?: boolean
-  handleClose?: () => void
-  children?: React.ReactNode
-}
-
 const Badge = ({
-  className,
-  color,
-  size,
   shape,
-  close,
-  handleClose,
+  size,
+  color,
+  textFamily,
+  textSize,
+  textWeight,
+  onClose,
+  className,
+  style,
   children,
   ...props
 }: BadgeProps): JSX.Element => {
-  const classes: string = [
-    'mu-badge',
+  const classes = arrayToClasslist([
     styles.Badge,
-
-    ...(color === 'primary' ? [styles.Primary] : []),
-    ...(color === 'green' ? [styles.Green] : []),
-    ...(color === 'yellow' ? [styles.Yellow] : []),
-    ...(color === 'blue' ? [styles.Blue] : []),
-    ...(color === 'turquoise' ? [styles.Turquoise] : []),
-    ...(color === 'grey' ? [styles.Grey] : []),
 
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
-    ...(size === 'sm' ? [styles.SizeSm] : []),
-    ...(size === 'md' ? [styles.SizeMd] : []),
+    ...(size === 'sm' ? [styles.Sm] : []),
+    ...(size === 'md' ? [styles.Md] : []),
 
-    className
-  ].join(' ')
+    ...getColorClasses(color, styles),
+
+    ...getTextFamily(textFamily, styles),
+
+    ...getTextWeight(textWeight, styles),
+
+    className || ''
+  ])
 
   return (
-    <div className={classes} {...props}>
-      <span className={`mu-content ${styles.Content}`}>{children}</span>
+    <div className={classes} style={{ ...style, fontSize: textSize }} {...props}>
+      <span className={styles.Children}>{children}</span>
 
-      {close && (
-        <button type="button" className={`mu-close-btn ${styles.XMarkBtn}`} onClick={handleClose}>
-          <Icon icon="icon-x-mark" size={10} />
+      {onClose && (
+        <button type="button" className={styles.XMark} onClick={onClose}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+          </svg>
         </button>
       )}
     </div>
@@ -58,13 +51,11 @@ const Badge = ({
 }
 
 Badge.defaultProps = {
-  className: '',
-  color: 'primary',
-  size: 'md',
   shape: 'squared',
-  close: false,
-  handleClose: () => {},
-  children: null
+  size: 'md',
+  color: 'black',
+  textSize: '18px',
+  textWeight: 500
 }
 
 export default Badge
