@@ -84,6 +84,10 @@ const Dev = (): JSX.Element => {
           <Button color="purple" textFamily="heading" textWeight={100}>
             Custom Text
           </Button>
+
+          <Button before="With" after={<Icon icon="icon-email" />}>
+            before and after
+          </Button>
         </div>
       </div>
 
