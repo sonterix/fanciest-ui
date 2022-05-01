@@ -22,3 +22,7 @@ export { default as Skeleton } from 'components/appearance/Skeleton'
 
 export { default as DetectClickOutside } from 'components/functional/DetectClickOutside'
 export { default as Container } from 'components/functional/Container'
+
+export { default as useDebounce } from 'components/hooks/useDebounce'
+export { default as useLoader } from 'components/hooks/useLoader'
+export { default as useWindowSize } from 'components/hooks/useWindowSize'

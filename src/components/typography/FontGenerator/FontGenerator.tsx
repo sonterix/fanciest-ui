@@ -46,8 +46,12 @@ const FontGenerator = ({
       setFontSize(getFontSize(media, window.innerWidth))
     }
 
+    updateSize()
+
     window.addEventListener('resize', updateSize)
-    return () => window.removeEventListener('resize', updateSize)
+    return () => {
+      window.removeEventListener('resize', updateSize)
+    }
   }, [media])
 
   return htmlContent ? (
