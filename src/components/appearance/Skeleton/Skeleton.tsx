@@ -1,74 +1,69 @@
-// @ts-ignore
 import React from 'react'
 
+import { arrayToClasslist } from 'helpers'
+import { SkeletonProps } from './Skeleton.type'
 import styles from './Skeleton.module.scss'
 
-type SkeletonProps = {
-  [key: string]: any
-  className?: string
-  animation?: 'pulse' | 'wave' | false
-  variant?: 'text' | 'rect' | 'circle'
-  as?: string
-  width?: number | string
-  height?: number | string
-  spaceTop?: number
-  spaceBottom?: number
-  spaceLeft?: number
-  spaceRight?: number
-}
-
 const Skeleton = ({
-  className,
-  animation,
-  variant,
-  as,
+  layout,
+  type,
   width,
   height,
   spaceTop,
   spaceBottom,
   spaceLeft,
   spaceRight,
+  as,
+  animation,
+  className,
+  style,
   ...props
 }: SkeletonProps): JSX.Element => {
-  const Tag = (as as keyof JSX.IntrinsicElements) || 'h1'
-  const classes: string = [
-    'mu-skeleton',
+  const classes = arrayToClasslist([
     styles.Skeleton,
+
+    ...(type === 'block' ? [styles.Block] : []),
+    ...(type === 'inline' ? [styles.Inline] : []),
+
+    ...(layout === 'rect' ? [styles.Rect] : []),
+    ...(layout === 'circle' ? [styles.Circle] : []),
+
     ...(animation === 'pulse' ? [styles.Pulse] : []),
     ...(animation === 'wave' ? [styles.Wave] : []),
-    ...(variant === 'text' ? [styles.Text] : []),
-    ...(variant === 'rect' ? [styles.Rect] : []),
-    ...(variant === 'circle' ? [styles.Circle] : []),
-    className
-  ].join(' ')
 
-  return (
-    <Tag
-      className={classes}
-      style={{
+    className || ''
+  ])
+
+  return React.createElement(
+    as || 'span',
+    {
+      ...props,
+      className: classes,
+      style: {
+        ...style,
         maxWidth: width,
         height,
         marginTop: spaceTop,
         marginBottom: spaceBottom,
         marginLeft: spaceLeft,
         marginRight: spaceRight
-      }}
-      {...props}
-    />
+      }
+    },
+    null
   )
 }
 
 Skeleton.defaultProps = {
-  className: '',
-  animation: 'pulse',
-  variant: 'text',
-  as: 'div',
+  layout: 'rect',
+  type: 'block',
   width: '100%',
   height: '30px',
   spaceTop: 0,
   spaceBottom: 0,
   spaceLeft: 0,
-  spaceRight: 0
+  spaceRight: 0,
+  as: 'span',
+  animation: 'pulse'
 }
 
 export default Skeleton

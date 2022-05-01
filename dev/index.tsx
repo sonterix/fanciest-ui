@@ -25,7 +25,8 @@ import {
   P2,
   P3,
   P4,
-  Rating
+  Rating,
+  Skeleton
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
@@ -220,7 +221,7 @@ const Dev = (): JSX.Element => {
           <Loader wrapperWidth={200} wrapperHeight={200} />
         </div>
 
-        <h2 className="dev__block__subtitle">Loader</h2>
+        <h2 className="dev__block__subtitle">Rating</h2>
 
         <div className="dev__block__preview">
           <Rating color="black" rating={4} />
@@ -247,6 +248,18 @@ const Dev = (): JSX.Element => {
           />
 
           <Rating color="blue" rating={5} starSize={30} textSize="26px" withNumber />
+        </div>
+
+        <h2 className="dev__block__subtitle">Skeleton</h2>
+
+        <div className="dev__block__preview">
+          <Skeleton animation="pulse" />
+          <Skeleton animation="wave" />
+          <Skeleton animation="none" />
+
+          <Skeleton width={500} height={60} />
+
+          <Skeleton layout="circle" width={80} height={80} />
         </div>
       </div>
 
