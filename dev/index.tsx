@@ -14,68 +14,75 @@ const Dev = (): JSX.Element => {
       <div className="dev__block">
         <h1 className="dev__block__title">Buttons</h1>
 
-        <h2 className="dev__block__subtitle">Components</h2>
+        <h2 className="dev__block__subtitle">Circle Button</h2>
 
         <div className="dev__block__preview">
-          <Button>Button</Button>
-          <Button href="#">Button Link</Button>
-          <CircleButton>
-            <Icon icon="icon-email" />
+          <CircleButton color="black">B</CircleButton>
+          <CircleButton color="white">W</CircleButton>
+          <CircleButton color="yellow">Y</CircleButton>
+          <CircleButton color="orange">O</CircleButton>
+          <CircleButton color="red">Re</CircleButton>
+          <CircleButton color="rose">Ro</CircleButton>
+          <CircleButton color="green">G</CircleButton>
+          <CircleButton color="teal">Te</CircleButton>
+          <CircleButton color="turquoise">Tu</CircleButton>
+          <CircleButton color="blue">B</CircleButton>
+          <CircleButton color="purple">P</CircleButton>
+
+          <CircleButton color="green" size="sm">
+            SM
           </CircleButton>
-          <CircleButton href="#">L</CircleButton>
+          <CircleButton color="green" size="md">
+            MD
+          </CircleButton>
+
+          <CircleButton color="rose" layout="outlined">
+            L
+          </CircleButton>
+
+          <CircleButton color="teal" textFamily="heading" textWeight={100}>
+            T
+          </CircleButton>
         </div>
 
-        <h2 className="dev__block__subtitle">Props</h2>
+        <h2 className="dev__block__subtitle">Button</h2>
 
         <div className="dev__block__preview">
-          <Button color="black">Click me</Button>
+          <Button color="black">Black</Button>
+          <Button color="white">White</Button>
+          <Button color="yellow">Yellow</Button>
+          <Button color="orange">Orange</Button>
+          <Button color="red">Red</Button>
+          <Button color="rose">Rose</Button>
+          <Button color="green">Green</Button>
+          <Button color="teal">Teal</Button>
+          <Button color="turquoise">Turquoise</Button>
+          <Button color="blue">Blue</Button>
+          <Button color="purple">Purplr</Button>
 
-          <Button color="white">
-            <span>t</span>
-            <span>e</span>
-            <span>s</span>
-            <span>t</span>
+          <Button color="yellow" size="xs">
+            XS
+          </Button>
+          <Button color="yellow" size="sm">
+            SM
+          </Button>
+          <Button color="yellow" size="md">
+            MD
+          </Button>
+          <Button color="yellow" size="lg">
+            LG
           </Button>
 
-          <CircleButton color="yellow" textWeight={800}>
-            {12}
-          </CircleButton>
-
-          <Button color="orange" textFamily="heading">
-            {['Hello', 'World']}
+          <Button color="red" shape="squared">
+            Squared
           </Button>
 
-          <Button href="#" color="rose" textWeight={100}>
-            Nick
+          <Button color="turquoise" layout="outlined">
+            Outlined
           </Button>
 
-          <CircleButton color="red">
-            <Icon icon="icon-chat" />
-          </CircleButton>
-
-          <CircleButton color="green" layout="outlined">
-            <Icon icon="icon-chat" />
-          </CircleButton>
-
-          <Button color="teal" before={<Icon icon="icon-chat" />}>
-            Click me
-          </Button>
-
-          <Button color="turquoise" layout="outlined" textWeight={300} after={<Icon icon="icon-chat" />}>
-            <span>Push me</span>
-            <span>Pull me</span>
-          </Button>
-
-          <CircleButton href="#" color="blue" size="sm">
-            <Icon icon="icon-chat" />
-          </CircleButton>
-
-          <Button color="purple" size="sm" layout="outlined">
-            <Icon icon="icon-chat" />
-          </Button>
-
-          <Button type="reset" disabled>
-            Disbled
+          <Button color="purple" textFamily="heading" textWeight={100}>
+            Custom Text
           </Button>
         </div>
       </div>
@@ -111,30 +118,33 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Avatar</h2>
 
         <div className="dev__block__preview">
-          <Avatar
-            width={100}
-            height={100}
-            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/292/apple-logo_f8ff.png"
-          />
-          <Avatar color="black">H</Avatar>
-          <Avatar color="white">e</Avatar>
-          <Avatar color="yellow">l</Avatar>
-          <Avatar color="orange">l</Avatar>
-          <Avatar color="red">o</Avatar>
-          <Avatar color="rose">-</Avatar>
-          <Avatar color="green">W</Avatar>
-          <Avatar color="teal">o</Avatar>
-          <Avatar color="turquoise">r</Avatar>
-          <Avatar color="blue">l</Avatar>
-          <Avatar color="purple">d</Avatar>
+          <Avatar color="black">B</Avatar>
+          <Avatar color="white">W</Avatar>
+          <Avatar color="yellow">Y</Avatar>
+          <Avatar color="orange">O</Avatar>
+          <Avatar color="red">Re</Avatar>
+          <Avatar color="rose">Ro</Avatar>
+          <Avatar color="green">G</Avatar>
+          <Avatar color="teal">Te</Avatar>
+          <Avatar color="turquoise">Tu</Avatar>
+          <Avatar color="blue">B</Avatar>
+          <Avatar color="purple">P</Avatar>
+
+          <Avatar src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/292/apple-logo_f8ff.png" />
+
+          <Avatar color="green" radius="50%">
+            50%
+          </Avatar>
+          <Avatar color="green" radius={0}>
+            0
+          </Avatar>
+
           <Avatar color="black" width={100} height={50}>
-            Test
+            Size
           </Avatar>
-          <Avatar color="red" width={100} height={100} textFamily="heading" textSize={24}>
-            Test 2
-          </Avatar>
-          <Avatar color="green" width={80} height={80} textWeight={300} radius="50%">
-            Test 3
+
+          <Avatar color="red" textFamily="heading" textSize={24} textWeight={300}>
+            Txt
           </Avatar>
         </div>
 
