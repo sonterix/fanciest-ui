@@ -1,111 +1,103 @@
-@import '../../../scss/variables';
-
 .Rating {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
+  gap: 12px;
+  cursor: default;
 
-  &.Yellow .AllStars {
-    &.Hoverable .RatingBtn {
-      &:hover ~ .RatingBtn,
+  .Stars {
+    color: var(--color-black8);
+  }
+
+  @mixin colorStylesLocal($color) {
+    &.Hoverable .InteractiveIcon {
+      &:hover ~ .InteractiveIcon,
       &:hover {
-        i {
-          color: var(--color-yellow);
+        .Checked,
+        .Unchecked {
+          color: $color;
         }
       }
     }
 
-    i.Checked {
-      color: var(--color-yellow);
+    .Checked {
+      color: $color;
     }
   }
 
-  &.Red .AllStars {
-    &.Hoverable .RatingBtn {
-      &:hover ~ .RatingBtn,
-      &:hover {
-        i {
-          color: var(--color-red5);
-        }
-      }
-    }
-
-    i.Checked {
-      color: var(--color-red5);
-    }
+  &.Black .Stars {
+    @include colorStylesLocal(var(--color-black2));
   }
 
-  &.Green .AllStars {
-    &.Hoverable .RatingBtn {
-      &:hover ~ .RatingBtn,
-      &:hover {
-        i {
-          color: var(--color-turquoise);
-        }
-      }
-    }
-
-    i.Checked {
-      color: var(--color-turquoise);
-    }
+  &.White .Stars {
+    @include colorStylesLocal(var(--color-white));
   }
 
-  &.Single {
-    .AllRatingValue {
-      margin-left: 8px;
-    }
+  &.Yellow .Stars {
+    @include colorStylesLocal(var(--color-yellow));
   }
 
-  &.Multy {
-    .AllRatingValue {
-      margin-left: 12px;
-    }
+  &.Orange .Stars {
+    @include colorStylesLocal(var(--color-orange));
   }
 
-  .AllStars {
+  &.Red .Stars {
+    @include colorStylesLocal(var(--color-red));
+  }
+
+  &.Rose .Stars {
+    @include colorStylesLocal(var(--color-rose));
+  }
+
+  &.Green .Stars {
+    @include colorStylesLocal(var(--color-green));
+  }
+
+  &.Teal .Stars {
+    @include colorStylesLocal(var(--color-teal));
+  }
+
+  &.Turquoise .Stars {
+    @include colorStylesLocal(var(--color-turquoise));
+  }
+
+  &.Blue .Stars {
+    @include colorStylesLocal(var(--color-blue));
+  }
+
+  &.Purple .Stars {
+    @include colorStylesLocal(var(--color-purple));
+  }
+
+  .Stars {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    direction: rtl;
 
     &.Hoverable {
-      direction: rtl;
-
-      .RatingBtn {
+      .InteractiveIcon {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 3px;
+        padding: 0;
+        color: inherit;
         background-color: transparent;
         border: none;
         cursor: pointer;
-
-        i {
-          padding: 0;
-        }
-      }
-
-      &:first-child {
-        padding-left: 0;
-      }
-
-      &:last-child {
-        padding-right: 0;
       }
 
       &:hover {
         .Checked {
-          color: var(--color-black7);
+          color: var(--color-black8);
         }
       }
     }
 
-    i {
-      padding: 0 3px;
-      font-size: 20px;
-      transition: color var(--trans);
-
-      &.Default {
-        color: var(--color-black7);
-      }
+    svg {
+      padding-left: 3px;
+      padding-right: 3px;
+      fill: currentColor;
 
       &:first-child {
         padding-left: 0;
@@ -117,12 +109,8 @@
     }
   }
 
-  .AllRatingValue {
-    margin-left: 12px;
-    font-size: 18px;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 22px;
+  .RatingNumber {
+    font-weight: 500;
     color: var(--color-black);
   }
 }

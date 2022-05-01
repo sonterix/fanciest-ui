@@ -24,7 +24,8 @@ import {
   P1,
   P2,
   P3,
-  P4
+  P4,
+  Rating
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
@@ -217,6 +218,35 @@ const Dev = (): JSX.Element => {
           <Loader color="black" width={130} height={130} />
 
           <Loader wrapperWidth={200} wrapperHeight={200} />
+        </div>
+
+        <h2 className="dev__block__subtitle">Loader</h2>
+
+        <div className="dev__block__preview">
+          <Rating color="black" rating={4} />
+          <Rating color="white" rating={4} />
+          <Rating color="yellow" rating={4} />
+          <Rating color="orange" rating={4} />
+          <Rating color="red" rating={4} />
+          <Rating color="rose" rating={4} />
+          <Rating color="green" rating={4} />
+          <Rating color="teal" rating={4} />
+          <Rating color="turquoise" rating={4} />
+          <Rating color="blue" rating={4} />
+          <Rating color="purple" rating={4} />
+
+          <Rating color="orange" rating={3} layout="single" />
+
+          <Rating color="yellow" rating={3} layout="single" withNumber />
+
+          <Rating
+            color="teal"
+            rating={2}
+            withNumber
+            onChangeRating={rating => console.log(`Selected Rating: ${rating}`)}
+          />
+
+          <Rating color="blue" rating={5} starSize={30} textSize="26px" withNumber />
         </div>
       </div>
 

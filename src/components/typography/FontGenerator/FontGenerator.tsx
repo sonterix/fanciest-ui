@@ -51,7 +51,7 @@ const FontGenerator = ({
   }, [media])
 
   return htmlContent ? (
-    <div className={classes} style={{ ...style, fontSize }} {...props}>
+    <div {...props} className={classes} style={{ ...style, fontSize }}>
       {htmlContent}
     </div>
   ) : (
