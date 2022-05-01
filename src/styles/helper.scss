@@ -1,0 +1,179 @@
+// Breakpoints
+$xs: 361px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1201px;
+$xxl: 1401px;
+$xxxl: 1981px;
+
+@mixin colorStyles($with-color: true, $with-background-color: true) {
+  &.Black {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-black2);
+    } @else if $with-color {
+      color: var(--color-black2);
+    } @else if $with-background-color {
+      background-color: var(--color-black2);
+    }
+  }
+
+  &.White {
+    @if $with-color and $with-background-color {
+      color: var(--color-black);
+      background-color: var(--color-white);
+    } @else if $with-color {
+      color: var(--color-white);
+    } @else if $with-background-color {
+      background-color: var(--color-white);
+    }
+  }
+
+  &.Yellow {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-yellow);
+    } @else if $with-color {
+      color: var(--color-yellow);
+    } @else if $with-background-color {
+      background-color: var(--color-yellow);
+    }
+  }
+
+  &.Orange {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-orange);
+    } @else if $with-color {
+      color: var(--color-orange);
+    } @else if $with-background-color {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &.Red {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-red);
+    } @else if $with-color {
+      color: var(--color-red);
+    } @else if $with-background-color {
+      background-color: var(--color-red);
+    }
+  }
+
+  &.Rose {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-rose);
+    } @else if $with-color {
+      color: var(--color-rose);
+    } @else if $with-background-color {
+      background-color: var(--color-rose);
+    }
+  }
+
+  &.Green {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-green);
+    } @else if $with-color {
+      color: var(--color-green);
+    } @else if $with-background-color {
+      background-color: var(--color-green);
+    }
+  }
+
+  &.Teal {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-teal);
+    } @else if $with-color {
+      color: var(--color-teal);
+    } @else if $with-background-color {
+      background-color: var(--color-teal);
+    }
+  }
+
+  &.Turquoise {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-turquoise);
+    } @else if $with-color {
+      color: var(--color-turquoise);
+    } @else if $with-background-color {
+      background-color: var(--color-turquoise);
+    }
+  }
+
+  &.Blue {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-blue);
+    } @else if $with-color {
+      color: var(--color-blue);
+    } @else if $with-background-color {
+      background-color: var(--color-blue);
+    }
+  }
+
+  &.Purple {
+    @if $with-color and $with-background-color {
+      color: var(--color-white);
+      background-color: var(--color-purple);
+    } @else if $with-color {
+      color: var(--color-purple);
+    } @else if $with-background-color {
+      background-color: var(--color-purple);
+    }
+  }
+}
+
+@mixin textFamilyStyles {
+  &.Main {
+    font-family: var(--font-main);
+  }
+
+  &.Heading {
+    font-family: var(--font-heading);
+  }
+}
+
+@mixin textWeightStyles {
+  &.Weight100 {
+    font-weight: 100;
+  }
+
+  &.Weight200 {
+    font-weight: 200;
+  }
+
+  &.Weight300 {
+    font-weight: 300;
+  }
+
+  &.Weight400 {
+    font-weight: 400;
+  }
+
+  &.Weight500 {
+    font-weight: 500;
+  }
+
+  &.Weight600 {
+    font-weight: 600;
+  }
+
+  &.Weight700 {
+    font-weight: 700;
+  }
+
+  &.Weight800 {
+    font-weight: 800;
+  }
+
+  &.Weight900 {
+    font-weight: 900;
+  }
+}

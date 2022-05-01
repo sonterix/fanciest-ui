@@ -1,5 +1,5 @@
 export interface IconPropsType extends React.ComponentProps<'i'> {
   icon: string
-  size?: number
+  size?: string | number
   pathNumber?: number
 }

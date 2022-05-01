@@ -6,7 +6,7 @@ import './index.scss'
 import '../src/styles/index.scss'
 import '../src/styles/icons.css'
 
-import { Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
+import { Avatar, Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
 
 const Dev = (): JSX.Element => {
   return (
@@ -102,6 +102,40 @@ const Dev = (): JSX.Element => {
           <Font as="del" media={{ default: 10, xs: 11, sm: 12, md: 13, lg: 14, xl: 15, xxl: 16, xxxl: 17 }}>
             Custom 3
           </Font>
+        </div>
+      </div>
+
+      <div className="dev__block">
+        <h1 className="dev__block__title">Appearance</h1>
+
+        <h2 className="dev__block__subtitle">Avatar</h2>
+
+        <div className="dev__block__preview">
+          <Avatar
+            width={100}
+            height={100}
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/292/apple-logo_f8ff.png"
+          />
+          <Avatar color="black">H</Avatar>
+          <Avatar color="white">e</Avatar>
+          <Avatar color="yellow">l</Avatar>
+          <Avatar color="orange">l</Avatar>
+          <Avatar color="red">o</Avatar>
+          <Avatar color="rose">-</Avatar>
+          <Avatar color="green">W</Avatar>
+          <Avatar color="teal">o</Avatar>
+          <Avatar color="turquoise">r</Avatar>
+          <Avatar color="blue">l</Avatar>
+          <Avatar color="purple">d</Avatar>
+          <Avatar color="black" width={100} height={50}>
+            Test
+          </Avatar>
+          <Avatar color="red" width={100} height={100} textFamily="heading" textSize={24}>
+            Test 2
+          </Avatar>
+          <Avatar color="green" width={80} height={80} textWeight={300} radius="50%">
+            Test 3
+          </Avatar>
         </div>
       </div>
     </section>

@@ -1,10 +1,10 @@
 import { Color, Shape, Size, TextWeight, Layout, TextFamiy } from 'types'
 
 export interface ButtonProps extends React.ComponentProps<'button'> {
-  color?: Color
+  layout?: Layout
   shape?: Shape
   size?: Size | 'xs' | 'lg'
-  layout?: Layout
+  color?: Color
   textFamily?: TextFamiy
   textWeight: TextWeight
   before?: React.ReactNode
@@ -12,10 +12,10 @@ export interface ButtonProps extends React.ComponentProps<'button'> {
 }
 
 export interface ButtonLinkProps extends React.ComponentProps<'a'> {
-  color?: Color
+  layout?: Layout
   shape?: Shape
   size?: Size | 'xs' | 'lg'
-  layout?: Layout
+  color?: Color
   textFamily?: TextFamiy
   textWeight: TextWeight
   before?: React.ReactNode

@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, useMemo, useState } from 'react'
 import parse from 'html-react-parser'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist, getTextFamily, getTextWeight } from 'helpers'
 import { FontProps } from './FontGenerator.type'
 import { getFontSize } from './helper'
 import styles from './FontGenerator.module.scss'
@@ -26,18 +26,9 @@ const FontGenerator = ({
   const classes = arrayToClasslist([
     styles.Font,
 
-    ...(family === 'main' ? [styles.Main] : []),
-    ...(family === 'heading' ? [styles.Heading] : []),
+    ...getTextFamily(family, styles),
 
-    ...(weight === 100 ? [styles.Weight100] : []),
-    ...(weight === 200 ? [styles.Weight200] : []),
-    ...(weight === 300 ? [styles.Weight300] : []),
-    ...(weight === 400 ? [styles.Weight400] : []),
-    ...(weight === 500 ? [styles.Weight500] : []),
-    ...(weight === 600 ? [styles.Weight600] : []),
-    ...(weight === 700 ? [styles.Weight700] : []),
-    ...(weight === 800 ? [styles.Weight800] : []),
-    ...(weight === 900 ? [styles.Weight900] : []),
+    ...getTextWeight(weight, styles),
 
     ...(inheritToChildren ? [styles.InheritToChildren] : []),
 

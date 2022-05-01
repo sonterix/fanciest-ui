@@ -1,0 +1,11 @@
+@import '../../../scss/variables';
+
+.LoaderHeight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Loader {
+  fill: var(--color-red5);
+}

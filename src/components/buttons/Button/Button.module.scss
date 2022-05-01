@@ -1,3 +1,5 @@
+@import '../../../styles/helper.scss';
+
 .Button {
   display: inline-flex;
   justify-content: center;
@@ -8,70 +10,6 @@
   border: 1px solid transparent;
   transition: color var(--trans), background-color var(--trans), border-color var(--trans);
   cursor: pointer;
-
-  @mixin getColorStyles($color-primary, $color-secondary) {
-    &.Filled {
-      color: $color-secondary;
-      background-color: $color-primary;
-      border-color: $color-primary;
-    }
-
-    &.Outlined {
-      color: $color-primary;
-      background-color: transparent;
-      border-color: $color-primary;
-    }
-
-    &:not(:disabled):hover {
-      color: var(--color-white);
-      background-color: var(--color-black);
-      border-color: var(--color-black);
-    }
-  }
-
-  &.Black {
-    @include getColorStyles(var(--color-black2), var(--color-white));
-  }
-
-  &.White {
-    @include getColorStyles(var(--color-white), var(--color-black));
-  }
-
-  &.Yellow {
-    @include getColorStyles(var(--color-yellow), var(--color-white));
-  }
-
-  &.Orange {
-    @include getColorStyles(var(--color-orange), var(--color-white));
-  }
-
-  &.Red {
-    @include getColorStyles(var(--color-red), var(--color-white));
-  }
-
-  &.Rose {
-    @include getColorStyles(var(--color-rose), var(--color-white));
-  }
-
-  &.Green {
-    @include getColorStyles(var(--color-green), var(--color-white));
-  }
-
-  &.Teal {
-    @include getColorStyles(var(--color-teal), var(--color-white));
-  }
-
-  &.Turquoise {
-    @include getColorStyles(var(--color-turquoise), var(--color-white));
-  }
-
-  &.Blue {
-    @include getColorStyles(var(--color-blue), var(--color-white));
-  }
-
-  &.Purple {
-    @include getColorStyles(var(--color-grape), var(--color-white));
-  }
 
   &.Xs {
     padding: 8px 16px;
@@ -129,49 +67,73 @@
     }
   }
 
-  &.Main {
-    font-family: var(--font-main);
+  @mixin colorStylesLocal($color-primary, $color-secondary) {
+    &.Filled {
+      color: $color-secondary;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &.Outlined {
+      color: $color-primary;
+      background-color: transparent;
+      border-color: $color-primary;
+    }
+
+    &:not(:disabled):hover {
+      color: var(--color-white);
+      background-color: var(--color-black);
+      border-color: var(--color-black);
+    }
   }
 
-  &.Heading {
-    font-family: var(--font-heading);
+  &.Black {
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
   }
 
-  &.Weight100 {
-    font-weight: 100;
+  &.White {
+    @include colorStylesLocal(var(--color-white), var(--color-black));
   }
 
-  &.Weight200 {
-    font-weight: 200;
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
   }
 
-  &.Weight300 {
-    font-weight: 300;
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
   }
 
-  &.Weight400 {
-    font-weight: 400;
+  &.Red {
+    @include colorStylesLocal(var(--color-red), var(--color-white));
   }
 
-  &.Weight500 {
-    font-weight: 500;
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
   }
 
-  &.Weight600 {
-    font-weight: 600;
+  &.Green {
+    @include colorStylesLocal(var(--color-green), var(--color-white));
   }
 
-  &.Weight700 {
-    font-weight: 700;
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
   }
 
-  &.Weight800 {
-    font-weight: 800;
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
   }
 
-  &.Weight900 {
-    font-weight: 900;
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
   }
+
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
+  }
+
+  @include textFamilyStyles();
+
+  @include textWeightStyles();
 
   &:disabled {
     cursor: default;

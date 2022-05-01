@@ -25,6 +25,7 @@ export default {
     }),
     typescript(),
     styles({
+      alias: { styles: './src/styles' },
       modules: {
         generateScopedName: (name, file) => {
           if (file.includes('.module.')) {
