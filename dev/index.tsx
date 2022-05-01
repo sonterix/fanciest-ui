@@ -188,7 +188,14 @@ const Dev = (): JSX.Element => {
           <Badge color="blue">Blue</Badge>
           <Badge color="purple">Purplr</Badge>
 
-          <Badge color="red" onClose={() => alert('Clicked')}>
+          <Badge color="red" bgOpacity={0.4}>
+            Opacity 0.6
+          </Badge>
+          <Badge color="red" bgOpacity={0.4} hoverable>
+            Opacity 0.6 Hoverable
+          </Badge>
+
+          <Badge color="orange" onClose={() => alert('Clicked')}>
             Click me
           </Badge>
 

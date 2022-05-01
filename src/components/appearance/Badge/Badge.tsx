@@ -8,6 +8,8 @@ const Badge = ({
   shape,
   size,
   color,
+  bgOpacity,
+  hoverable,
   textFamily,
   textSize,
   textWeight,
@@ -26,6 +28,8 @@ const Badge = ({
     ...(size === 'sm' ? [styles.Sm] : []),
     ...(size === 'md' ? [styles.Md] : []),
 
+    ...(hoverable ? [styles.Hoverable] : []),
+
     ...getColorClasses(color, styles),
 
     ...getTextFamily(textFamily, styles),
@@ -37,6 +41,8 @@ const Badge = ({
 
   return (
     <div {...props} className={classes} style={{ ...style, fontSize: textSize }}>
+      <div className={styles.Background} style={{ opacity: bgOpacity }} />
+
       <span className={styles.Children}>{children}</span>
 
       {onClose && (
@@ -54,6 +60,8 @@ Badge.defaultProps = {
   shape: 'squared',
   size: 'md',
   color: 'black',
+  bgOpacity: 1,
+  hoverable: false,
   textSize: '18px',
   textWeight: 500
 }

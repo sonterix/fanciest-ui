@@ -5,7 +5,9 @@
   justify-content: space-between;
   align-items: center;
   gap: 5px;
+  position: relative;
   padding: 5px 12px;
+  overflow: hidden;
   cursor: default;
 
   &.Sm {
@@ -41,24 +43,95 @@
     }
   }
 
-  @include colorStyles();
+  &.Hoverable {
+    cursor: pointer;
+
+    &:hover .Background {
+      opacity: 1 !important;
+    }
+  }
+
+  @mixin colorStylesLocal($color-primary, $color-secondary) {
+    color: $color-secondary;
+
+    .Background {
+      background-color: $color-primary;
+    }
+  }
+
+  &.Black {
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
+  }
+
+  &.White {
+    @include colorStylesLocal(var(--color-white), var(--color-black));
+  }
+
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
+  }
+
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
+  }
+
+  &.Red {
+    @include colorStylesLocal(var(--color-red), var(--color-white));
+  }
+
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
+  }
+
+  &.Green {
+    @include colorStylesLocal(var(--color-green), var(--color-white));
+  }
+
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
+  }
+
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
+  }
+
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
+  }
+
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
+  }
 
   @include textFamilyStyles();
 
   @include textWeightStyles();
 
+  .Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--trans);
+    z-index: 1;
+  }
+
   .Children {
+    position: relative;
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
     white-space: nowrap;
     color: inherit;
+    z-index: 2;
   }
 
   .XMark {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     padding: 5px;
     padding-right: 0;
     color: inherit;
@@ -66,6 +139,7 @@
     background-color: transparent;
     opacity: 0.8;
     transition: opacity var(--trans);
+    z-index: 2;
     cursor: pointer;
 
     > svg {
