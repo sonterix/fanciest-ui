@@ -6,7 +6,24 @@ import './index.scss'
 import '../src/styles/index.scss'
 import '../src/styles/icons.css'
 
-import { Avatar, Badge, Button, CircleButton, Font, H1, H2, H3, H4, H5, Icon, P1, P2, P3, P4 } from '../src/components'
+import {
+  Avatar,
+  Badge,
+  Button,
+  CircleButton,
+  DetectClickOutside,
+  Font,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  Icon,
+  P1,
+  P2,
+  P3,
+  P4
+} from '../src/components'
 
 const Dev = (): JSX.Element => {
   return (
@@ -178,6 +195,31 @@ const Dev = (): JSX.Element => {
           <Badge shape="rounded" size="sm">
             Custom Shape and Size
           </Badge>
+        </div>
+      </div>
+
+      <div className="dev__block">
+        <h1 className="dev__block__title">Functional</h1>
+
+        <h2 className="dev__block__subtitle">DetectClickOutside</h2>
+
+        <div className="dev__block__preview">
+          <DetectClickOutside oneClickOutside={() => console.info('Clicked outside')}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '10px',
+                width: 200,
+                height: 100,
+                textAlign: 'center',
+                border: '1px solid black'
+              }}
+            >
+              Click outsize me and check the console
+            </div>
+          </DetectClickOutside>
         </div>
       </div>
     </section>
