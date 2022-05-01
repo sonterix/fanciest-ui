@@ -233,6 +233,8 @@ const Dev = (): JSX.Element => {
 
           <Loader color="purple" layout="ellipsis" />
 
+          <Loader color="red" layout="pulse" />
+
           <Loader color="black" layout="magnify" />
 
           <Loader color="turquoise" width={130} height={130} />
