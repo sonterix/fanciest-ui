@@ -1,11 +1,16 @@
-@import '../../../scss/variables';
+@import '../../../styles/helper.scss';
 
-.LoaderHeight {
+.Loader {
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.Loader {
-  fill: var(--color-red5);
+  @include colorStyles($with-color: true, $with-background-color: false);
+
+  > svg {
+    display: block;
+    fill: currentColor;
+    background: none;
+    shape-rendering: auto;
+  }
 }

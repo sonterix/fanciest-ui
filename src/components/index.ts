@@ -16,6 +16,7 @@ export { default as P4 } from 'components/typography/P4'
 export { default as Avatar } from 'components/appearance/Avatar'
 export { default as Badge } from 'components/appearance/Badge'
 export { default as Icon } from 'components/appearance/Icon'
+export { default as Loader } from 'components/appearance/Loader'
 
 export { default as DetectClickOutside } from 'components/functional/DetectClickOutside'
 export { default as Container } from 'components/functional/Container'

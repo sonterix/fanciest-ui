@@ -20,6 +20,7 @@ import {
   H4,
   H5,
   Icon,
+  Loader,
   P1,
   P2,
   P3,
@@ -196,6 +197,26 @@ const Dev = (): JSX.Element => {
           <Badge shape="rounded" size="sm">
             Custom Shape and Size
           </Badge>
+        </div>
+
+        <h2 className="dev__block__subtitle">Loader</h2>
+
+        <div className="dev__block__preview">
+          <Loader color="black" />
+          <Loader color="white" />
+          <Loader color="yellow" />
+          <Loader color="orange" />
+          <Loader color="red" />
+          <Loader color="rose" />
+          <Loader color="green" />
+          <Loader color="teal" />
+          <Loader color="turquoise" />
+          <Loader color="blue" />
+          <Loader color="purple" />
+
+          <Loader wrapperWidth={200} wrapperHeight={200} />
+
+          <Loader width={130} height={130} />
         </div>
       </div>
 
