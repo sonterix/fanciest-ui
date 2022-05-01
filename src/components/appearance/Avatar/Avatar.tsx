@@ -34,9 +34,9 @@ const Avatar = ({
 
   return (
     <div
+      {...props}
       className={classes}
       style={{ ...style, ...(width ? { width } : {}), ...(height ? { height } : {}), borderRadius: radius }}
-      {...props}
     >
       {src ? (
         <img className={styles.Image} src={src} alt={alt} style={{ objectFit }} />

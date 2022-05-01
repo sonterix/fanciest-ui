@@ -33,11 +33,11 @@ const CircleButton = ({
   ])
 
   return (props as CircleButtonLinkProps)?.href ? (
-    <a className={classes} {...(props as CircleButtonLinkProps)}>
+    <a {...(props as CircleButtonLinkProps)} className={classes}>
       {children}
     </a>
   ) : (
-    <button type={(props as CircleButtonProps)?.type || 'button'} className={classes} {...(props as CircleButtonProps)}>
+    <button {...(props as CircleButtonProps)} type={(props as CircleButtonProps)?.type || 'button'} className={classes}>
       {children}
     </button>
   )

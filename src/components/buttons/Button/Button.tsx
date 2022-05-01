@@ -41,13 +41,13 @@ const Button = ({
   ])
 
   return (props as ButtonLinkProps)?.href ? (
-    <a className={classes} {...(props as ButtonLinkProps)}>
+    <a {...(props as ButtonLinkProps)} className={classes}>
       {!!before && before}
       <span className={styles.Children}>{children}</span>
       {!!after && after}
     </a>
   ) : (
-    <button type={(props as ButtonProps)?.type || 'button'} className={classes} {...(props as ButtonProps)}>
+    <button {...(props as ButtonProps)} type={(props as ButtonProps)?.type || 'button'} className={classes}>
       {!!before && before}
       <span className={styles.Children}>{children}</span>
       {!!after && after}

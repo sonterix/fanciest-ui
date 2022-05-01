@@ -7,7 +7,7 @@ const Icon = ({ icon, iconSize, pathNumber, className, style, ...props }: IconPr
   const classes = arrayToClasslist([icon, className || ''])
 
   return (
-    <i className={classes} style={{ ...style, fontSize: iconSize }} {...props}>
+    <i {...props} className={classes} style={{ ...style, fontSize: iconSize }}>
       {Number.isInteger(pathNumber) &&
         Array.from(Array(pathNumber).keys()).map(key => <span key={`path-${key}`} className={`path${key + 1}`} />)}
     </i>

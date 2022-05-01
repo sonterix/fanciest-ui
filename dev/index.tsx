@@ -214,9 +214,9 @@ const Dev = (): JSX.Element => {
           <Loader color="blue" />
           <Loader color="purple" />
 
-          <Loader wrapperWidth={200} wrapperHeight={200} />
+          <Loader color="black" width={130} height={130} />
 
-          <Loader width={130} height={130} />
+          <Loader wrapperWidth={200} wrapperHeight={200} />
         </div>
       </div>
 

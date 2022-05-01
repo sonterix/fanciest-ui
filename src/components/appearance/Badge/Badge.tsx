@@ -36,7 +36,7 @@ const Badge = ({
   ])
 
   return (
-    <div className={classes} style={{ ...style, fontSize: textSize }} {...props}>
+    <div {...props} className={classes} style={{ ...style, fontSize: textSize }}>
       <span className={styles.Children}>{children}</span>
 
       {onClose && (
