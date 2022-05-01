@@ -18,6 +18,11 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true
+      },
+      {
+        file: packageJson.module,
+        format: 'esm',
+        sourcemap: true
       }
     ],
     plugins: [
@@ -48,7 +53,7 @@ export default [
     ]
   },
   {
-    input: './dist/types/index.d.ts',
+    input: './dist/esm/types/index.d.ts',
     output: [{ file: './dist/index.d.ts', format: 'esm' }],
     external: [/\.scss$/],
     plugins: [dts()]

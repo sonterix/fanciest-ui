@@ -10,3 +10,6 @@ build
 dist
 tmp
 out-tsc
+
+rollup.config.js
+rollup.dev.config.js
