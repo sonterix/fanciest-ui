@@ -18,3 +18,4 @@ export { default as Badge } from 'components/appearance/Badge'
 export { default as Icon } from 'components/appearance/Icon'
 
 export { default as DetectClickOutside } from 'components/functional/DetectClickOutside'
+export { default as Container } from 'components/functional/Container'

@@ -11,6 +11,7 @@ import {
   Badge,
   Button,
   CircleButton,
+  Container,
   DetectClickOutside,
   Font,
   H1,
@@ -214,12 +215,30 @@ const Dev = (): JSX.Element => {
                 width: 200,
                 height: 100,
                 textAlign: 'center',
-                border: '1px solid black'
+                border: '1px dotted #ccc'
               }}
             >
               Click outsize me and check the console
             </div>
           </DetectClickOutside>
+        </div>
+
+        <h2 className="dev__block__subtitle">Container</h2>
+
+        <div className="dev__block__preview">
+          <Container style={{ border: '1px dotted #ccc' }}>Container</Container>
+          <Container style={{ border: '1px dotted #ccc' }} width={630}>
+            Container with Custom Width
+          </Container>
+          <Container
+            style={{ border: '1px dotted #ccc' }}
+            spaceTop={30}
+            spaceBottom={30}
+            spaceLeft={50}
+            spaceRight={50}
+          >
+            Container with Custom Spaces
+          </Container>
         </div>
       </div>
     </section>
