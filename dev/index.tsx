@@ -223,7 +223,19 @@ const Dev = (): JSX.Element => {
           <Loader color="blue" />
           <Loader color="purple" />
 
-          <Loader color="black" width={130} height={130} />
+          <Loader color="orange" layout="spinline" />
+
+          <Loader color="blue" layout="spindot" />
+
+          <Loader color="yellow" layout="rolling" />
+
+          <Loader color="teal" layout="dualring" />
+
+          <Loader color="purple" layout="ellipsis" />
+
+          <Loader color="black" layout="magnify" />
+
+          <Loader color="turquoise" width={130} height={130} />
 
           <Loader wrapperWidth={200} wrapperHeight={200} />
         </div>
