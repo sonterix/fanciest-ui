@@ -1,0 +1,99 @@
+.InputContainer {
+  .Label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-black);
+  }
+
+  .Input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-black);
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: color var(--trans), background-color var(--trans), border-color var(--trans);
+
+    &.Md {
+      padding: 12px 16px;
+      font-size: 18px;
+    }
+
+    &.Sm {
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+
+    &.Rounded {
+      border-radius: 26px;
+    }
+
+    &.Squared {
+      border-radius: 6px;
+    }
+
+    &.Filled {
+      background-color: var(--color-white);
+      border-color: var(--color-black8);
+
+      &:not(.Disabled):hover,
+      &:not(.Disabled):focus {
+        border-color: var(--color-black5);
+      }
+    }
+
+    &.Outlined {
+      padding-left: 0;
+      padding-right: 0;
+      border-width: 2px;
+      border-bottom-color: var(--color-black8);
+      border-radius: 0;
+
+      &:not(.Disabled):hover,
+      &:not(.Disabled):focus {
+        border-bottom-color: var(--color-black5);
+      }
+    }
+
+    &.Disabled {
+      pointer-events: none;
+      cursor: default;
+
+      &.Filled {
+        color: var(--color-black4);
+        background-color: var(--color-black9);
+      }
+
+      &.Outlined {
+        color: var(--color-black8);
+        border-bottom-color: var(--color-black8);
+      }
+    }
+
+    > input {
+      flex: 1;
+      padding: 0;
+      width: 100%;
+      font-size: inherit;
+      color: inherit;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        color: var(--color-black5);
+      }
+
+      &:disabled {
+        pointer-events: inherit;
+        cursor: inherit;
+
+        &::placeholder {
+          color: var(--color-black7);
+        }
+      }
+    }
+  }
+}

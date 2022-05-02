@@ -22,6 +22,8 @@ export { default as Loader } from 'components/appearance/Loader'
 export { default as Rating } from 'components/appearance/Rating'
 export { default as Skeleton } from 'components/appearance/Skeleton'
 
+export { default as Input } from 'components/form/Input'
+
 export { default as DetectClickOutside } from 'components/functional/DetectClickOutside'
 export { default as Container } from 'components/functional/Container'
 

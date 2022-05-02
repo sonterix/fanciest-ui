@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import './index.scss'
@@ -20,6 +20,7 @@ import {
   H4,
   H5,
   Icon,
+  Input,
   Loader,
   P1,
   P2,
@@ -30,6 +31,8 @@ import {
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
+  const [input, setInput] = useState<{ [key: string]: string }>({})
+
   return (
     <section className="dev">
       <div className="dev__block">
@@ -281,6 +284,62 @@ const Dev = (): JSX.Element => {
           <Skeleton width={500} height={60} />
 
           <Skeleton layout="circle" width={80} height={80} />
+        </div>
+      </div>
+
+      <div className="dev__block">
+        <h1 className="dev__block__title">Form</h1>
+
+        <h2 className="dev__block__subtitle">Input</h2>
+
+        <div className="dev__block__preview">
+          <Input
+            name="default"
+            value={input?.default || ''}
+            placeholder="Text me"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Input
+            name="layout"
+            layout="outlined"
+            value={input?.layout || ''}
+            placeholder="Layout"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Input
+            name="shape"
+            shape="rounded"
+            value={input?.shape || ''}
+            placeholder="Shape"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Input
+            name="size"
+            presetSize="sm"
+            value={input?.size || ''}
+            placeholder="Size"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Input
+            name="mask"
+            mask="  -  -  "
+            value={input?.mask || ''}
+            placeholder="Mask"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Input
+            name="beforeafter"
+            value={input?.beforeafter || ''}
+            placeholder="Before and After"
+            before={<Icon icon="icon-email" />}
+            after={<small>You</small>}
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
         </div>
       </div>
 
