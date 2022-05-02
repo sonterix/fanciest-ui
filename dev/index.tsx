@@ -357,10 +357,45 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Checkbox</h2>
 
         <div className="dev__block__preview">
+          <Checkbox defaultChecked color="black" />
+          <Checkbox defaultChecked color="white" />
+          <Checkbox defaultChecked color="yellow" />
+          <Checkbox defaultChecked color="orange" />
+          <Checkbox defaultChecked color="red" />
+          <Checkbox defaultChecked color="rose" />
+          <Checkbox defaultChecked color="green" />
+          <Checkbox defaultChecked color="teal" />
+          <Checkbox defaultChecked color="turquoise" />
+          <Checkbox defaultChecked color="blue" />
+          <Checkbox defaultChecked color="purple" />
+
+          <Checkbox defaultChecked disabled />
+
           <Checkbox
-            name="default"
-            checked={checkbox?.default || false}
+            name="label1"
+            label="Right label"
+            defaultChecked={checkbox?.label1 || false}
             onChange={({ target }) => setCheckbox(prev => ({ ...prev, [target.name]: target.checked }))}
+          />
+
+          <Checkbox
+            name="label2"
+            label="Left label"
+            labelPosition="left"
+            defaultChecked={checkbox?.label2 || false}
+            onChange={({ target }) => setCheckbox(prev => ({ ...prev, [target.name]: target.checked }))}
+          />
+
+          <Checkbox
+            label="With custom input"
+            customInput={
+              <input
+                type="checkbox"
+                name="custom"
+                defaultChecked={checkbox?.custom || false}
+                onChange={({ target }) => setCheckbox(prev => ({ ...prev, [target.name]: target.checked }))}
+              />
+            }
           />
         </div>
       </div>

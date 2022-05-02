@@ -7,55 +7,56 @@
   overflow: hidden;
   cursor: pointer;
 
-  @mixin colorStylesLocal($color) {
+  @mixin colorStylesLocal($color-primary, $color-secondary) {
     .Checked {
-      border-color: $color;
-      background-color: $color;
+      color: $color-secondary;
+      border-color: $color-primary;
+      background-color: $color-primary;
     }
   }
 
   &.Black {
-    @include colorStylesLocal(var(--color-black2));
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
   }
 
   &.White {
-    @include colorStylesLocal(var(--color-white));
+    @include colorStylesLocal(var(--color-white), var(--color-black));
   }
 
   &.Yellow {
-    @include colorStylesLocal(var(--color-yellow));
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
   }
 
   &.Orange {
-    @include colorStylesLocal(var(--color-orange));
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
   }
 
   &.Red {
-    @include colorStylesLocal(var(--color-red));
+    @include colorStylesLocal(var(--color-red), var(--color-white));
   }
 
   &.Rose {
-    @include colorStylesLocal(var(--color-rose));
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
   }
 
   &.Green {
-    @include colorStylesLocal(var(--color-green));
+    @include colorStylesLocal(var(--color-green), var(--color-white));
   }
 
   &.Teal {
-    @include colorStylesLocal(var(--color-teal));
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
   }
 
   &.Turquoise {
-    @include colorStylesLocal(var(--color-turquoise));
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
   }
 
   &.Blue {
-    @include colorStylesLocal(var(--color-blue));
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
   }
 
   &.Purple {
-    @include colorStylesLocal(var(--color-purple));
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
   }
 
   &.Disabled {
@@ -66,6 +67,10 @@
     .Unchecked {
       background-color: var(--color-black9);
       border-color: var(--color-black8);
+
+      > svg {
+        fill: var(--color-black8);
+      }
     }
   }
 
@@ -74,6 +79,7 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--color-black3);
+    user-select: none;
   }
 
   .Unchecked,
@@ -90,7 +96,7 @@
     > svg {
       width: 12px;
       height: 12px;
-      fill: var(--color-white);
+      fill: currentColor;
       transition: opacity var(--trans-fast);
     }
   }
