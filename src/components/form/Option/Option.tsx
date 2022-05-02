@@ -1,34 +1,31 @@
-// @ts-ignore
 import React from 'react'
 
+import { arrayToClasslist, getColorClasses, getTextWeight } from 'helpers'
+import { OptionProps } from './Option.type'
 import styles from './Option.module.scss'
 
-export type OptionProps = {
-  [key: string]: any
-  value: string
-  className?: string
-  disabled?: boolean
-  children: string
-}
-
-const Option = ({ value, className, disabled, children, ...props }: OptionProps): JSX.Element => {
-  const classes: string = [
-    'mu-option',
+const Option = ({ color, textSize, textWeight, className, style, children, ...props }: OptionProps): JSX.Element => {
+  const classes = arrayToClasslist([
     styles.Option,
-    ...(disabled ? [styles.Disabled] : []),
-    className
-  ].join(' ')
+
+    ...getColorClasses(color, styles),
+
+    ...getTextWeight(textWeight, styles),
+
+    className || ''
+  ])
 
   return (
-    <div className={classes} data-value={value} role="button" {...props}>
+    <div className={classes} style={{ ...(style || {}), fontSize: textSize }} data-value={props?.value}>
       {children}
     </div>
   )
 }
 
 Option.defaultProps = {
-  className: '',
-  disabled: false
+  color: 'black',
+  textSize: '16px',
+  textWeight: 400
 }
 
 export default Option
