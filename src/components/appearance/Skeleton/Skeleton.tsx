@@ -40,7 +40,7 @@ const Skeleton = ({
       ...props,
       className: classes,
       style: {
-        ...style,
+        ...(style || {}),
         maxWidth: width,
         height,
         marginTop: spaceTop,

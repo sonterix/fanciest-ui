@@ -40,7 +40,7 @@ const Badge = ({
   ])
 
   return (
-    <div {...props} className={classes} style={{ ...style, ...(textSize ? { fontSize: textSize } : {}) }}>
+    <div {...props} className={classes} style={{ ...(style || {}), ...(textSize ? { fontSize: textSize } : {}) }}>
       <div className={styles.Background} style={{ opacity: bgOpacity }} />
 
       <span className={styles.Children}>{children}</span>

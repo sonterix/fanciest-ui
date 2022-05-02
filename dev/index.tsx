@@ -30,11 +30,13 @@ import {
   Radio,
   Rating,
   Skeleton,
-  Switch
+  Switch,
+  Textarea
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
+  const [textarea, setTextarea] = useState<{ [key: string]: string }>({})
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
   const [radio, setRadio] = useState<{ [key: string]: string }>({})
   const [switchValue, setSwitchValue] = useState<{ [key: string]: boolean }>({})
@@ -355,6 +357,59 @@ const Dev = (): JSX.Element => {
             before={<Icon icon="icon-email" />}
             after={<small>You</small>}
             onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Textare</h2>
+
+        <div className="dev__block__preview">
+          <Textarea
+            name="default"
+            value={textarea?.default || ''}
+            placeholder="Text me"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Textarea name="disabled" placeholder="Disabled" disabled />
+
+          <Textarea
+            name="label"
+            label="Cool Textare, right?"
+            value={textarea?.label || ''}
+            placeholder="Label"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Textarea
+            name="layout"
+            layout="outlined"
+            value={textarea?.layout || ''}
+            placeholder="Layout"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Textarea
+            name="shape"
+            shape="rounded"
+            value={textarea?.shape || ''}
+            placeholder="Shape"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Textarea
+            name="presetSize"
+            presetSize="sm"
+            value={textarea?.presetSize || ''}
+            placeholder="Size"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Textarea
+            name="resize"
+            resize="none"
+            value={textarea?.mask || ''}
+            placeholder="Resize"
+            onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
           />
         </div>
 

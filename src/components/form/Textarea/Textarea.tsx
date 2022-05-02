@@ -1,34 +1,23 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
+import { arrayToClasslist } from 'helpers'
+import { InputProps } from './Textarea.type'
 import styles from './Textarea.module.scss'
 
-interface TextareaProps extends React.ComponentProps<'textarea'> {
-  className?: string
-  textareaSize?: 'sm' | 'md'
-  layout?: 'filled' | 'outlined'
-  shape?: 'rounded' | 'squared'
-  label?: string
-  msg?: string
-  status?: 'success' | 'error'
-  resize?: boolean
-}
-
 const Textarea = ({
-  className,
-  textareaSize,
   layout,
   shape,
+  presetSize,
   label,
-  msg,
-  status,
   resize,
+  className,
+  style,
   ...props
-}: TextareaProps): JSX.Element => {
-  const classes: string = [
-    'mu-textarea',
+}: InputProps): JSX.Element => {
+  const classes = arrayToClasslist([
     styles.Textarea,
-    ...(textareaSize === 'sm' ? [styles.SizeSm] : []),
-    ...(textareaSize === 'md' ? [styles.SizeMd] : []),
+
+    ...(props?.disabled ? [styles.Disabled] : []),
 
     ...(layout === 'filled' ? [styles.Filled] : []),
     ...(layout === 'outlined' ? [styles.Outlined] : []),
@@ -36,46 +25,34 @@ const Textarea = ({
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
-    ...(status === 'success' ? [styles.Success] : []),
-    ...(status === 'error' ? [styles.Error] : []),
+    ...(presetSize === 'sm' ? [styles.Sm] : []),
+    ...(presetSize === 'md' ? [styles.Md] : []),
 
-    ...(!resize ? [styles.NoResize] : []),
-    className
-  ].join(' ')
+    className || ''
+  ])
+
+  // Id for label and textarea
+  const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
 
   return (
-    <div className="mu-container">
-      {!!label && <label className={`mu-label ${styles.Label}`}>{label}</label>}
-
-      <div className={`mu-textarea-container ${styles.TextareaWrapper}`}>
-        <textarea className={classes} {...props} />
-      </div>
-
-      {!!msg && (
-        <small
-          className={`mu-message ${
-            status === 'success'
-              ? styles.SuccessMsg
-              : status === 'error'
-              ? styles.ErrorMsg
-              : styles.Msg
-          }`}
-        >
-          {msg}
-        </small>
+    <div className={styles.InputContainer}>
+      {!!label && (
+        <label className={styles.Label} htmlFor={generatedId.current}>
+          {label}
+        </label>
       )}
+
+      <div className={classes}>
+        <textarea {...props} id={generatedId.current} style={{ ...(style || {}), ...(resize ? { resize } : {}) }} />
+      </div>
     </div>
   )
 }
 
 Textarea.defaultProps = {
-  className: '',
-  textareaSize: 'md',
   layout: 'filled',
   shape: 'squared',
-  label: '',
-  msg: '',
-  resize: true
+  presetSize: 'md'
 }
 
 export default Textarea

@@ -21,7 +21,7 @@ const Loader = ({
     <div
       {...props}
       className={classes}
-      style={{ ...style, minWidth: wrapperWidth || 0, minHeight: wrapperHeight || 0 }}
+      style={{ ...(style || {}), minWidth: wrapperWidth || 0, minHeight: wrapperHeight || 0 }}
     >
       {layout === 'ball' && (
         <svg

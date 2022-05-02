@@ -22,7 +22,7 @@ const Container = ({
       {...props}
       className={classes}
       style={{
-        ...style,
+        ...(style || {}),
         maxWidth: width,
         ...(spaceTop ? { paddingTop: spaceTop } : {}),
         paddingRight: spaceRight || '15px',

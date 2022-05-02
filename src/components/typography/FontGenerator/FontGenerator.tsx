@@ -55,11 +55,11 @@ const FontGenerator = ({
   }, [media])
 
   return htmlContent ? (
-    <div {...props} className={classes} style={{ ...style, fontSize }}>
+    <div {...props} className={classes} style={{ ...(style || {}), fontSize }}>
       {htmlContent}
     </div>
   ) : (
-    React.createElement(as || 'p', { className: classes, style: { ...style, fontSize }, ...props }, children)
+    React.createElement(as || 'p', { className: classes, style: { ...(style || {}), fontSize }, ...props }, children)
   )
 }
 

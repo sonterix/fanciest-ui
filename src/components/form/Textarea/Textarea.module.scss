@@ -1,35 +1,33 @@
-@import '../../../scss/variables';
+.InputContainer {
+  display: inline-block;
 
-.Label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--color-black);
-}
-
-.TextareaWrapper {
-  position: relative;
+  .Label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-black3);
+    user-select: none;
+  }
 
   .Textarea {
-    padding: 12px 16px;
-    width: 100%;
-    font-size: 18px;
-    color: var(--color-black4);
-    background-color: var(--color-black9);
-    border: 1px solid var(--color-black8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-black);
+    background-color: transparent;
+    border: 1px solid transparent;
     transition: color var(--trans), background-color var(--trans), border-color var(--trans);
 
-    &.SizeMd {
+    &.Md {
       padding: 12px 16px;
       font-size: 18px;
-      font-weight: 400;
     }
 
-    &.SizeSm {
+    &.Sm {
       padding: 8px 16px;
       font-size: 16px;
-      font-weight: 400;
     }
 
     &.Rounded {
@@ -41,20 +39,11 @@
     }
 
     &.Filled {
-      color: var(--color-black);
       background-color: var(--color-white);
       border-color: var(--color-black8);
 
-      &.Success {
-        border-color: var(--color-green);
-      }
-
-      &.Error {
-        border-color: var(--color-red);
-      }
-
-      &:not(:disabled):not(.Success):not(.Error):hover,
-      &:not(:disabled):not(.Success):not(.Error):focus {
+      &:not(.Disabled):hover,
+      &:not(.Disabled):focus {
         border-color: var(--color-black5);
       }
     }
@@ -62,74 +51,52 @@
     &.Outlined {
       padding-left: 0;
       padding-right: 0;
-      color: var(--color-black);
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid var(--color-black8);
+      border-width: 2px;
+      border-bottom-color: var(--color-black8);
       border-radius: 0;
 
-      &.Success {
-        border-bottom-color: var(--color-green);
-      }
-
-      &.Error {
-        border-bottom-color: var(--color-red);
-      }
-
-      &:not(:disabled):not(.Success):not(.Error):hover,
-      &:not(:disabled):not(.Success):not(.Error):focus {
+      &:not(.Disabled):hover,
+      &:not(.Disabled):focus {
         border-bottom-color: var(--color-black5);
       }
     }
 
-    &.NoResize {
-      resize: none;
-    }
-
-    &::placeholder {
-      color: var(--color-black5);
-    }
-
-    &:disabled {
-      cursor: default;
+    &.Disabled {
       pointer-events: none;
-
-      &::placeholder {
-        color: var(--color-black7);
-      }
+      cursor: default;
 
       &.Filled {
         color: var(--color-black4);
         background-color: var(--color-black9);
-        border-color: var(--color-black8);
       }
 
       &.Outlined {
         color: var(--color-black8);
-        background-color: transparent;
         border-bottom-color: var(--color-black8);
       }
     }
+
+    > textarea {
+      flex: 1;
+      padding: 0;
+      width: 100%;
+      font-size: inherit;
+      color: inherit;
+      background-color: transparent;
+      border: none;
+
+      &::placeholder {
+        color: var(--color-black5);
+      }
+
+      &:disabled {
+        pointer-events: inherit;
+        cursor: inherit;
+
+        &::placeholder {
+          color: var(--color-black7);
+        }
+      }
+    }
   }
-}
-
-.Msg,
-.SuccessMsg,
-.ErrorMsg {
-  display: block;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.Msg {
-  color: var(--color-black4);
-}
-
-.SuccessMsg {
-  color: var(--color-green);
-}
-
-.ErrorMsg {
-  color: var(--color-red);
 }

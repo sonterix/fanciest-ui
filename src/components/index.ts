@@ -23,6 +23,7 @@ export { default as Rating } from 'components/appearance/Rating'
 export { default as Skeleton } from 'components/appearance/Skeleton'
 
 export { default as Input } from 'components/form/Input'
+export { default as Textarea } from 'components/form/Textarea'
 export { default as Checkbox } from 'components/form/Checkbox'
 export { default as Radio } from 'components/form/Radio'
 export { default as Switch } from 'components/form/Switch'
