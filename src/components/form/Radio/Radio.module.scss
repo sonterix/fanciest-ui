@@ -111,11 +111,6 @@
   .Unchecked {
     background-color: var(--color-white);
     border-color: var(--color-black8);
-
-    &:not(.Disabled):hover,
-    &:not(.Disabled):focus {
-      border-color: var(--color-black5);
-    }
   }
 
   > input {

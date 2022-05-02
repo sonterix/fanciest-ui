@@ -29,13 +29,15 @@ import {
   P4,
   Radio,
   Rating,
-  Skeleton
+  Skeleton,
+  Switch
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
   const [radio, setRadio] = useState<{ [key: string]: string }>({})
+  const [switchValue, setSwitchValue] = useState<{ [key: string]: boolean }>({})
 
   return (
     <section className="dev">
@@ -444,6 +446,51 @@ const Dev = (): JSX.Element => {
                 value="1"
                 defaultChecked={radio?.custom === '1' || false}
                 onChange={({ target }) => setRadio(prev => ({ ...prev, [target.name]: target.value }))}
+              />
+            }
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Switch</h2>
+
+        <div className="dev__block__preview">
+          <Switch defaultChecked color="black" />
+          <Switch defaultChecked color="white" />
+          <Switch defaultChecked color="yellow" />
+          <Switch defaultChecked color="orange" />
+          <Switch defaultChecked color="red" />
+          <Switch defaultChecked color="rose" />
+          <Switch defaultChecked color="green" />
+          <Switch defaultChecked color="teal" />
+          <Switch defaultChecked color="turquoise" />
+          <Switch defaultChecked color="blue" />
+          <Switch defaultChecked color="purple" />
+
+          <Switch defaultChecked disabled />
+
+          <Switch
+            name="label1"
+            label="Right label"
+            defaultChecked={switchValue?.label1 || false}
+            onChange={({ target }) => setSwitchValue(prev => ({ ...prev, [target.name]: target.checked }))}
+          />
+
+          <Switch
+            name="label2"
+            label="Left label"
+            labelPosition="left"
+            defaultChecked={switchValue?.label2 || false}
+            onChange={({ target }) => setSwitchValue(prev => ({ ...prev, [target.name]: target.checked }))}
+          />
+
+          <Switch
+            label="With custom input"
+            customInput={
+              <input
+                type="checkbox"
+                name="custom"
+                defaultChecked={switchValue?.custom || false}
+                onChange={({ target }) => setSwitchValue(prev => ({ ...prev, [target.name]: target.checked }))}
               />
             }
           />

@@ -1,67 +1,72 @@
-// @ts-ignore
-import React from 'react'
+import React, { useRef } from 'react'
 
+import { arrayToClasslist, getColorClasses } from 'helpers'
+import { SwitchProps } from './Switch.type'
 import styles from './Switch.module.scss'
 
-type SwitchProps = {
-  [key: string]: any
-  className?: string
-  label?: string
-  labelPosition?: 'left' | 'right'
-  color?: 'red' | 'blue' | 'turquoise'
-  checked: boolean
-  disabled?: boolean
-  handleChange: () => void
-}
-
 const Switch = ({
-  className,
+  color,
   label,
   labelPosition,
-  color,
+  customInput,
+  className,
   checked,
+  defaultChecked,
   disabled,
-  handleChange,
   ...props
 }: SwitchProps): JSX.Element => {
-  const classes: string = [
-    'mu-switch',
+  const classes = arrayToClasslist([
     styles.Switch,
-    checked ? `switch-checked ${styles.Checked}` : '',
 
-    ...(disabled ? [`switch-disabled ${styles.SwitchDisabled}`] : []),
+    ...(disabled ? [styles.Disabled] : []),
 
-    ...(color === 'red' ? [styles.RedColor] : []),
-    ...(color === 'blue' ? [styles.BlueColor] : []),
-    ...(color === 'turquoise' ? [styles.TurquoiseColor] : []),
+    ...getColorClasses(color, styles),
 
-    className
-  ].join(' ')
+    className || ''
+  ])
+
+  // Id for label and input
+  const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
+
+  // Recreate custom input with all existing props + id
+  const localCustomInput = customInput
+    ? React.createElement(customInput.type, { ...customInput.props, id: generatedId.current }, null)
+    : null
 
   return (
-    <label className={`mu-container ${styles.SwitchContainer}`}>
-      {label && labelPosition === 'left' && (
-        <span className={`mu-label ${styles.LabelLeft}`}>{label}</span>
+    <label htmlFor={generatedId.current} className={classes}>
+      {label && labelPosition === 'left' && <span className={styles.Label}>{label}</span>}
+
+      {localCustomInput || (
+        <input
+          {...props}
+          id={generatedId.current}
+          type="checkbox"
+          checked={checked}
+          defaultChecked={defaultChecked}
+          disabled={disabled}
+        />
       )}
 
-      <button type="button" className={classes} onClick={handleChange} {...props}>
+      <div
+        className={
+          checked || defaultChecked || localCustomInput?.props.checked || localCustomInput?.props.defaultChecked
+            ? styles.Checked
+            : styles.Unchecked
+        }
+      >
         <span className={styles.Switcher} />
         <span className={styles.Line} />
-      </button>
+      </div>
 
-      {label && labelPosition === 'right' && (
-        <span className={`mu-label ${styles.LabelRight}`}>{label}</span>
-      )}
+      {label && labelPosition === 'right' && <span className={styles.Label}>{label}</span>}
     </label>
   )
 }
 
 Switch.defaultProps = {
-  className: '',
-  label: '',
-  labelPosition: 'right',
-  color: 'red',
-  disabled: false
+  color: 'rose',
+  labelPosition: 'right'
 }
 
 export default Switch

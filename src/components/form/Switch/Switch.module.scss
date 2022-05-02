@@ -1,111 +1,148 @@
-@import '../../../scss/variables';
-
-.SwitchContainer {
-  display: flex;
+.Switch {
+  display: inline-flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
 
-  .Switch {
+  @mixin colorStylesLocal($color) {
+    .Checked {
+      .Switcher {
+        transform: translate(100%, -50%);
+        background-color: $color;
+      }
+
+      .Line {
+        background-color: $color;
+      }
+    }
+  }
+
+  &.Black {
+    @include colorStylesLocal(var(--color-black2));
+  }
+
+  &.White {
+    @include colorStylesLocal(var(--color-white));
+  }
+
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow));
+  }
+
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange));
+  }
+
+  &.Red {
+    @include colorStylesLocal(var(--color-red));
+  }
+
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose));
+  }
+
+  &.Green {
+    @include colorStylesLocal(var(--color-green));
+  }
+
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal));
+  }
+
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise));
+  }
+
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue));
+  }
+
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple));
+  }
+
+  &.Disabled {
+    pointer-events: none;
+    cursor: default;
+
+    .Unchecked,
+    .Checked {
+      .Switcher {
+        background-color: var(--color-black8);
+      }
+
+      .Line {
+        background-color: var(--color-black8);
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .Label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-black3);
+    user-select: none;
+  }
+
+  .Unchecked,
+  .Checked {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     padding: 5px 0;
     width: 40px;
-    border: none;
-    background-color: transparent;
     cursor: pointer;
     overflow: hidden;
-
-    &.Checked {
-      .Switcher {
-        left: 0;
-        transform: translate(100%, -50%);
-      }
-    }
-
-    &.Checked.RedColor {
-      .Switcher {
-        background-color: var(--color-red5);
-      }
-
-      .Line {
-        background-color: var(--color-red5);
-      }
-    }
-
-    &.Checked.BlueColor {
-      .Switcher {
-        background-color: var(--color-blue);
-      }
-
-      .Line {
-        background-color: var(--color-blue);
-      }
-    }
-
-    &.Checked.TurquoiseColor {
-      .Switcher {
-        background-color: var(--color-turquoise);
-      }
-
-      .Line {
-        background-color: var(--color-turquoise);
-      }
-    }
-
-    &.SwitchDisabled {
-      pointer-events: none;
-      cursor: default;
-
-      .Switcher {
-        background-color: var(--color-black6);
-      }
-
-      .Line {
-        background-color: var(--color-black6);
-      }
-    }
 
     .Switcher {
       position: absolute;
       left: 0;
       top: 50%;
-      transform: translateY(-50%);
       width: 20px;
       height: 20px;
-      background-color: var(--color-black5);
       border-radius: 50%;
-      transition: transform 0.2s;
-      z-index: 5;
+      transition: transform var(--trans), background-color var(--trans);
+      z-index: 2;
     }
 
     .Line {
-      display: inline-block;
+      display: block;
       position: relative;
       width: 100%;
       height: 14px;
+      border-radius: 8px;
+      transition: background-color var(--trans);
       opacity: 0.5;
-      background-color: var(--color-black5);
-      border-radius: 7px;
-      z-index: 4;
+      z-index: 1;
     }
   }
 
-  .LabelLeft,
-  .LabelRight {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--color-black);
+  .Unchecked {
+    .Switcher {
+      transform: translate(0, -50%);
+      background-color: var(--color-black7);
+    }
+
+    .Line {
+      background-color: var(--color-black7);
+    }
   }
 
-  .LabelLeft {
-    margin-right: 8px;
-  }
-
-  .LabelRight {
-    margin-left: 8px;
+  > input {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
   }
 }

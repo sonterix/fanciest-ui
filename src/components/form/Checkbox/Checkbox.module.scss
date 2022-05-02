@@ -112,11 +112,6 @@
     > svg {
       opacity: 0;
     }
-
-    &:not(.Disabled):hover,
-    &:not(.Disabled):focus {
-      border-color: var(--color-black5);
-    }
   }
 
   > input {

@@ -25,6 +25,7 @@ export { default as Skeleton } from 'components/appearance/Skeleton'
 export { default as Input } from 'components/form/Input'
 export { default as Checkbox } from 'components/form/Checkbox'
 export { default as Radio } from 'components/form/Radio'
+export { default as Switch } from 'components/form/Switch'
 
 export { default as DetectClickOutside } from 'components/functional/DetectClickOutside'
 export { default as Container } from 'components/functional/Container'
