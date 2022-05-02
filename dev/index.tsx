@@ -10,6 +10,7 @@ import {
   Avatar,
   Badge,
   Button,
+  Checkbox,
   CircleButton,
   Container,
   DetectClickOutside,
@@ -32,6 +33,7 @@ import {
 
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
+  const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
 
   return (
     <section className="dev">
@@ -53,10 +55,10 @@ const Dev = (): JSX.Element => {
           <CircleButton color="blue">B</CircleButton>
           <CircleButton color="purple">P</CircleButton>
 
-          <CircleButton color="green" size="sm">
+          <CircleButton color="green" presetSize="sm">
             SM
           </CircleButton>
-          <CircleButton color="green" size="md">
+          <CircleButton color="green" presetSize="md">
             MD
           </CircleButton>
 
@@ -84,16 +86,16 @@ const Dev = (): JSX.Element => {
           <Button color="blue">Blue</Button>
           <Button color="purple">Purplr</Button>
 
-          <Button color="yellow" size="xs">
+          <Button color="yellow" presetSize="xs">
             XS
           </Button>
-          <Button color="yellow" size="sm">
+          <Button color="yellow" presetSize="sm">
             SM
           </Button>
-          <Button color="yellow" size="md">
+          <Button color="yellow" presetSize="md">
             MD
           </Button>
-          <Button color="yellow" size="lg">
+          <Button color="yellow" presetSize="lg">
             LG
           </Button>
 
@@ -206,7 +208,7 @@ const Dev = (): JSX.Element => {
             Custom Text
           </Badge>
 
-          <Badge shape="rounded" size="sm">
+          <Badge shape="rounded" presetSize="sm">
             Custom Shape and Size
           </Badge>
         </div>
@@ -300,6 +302,16 @@ const Dev = (): JSX.Element => {
             onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
           />
 
+          <Input name="disabled" placeholder="Disabled" disabled />
+
+          <Input
+            name="label"
+            label="Cool Input, right?"
+            value={input?.label || ''}
+            placeholder="Label"
+            onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
           <Input
             name="layout"
             layout="outlined"
@@ -317,9 +329,9 @@ const Dev = (): JSX.Element => {
           />
 
           <Input
-            name="size"
+            name="presetSize"
             presetSize="sm"
-            value={input?.size || ''}
+            value={input?.presetSize || ''}
             placeholder="Size"
             onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
           />
@@ -339,6 +351,16 @@ const Dev = (): JSX.Element => {
             before={<Icon icon="icon-email" />}
             after={<small>You</small>}
             onChange={({ target }) => setInput(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Checkbox</h2>
+
+        <div className="dev__block__preview">
+          <Checkbox
+            name="default"
+            checked={checkbox?.default || false}
+            onChange={({ target }) => setCheckbox(prev => ({ ...prev, [target.name]: target.checked }))}
           />
         </div>
       </div>

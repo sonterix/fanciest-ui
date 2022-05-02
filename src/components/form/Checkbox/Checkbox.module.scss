@@ -1,0 +1,127 @@
+.Checkbox {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  @mixin colorStylesLocal($color) {
+    .Checked {
+      border-color: $color;
+      background-color: $color;
+    }
+  }
+
+  &.Black {
+    @include colorStylesLocal(var(--color-black2));
+  }
+
+  &.White {
+    @include colorStylesLocal(var(--color-white));
+  }
+
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow));
+  }
+
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange));
+  }
+
+  &.Red {
+    @include colorStylesLocal(var(--color-red));
+  }
+
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose));
+  }
+
+  &.Green {
+    @include colorStylesLocal(var(--color-green));
+  }
+
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal));
+  }
+
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise));
+  }
+
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue));
+  }
+
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple));
+  }
+
+  &.Disabled {
+    pointer-events: none;
+    cursor: default;
+
+    .Checked,
+    .Unchecked {
+      background-color: var(--color-black9);
+      border-color: var(--color-black8);
+    }
+  }
+
+  .Label {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--color-black3);
+  }
+
+  .Unchecked,
+  .Checked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: border-color var(--trans), background-color var(--trans);
+
+    > svg {
+      width: 12px;
+      height: 12px;
+      fill: var(--color-white);
+      transition: opacity var(--trans-fast);
+    }
+  }
+
+  .Checked > svg {
+    opacity: 1;
+  }
+
+  .Unchecked {
+    background-color: var(--color-white);
+    border-color: var(--color-black8);
+
+    > svg {
+      opacity: 0;
+    }
+
+    &:not(.Disabled):hover,
+    &:not(.Disabled):focus {
+      border-color: var(--color-black5);
+    }
+  }
+
+  > input {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
