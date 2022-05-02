@@ -36,6 +36,7 @@ const Input = ({
     className || ''
   ])
 
+  // Id for label and input
   const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
 
   // Mask chars indexes array

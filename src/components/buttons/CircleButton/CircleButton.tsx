@@ -6,7 +6,7 @@ import styles from './CircleButton.module.scss'
 
 const CircleButton = ({
   layout,
-  size,
+  presetSize,
   color,
   textFamily,
   textWeight,
@@ -20,8 +20,8 @@ const CircleButton = ({
     ...(layout === 'filled' ? [styles.Filled] : []),
     ...(layout === 'outlined' ? [styles.Outlined] : []),
 
-    ...(size === 'sm' ? [styles.Sm] : []),
-    ...(size === 'md' ? [styles.Md] : []),
+    ...(presetSize === 'sm' ? [styles.Sm] : []),
+    ...(presetSize === 'md' ? [styles.Md] : []),
 
     ...getColorClasses(color, styles),
 
@@ -45,7 +45,7 @@ const CircleButton = ({
 
 CircleButton.defaultProps = {
   layout: 'filled',
-  size: 'md',
+  presetSize: 'md',
   color: 'rose',
   textWeight: 500
 }

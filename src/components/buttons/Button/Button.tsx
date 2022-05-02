@@ -7,7 +7,7 @@ import styles from './Button.module.scss'
 const Button = ({
   layout,
   shape,
-  size,
+  presetSize,
   color,
   textFamily,
   textWeight,
@@ -26,10 +26,10 @@ const Button = ({
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
-    ...(size === 'xs' ? [styles.Xs] : []),
-    ...(size === 'sm' ? [styles.Sm] : []),
-    ...(size === 'md' ? [styles.Md] : []),
-    ...(size === 'lg' ? [styles.Lg] : []),
+    ...(presetSize === 'xs' ? [styles.Xs] : []),
+    ...(presetSize === 'sm' ? [styles.Sm] : []),
+    ...(presetSize === 'md' ? [styles.Md] : []),
+    ...(presetSize === 'lg' ? [styles.Lg] : []),
 
     ...getColorClasses(color, styles),
 
@@ -42,15 +42,15 @@ const Button = ({
 
   return (props as ButtonLinkProps)?.href ? (
     <a {...(props as ButtonLinkProps)} className={classes}>
-      {!!before && before}
+      {before || null}
       <span className={styles.Children}>{children}</span>
-      {!!after && after}
+      {after || null}
     </a>
   ) : (
     <button {...(props as ButtonProps)} type={(props as ButtonProps)?.type || 'button'} className={classes}>
-      {!!before && before}
+      {before || null}
       <span className={styles.Children}>{children}</span>
-      {!!after && after}
+      {after || null}
     </button>
   )
 }
@@ -58,7 +58,7 @@ const Button = ({
 Button.defaultProps = {
   layout: 'filled',
   shape: 'rounded',
-  size: 'md',
+  presetSize: 'md',
   color: 'rose',
   textWeight: 500,
   before: null,

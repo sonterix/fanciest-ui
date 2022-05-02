@@ -6,7 +6,7 @@ import styles from './Badge.module.scss'
 
 const Badge = ({
   shape,
-  size,
+  presetSize,
   color,
   bgOpacity,
   hoverable,
@@ -25,8 +25,8 @@ const Badge = ({
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
-    ...(size === 'sm' ? [styles.Sm] : []),
-    ...(size === 'md' ? [styles.Md] : []),
+    ...(presetSize === 'sm' ? [styles.Sm] : []),
+    ...(presetSize === 'md' ? [styles.Md] : []),
 
     ...(hoverable ? [styles.Hoverable] : []),
 
@@ -40,7 +40,7 @@ const Badge = ({
   ])
 
   return (
-    <div {...props} className={classes} style={{ ...style, fontSize: textSize }}>
+    <div {...props} className={classes} style={{ ...style, ...(textSize ? { fontSize: textSize } : {}) }}>
       <div className={styles.Background} style={{ opacity: bgOpacity }} />
 
       <span className={styles.Children}>{children}</span>
@@ -58,11 +58,10 @@ const Badge = ({
 
 Badge.defaultProps = {
   shape: 'squared',
-  size: 'md',
+  presetSize: 'md',
   color: 'black',
   bgOpacity: 1,
   hoverable: false,
-  textSize: '18px',
   textWeight: 500
 }
 

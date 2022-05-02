@@ -13,9 +13,7 @@ export type Color =
 
 export type Shape = 'rounded' | 'squared'
 
-export type Size = 'sm' | 'md'
-
-export type Layout = 'filled' | 'outlined'
+export type PresetSize = 'sm' | 'md'
 
 export type TextWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
 
