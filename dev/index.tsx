@@ -360,7 +360,7 @@ const Dev = (): JSX.Element => {
           />
         </div>
 
-        <h2 className="dev__block__subtitle">Textare</h2>
+        <h2 className="dev__block__subtitle">Textarea</h2>
 
         <div className="dev__block__preview">
           <Textarea
@@ -374,7 +374,7 @@ const Dev = (): JSX.Element => {
 
           <Textarea
             name="label"
-            label="Cool Textare, right?"
+            label="Cool Textarea, right?"
             value={textarea?.label || ''}
             placeholder="Label"
             onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
