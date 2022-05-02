@@ -111,6 +111,11 @@
   .Unchecked {
     background-color: var(--color-white);
     border-color: var(--color-black8);
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-black5);
+    }
   }
 
   > input {

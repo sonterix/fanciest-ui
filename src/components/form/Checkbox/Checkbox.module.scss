@@ -112,6 +112,11 @@
     > svg {
       opacity: 0;
     }
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-black5);
+    }
   }
 
   > input {

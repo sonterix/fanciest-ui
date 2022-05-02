@@ -132,6 +132,17 @@
     .Line {
       background-color: var(--color-black7);
     }
+
+    &:hover,
+    &:focus {
+      .Switcher {
+        background-color: var(--color-black5);
+      }
+
+      .Line {
+        background-color: var(--color-black5);
+      }
+    }
   }
 
   > input {
