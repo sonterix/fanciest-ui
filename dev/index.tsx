@@ -27,6 +27,7 @@ import {
   P2,
   P3,
   P4,
+  Radio,
   Rating,
   Skeleton
 } from '../src/components'
@@ -34,6 +35,7 @@ import {
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
+  const [radio, setRadio] = useState<{ [key: string]: string }>({})
 
   return (
     <section className="dev">
@@ -394,6 +396,54 @@ const Dev = (): JSX.Element => {
                 name="custom"
                 defaultChecked={checkbox?.custom || false}
                 onChange={({ target }) => setCheckbox(prev => ({ ...prev, [target.name]: target.checked }))}
+              />
+            }
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Radio</h2>
+
+        <div className="dev__block__preview">
+          <Radio defaultChecked color="black" />
+          <Radio defaultChecked color="white" />
+          <Radio defaultChecked color="yellow" />
+          <Radio defaultChecked color="orange" />
+          <Radio defaultChecked color="red" />
+          <Radio defaultChecked color="rose" />
+          <Radio defaultChecked color="green" />
+          <Radio defaultChecked color="teal" />
+          <Radio defaultChecked color="turquoise" />
+          <Radio defaultChecked color="blue" />
+          <Radio defaultChecked color="purple" />
+
+          <Radio defaultChecked disabled />
+
+          <Radio
+            name="label"
+            value="1"
+            label="Right label"
+            defaultChecked={radio?.label === '1' || false}
+            onChange={({ target }) => setRadio(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Radio
+            name="label"
+            value="2"
+            label="Left label"
+            labelPosition="left"
+            defaultChecked={radio?.label === '2' || false}
+            onChange={({ target }) => setRadio(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+
+          <Radio
+            label="With custom input"
+            customInput={
+              <input
+                type="checkbox"
+                name="custom"
+                value="1"
+                defaultChecked={radio?.custom === '1' || false}
+                onChange={({ target }) => setRadio(prev => ({ ...prev, [target.name]: target.value }))}
               />
             }
           />

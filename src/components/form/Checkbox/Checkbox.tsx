@@ -10,6 +10,7 @@ const Checkbox = ({
   labelPosition,
   customInput,
   className,
+  checked,
   defaultChecked,
   disabled,
   ...props
@@ -41,6 +42,7 @@ const Checkbox = ({
           {...props}
           id={generatedId.current}
           type="checkbox"
+          checked={checked}
           defaultChecked={defaultChecked}
           disabled={disabled}
         />
@@ -48,7 +50,7 @@ const Checkbox = ({
 
       <div
         className={
-          defaultChecked || (localCustomInput ? localCustomInput.props.defaultChecked : false)
+          checked || defaultChecked || localCustomInput?.props.checked || localCustomInput?.props.defaultChecked
             ? styles.Checked
             : styles.Unchecked
         }

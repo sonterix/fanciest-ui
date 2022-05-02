@@ -1,70 +1,98 @@
-@import '../../../scss/variables';
-
-.RadioContainer {
-  display: flex;
+.Radio {
+  display: inline-flex;
+  justify-content: flex-start;
   align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
 
-  &.RedColor .Checked {
-    border-color: var(--color-red5);
+  @mixin colorStylesLocal($color-primary, $color-secondary) {
+    .Checked {
+      background-color: $color-secondary;
+      border-color: $color-primary;
 
-    &::before {
-      background-color: var(--color-red5);
+      &::before {
+        background-color: $color-primary;
+      }
     }
   }
 
-  &.BlueColor .Checked {
-    border-color: var(--color-blue);
-
-    &::before {
-      background-color: var(--color-blue);
-    }
+  &.Black {
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
   }
 
-  &.TurquoiseColor .Checked {
-    border-color: var(--color-turquoise);
-
-    &::before {
-      background-color: var(--color-turquoise);
-    }
+  &.White {
+    @include colorStylesLocal(var(--color-white), var(--color-black));
   }
 
-  input {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    width: 0;
-    height: 0;
-    opacity: 0;
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
+  }
+
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
+  }
+
+  &.Red {
+    @include colorStylesLocal(var(--color-red), var(--color-white));
+  }
+
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
+  }
+
+  &.Green {
+    @include colorStylesLocal(var(--color-green), var(--color-white));
+  }
+
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
+  }
+
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
+  }
+
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
+  }
+
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
+  }
+
+  &.Disabled {
     pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
+    cursor: default;
+
+    .Checked,
+    .Unchecked {
+      background-color: var(--color-white9);
+      border-color: var(--color-black8);
+
+      &::before {
+        background-color: var(--color-black8);
+      }
+    }
   }
 
-  .LabelLeft,
-  .LabelRight {
-    display: inline-block;
+  .Label {
+    display: block;
     font-size: 16px;
-    color: var(--color-black);
+    font-weight: 400;
+    color: var(--color-black3);
+    user-select: none;
   }
 
-  .LabelLeft {
-    margin-right: 8px;
-  }
-
-  .LabelRight {
-    margin-left: 8px;
-  }
-
+  .Unchecked,
   .Checked {
     position: relative;
-    min-width: 20px;
-    min-height: 20px;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-red5);
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
     border-radius: 50%;
-    transition: border-color var(--trans), background-color var(--trans);
+    transition: background-color var(--trans);
 
     &:before {
       content: '';
@@ -74,41 +102,31 @@
       transform: translateX(-50%) translateY(-50%);
       width: 12px;
       height: 12px;
+      background-color: transparent;
       border-radius: 50%;
+      transition: background-color var(--trans-fast);
     }
   }
 
   .Unchecked {
-    position: relative;
-    min-width: 20px;
-    min-height: 20px;
     background-color: var(--color-white);
-    border: 1px solid var(--color-black8);
-    border-radius: 50%;
-    transition: border-color var(--trans), background-color var(--trans);
+    border-color: var(--color-black8);
 
-    &:not(.RadioDisabled):hover,
-    &:not(.RadioDisabled):focus {
+    &:not(.Disabled):hover,
+    &:not(.Disabled):focus {
       border-color: var(--color-black5);
     }
   }
 
-  &.RadioDisabled {
+  > input {
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 0;
+    height: 0;
+    opacity: 0;
     pointer-events: none;
-    cursor: default;
-
-    .Checked {
-      background-color: var(--color-white);
-      border-color: var(--color-black8);
-
-      &:before {
-        background-color: var(--color-black8);
-      }
-    }
-
-    .Unchecked {
-      background-color: var(--color-black9);
-      border-color: var(--color-black8);
-    }
+    z-index: -1;
   }
 }

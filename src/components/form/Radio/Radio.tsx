@@ -1,106 +1,69 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
+import { arrayToClasslist, getColorClasses } from 'helpers'
+import { RadioProps } from './Radio.type'
 import styles from './Radio.module.scss'
 
-interface ElementJSX extends JSX.Element {
-  type: 'input'
-}
-
-interface RadioProps extends React.ComponentProps<'input'> {
-  className?: string
-  label?: string | ElementJSX | Array<ElementJSX>
-  labelPosition?: 'left' | 'right'
-  color?: 'red' | 'blue' | 'turquoise'
-  checked: boolean
-  name?: string
-  value?: string
-  onChange?: () => void
-  disabled?: boolean
-  customInput?: ElementJSX
-}
-
 const Radio = ({
-  className,
+  color,
   label,
   labelPosition,
-  color,
-  checked,
-  name,
-  value,
-  onChange,
-  disabled,
   customInput,
+  className,
+  checked,
+  defaultChecked,
+  disabled,
   ...props
 }: RadioProps): JSX.Element => {
-  const { checked: customChecked }: React.ComponentProps<'input'> = customInput?.props || {}
+  const classes = arrayToClasslist([
+    styles.Radio,
 
-  const classes: string = [
-    'mu-container',
-    'mu-redio-container',
-    styles.RadioContainer,
+    ...(disabled ? [styles.Disabled] : []),
 
-    ...(color === 'red' ? [styles.RedColor] : []),
-    ...(color === 'blue' ? [styles.BlueColor] : []),
-    ...(color === 'turquoise' ? [styles.TurquoiseColor] : []),
+    ...getColorClasses(color, styles),
 
-    disabled ? `mu-disabled ${styles.RadioDisabled}` : '',
+    className || ''
+  ])
 
-    className
-  ].join(' ')
+  // Id for label and input
+  const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
+
+  // Recreate custom input with all existing props + id
+  const localCustomInput = customInput
+    ? React.createElement(customInput.type, { ...customInput.props, id: generatedId.current }, null)
+    : null
 
   return (
-    <label className={classes}>
-      {label && labelPosition === 'left' && (
-        <span className={`mu-label ${styles.LabelLeft}`}>{label}</span>
+    <label htmlFor={generatedId.current} className={classes}>
+      {label && labelPosition === 'left' && <span className={styles.Label}>{label}</span>}
+
+      {localCustomInput || (
+        <input
+          {...props}
+          id={generatedId.current}
+          type="radio"
+          checked={checked}
+          defaultChecked={defaultChecked}
+          disabled={disabled}
+        />
       )}
 
-      {customInput ? (
-        <>
-          {customInput}
+      <div
+        className={
+          checked || defaultChecked || localCustomInput?.props.checked || localCustomInput?.props.defaultChecked
+            ? styles.Checked
+            : styles.Unchecked
+        }
+      />
 
-          {customChecked ? (
-            <div className={`mu-checked ${styles.Checked}`} />
-          ) : (
-            <div className={`mu-unchecked ${styles.Unchecked}`} />
-          )}
-        </>
-      ) : (
-        <>
-          <input
-            type="radio"
-            name={name}
-            value={value}
-            checked={checked}
-            onChange={onChange}
-            disabled={disabled}
-            {...props}
-          />
-
-          {checked ? (
-            <div className={`mu-checked ${styles.Checked}`} />
-          ) : (
-            <div className={`mu-unchecked ${styles.Unchecked}`} />
-          )}
-        </>
-      )}
-
-      {label && labelPosition === 'right' && (
-        <span className={`mu-label ${styles.LabelRight}`}>{label}</span>
-      )}
+      {label && labelPosition === 'right' && <span className={styles.Label}>{label}</span>}
     </label>
   )
 }
 
 Radio.defaultProps = {
-  className: '',
-  label: '',
-  labelPosition: 'right',
-  color: 'red',
-  name: 'radio',
-  value: '1',
-  onChange: () => {},
-  disabled: false,
-  customInput: null
+  color: 'rose',
+  labelPosition: 'right'
 }
 
 export default Radio
