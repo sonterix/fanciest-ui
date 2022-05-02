@@ -91,7 +91,7 @@
     height: 20px;
     border: 1px solid transparent;
     border-radius: 3px;
-    transition: border-color var(--trans), background-color var(--trans);
+    transition: background-color var(--trans), border-color var(--trans);
 
     > svg {
       width: 12px;
