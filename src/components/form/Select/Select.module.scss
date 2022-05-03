@@ -75,6 +75,10 @@
       background-color: var(--color-black9);
       pointer-events: none;
       cursor: default;
+
+      > svg {
+        color: var(--color-black4);
+      }
     }
 
     > svg {
