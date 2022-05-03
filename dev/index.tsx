@@ -424,7 +424,7 @@ const Dev = (): JSX.Element => {
               { value: 'three', label: 'Three' }
             ]}
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select options={[]} disabled />
@@ -437,7 +437,7 @@ const Dev = (): JSX.Element => {
             ]}
             label="Select something"
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select
@@ -448,7 +448,7 @@ const Dev = (): JSX.Element => {
             ]}
             layout="outlined"
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select
@@ -459,7 +459,7 @@ const Dev = (): JSX.Element => {
             ]}
             shape="rounded"
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select
@@ -470,7 +470,7 @@ const Dev = (): JSX.Element => {
             ]}
             presetSize="sm"
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select
@@ -481,7 +481,7 @@ const Dev = (): JSX.Element => {
             ]}
             textWeight={600}
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
 
           <Select
@@ -492,7 +492,7 @@ const Dev = (): JSX.Element => {
             ]}
             color="orange"
             value={select}
-            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+            onChange={({ target: { value } }) => setSelect(String(value))}
           />
         </div>
 

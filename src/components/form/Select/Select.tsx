@@ -97,7 +97,7 @@ const Select = ({
   }
 
   // Select option anction where the select is closing and call the callbackfunc
-  const handleSelectOption = (event: React.MouseEvent<HTMLButtonElement>): void => {
+  const handleSelectOption = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     setOpen(false)
 
     if (onChange) {

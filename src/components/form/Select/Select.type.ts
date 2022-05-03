@@ -6,7 +6,7 @@ export interface OptionProps extends React.ComponentProps<'option'> {
   value: string
 }
 
-export interface SelectProps extends React.ComponentProps<'button'> {
+export interface SelectProps extends Omit<React.ComponentProps<'button'>, 'onChange'> {
   options: OptionProps[]
   layout?: 'filled' | 'outlined'
   shape?: Shape
@@ -15,4 +15,5 @@ export interface SelectProps extends React.ComponentProps<'button'> {
   color?: Color
   textSize?: string | number
   textWeight?: TextWeight
+  onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }
