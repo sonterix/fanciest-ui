@@ -11,6 +11,7 @@ const P1 = ({ media, as, ...props }: FontProps): JSX.Element => {
         default: media?.default || '18px'
       }}
       as={as}
+      selector="fui-p1"
       {...props}
     />
   )

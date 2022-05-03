@@ -16,5 +16,6 @@ export interface FontProps extends React.ComponentProps<'p'> {
   weight?: TextWeight
   media?: FontMedia
   as?: string
+  selector?: string
   inheritToChildren?: boolean
 }

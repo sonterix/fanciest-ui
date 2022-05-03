@@ -12,6 +12,7 @@ const H4 = ({ media, as, ...props }: FontProps): JSX.Element => {
         lg: media?.lg || '24px'
       }}
       as={as || 'h4'}
+      selector="fui-h4"
       {...props}
     />
   )

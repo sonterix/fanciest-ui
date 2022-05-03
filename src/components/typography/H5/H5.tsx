@@ -11,6 +11,7 @@ const H5 = ({ media, as, ...props }: FontProps): JSX.Element => {
         default: media?.default || '20px'
       }}
       as={as || 'h5'}
+      selector="fui-h5"
       {...props}
     />
   )

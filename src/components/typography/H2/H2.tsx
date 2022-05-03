@@ -13,6 +13,7 @@ const H2 = ({ media, as, ...props }: FontProps): JSX.Element => {
         lg: media?.lg || '36px'
       }}
       as={as || 'h2'}
+      selector="fui-h2"
       {...props}
     />
   )

@@ -12,6 +12,7 @@ const FontGenerator = ({
   weight,
   media,
   as,
+  selector,
   inheritToChildren,
   className,
   style,
@@ -24,7 +25,7 @@ const FontGenerator = ({
   )
 
   const classes = arrayToClasslist([
-    `fui-${as || 'p'}`,
+    selector || 'fui-p',
 
     styles.Font,
 
