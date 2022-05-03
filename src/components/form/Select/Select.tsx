@@ -1,151 +1,128 @@
-// @ts-ignore
-import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-import Icon from '../../display/Icon/Icon'
-import { OptionProps } from '../Option/Option'
+import { arrayToClasslist, getColorClasses, getTextWeight } from 'helpers'
+import { SelectProps } from './Select.type'
 import styles from './Select.module.scss'
 
-interface SelectOption extends JSX.Element {
-  props: OptionProps
-}
-
-type SelectProps = {
-  [key: string]: any
-  className?: string
-  label?: string | Array<JSX.Element> | JSX.Element
-  presetSize?: 'sm' | 'md'
-  shape?: 'rounded' | 'squared'
-  minWidth?: number
-  selectedValue: string | number | boolean
-  disabled?: boolean
-  handleOnChange: (value: string) => void
-  children: Array<SelectOption> | SelectOption
-}
-
 const Select = ({
-  className,
-  label,
-  presetSize,
+  options,
+  layout,
   shape,
-  minWidth,
-  selectedValue,
-  disabled,
-  handleOnChange,
-  children,
+  presetSize,
+  label,
+  color,
+  textWeight,
+  className,
+  value,
+  defaultValue,
+  onChange,
   ...props
 }: SelectProps): JSX.Element => {
-  const classes: string = [
-    'mu-container',
-    styles.SelectContainer,
-    ...(presetSize === 'sm' ? [styles.SizeSm] : []),
-    ...(presetSize === 'md' ? [styles.SizeMd] : []),
+  const classes = [
+    ...(presetSize === 'sm' ? [styles.Sm] : []),
+    ...(presetSize === 'md' ? [styles.Md] : []),
+
+    ...getColorClasses(color, styles),
+
+    ...getTextWeight(textWeight, styles)
+  ]
+
+  // Classes are based on 'classes' variable
+  const clssesSelect = arrayToClasslist([
+    styles.Select,
+
+    ...(layout === 'filled' ? [styles.Filled] : []),
+    ...(layout === 'outlined' ? [styles.Outlined] : []),
 
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
 
-    ...(disabled ? [styles.Disabled] : []),
-    className
-  ].join(' ')
+    ...classes,
+    className || ''
+  ])
+
+  const clssesDropdown = arrayToClasslist([styles.Dropdown, ...classes])
 
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const [isOpen, setOpen] = useState(false)
 
-  // Select option anction where the select is closing and call the callbackfunc
-  const handleSelectOption = (value: string) => {
-    setOpen(false)
-    handleOnChange(value)
-  }
-
-  // Detect click outside of the dropdown and close it
-  const handleRefElClick = (event: Event) => {
-    const { target } = event
-    const { current } = dropdownRef
-
-    if (!current || !target) return
-
-    if (!current.contains(target as Node)) setOpen(false)
-  }
-
   // Detect click outside of the dropdown
   useEffect(() => {
+    const dropdownRefClick = ({ target }: Event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(target as Node)) {
+        setOpen(false)
+      }
+    }
+
     if (isOpen) {
-      // Add when opened
-      document.addEventListener('mousedown', handleRefElClick)
+      document.addEventListener('mousedown', dropdownRefClick)
     } else {
-      // Remove when closed
-      document.removeEventListener('mousedown', handleRefElClick)
+      document.removeEventListener('mousedown', dropdownRefClick)
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleRefElClick)
+      document.removeEventListener('mousedown', dropdownRefClick)
     }
   }, [isOpen])
 
-  // Anyway convert childrens to array
-  const options: Array<SelectOption> = useMemo(() => (Array.isArray(children) ? children : [children]), [])
+  const handleToggleDropdown = (): void => {
+    setOpen(prev => !prev)
+  }
 
-  // Add necessary props to each option
-  const constructOptions: Array<SelectOption> = useMemo(
-    () =>
-      options.map((option, index) => ({
-        ...option,
-        props: {
-          ...option.props,
-          onClick: () => handleSelectOption(option.props.value),
-          onKeyDown: () => {},
-          tabIndex: index
-        }
-      })),
-    [children]
+  // Select option anction where the select is closing and call the callbackfunc
+  const handleSelectOption = (event: React.MouseEvent<HTMLButtonElement>): void => {
+    setOpen(false)
+
+    if (onChange) {
+      onChange(event)
+    }
+  }
+
+  // Recteate option to add onClick
+  const localOptions = (Array.isArray(options) ? options : [options]).map((option, index) =>
+    React.createElement(
+      'button',
+      { ...option, type: 'button', tabIndex: index, role: 'option', onClick: handleSelectOption },
+      option.children
+    )
   )
 
-  // Get selected option name to show in jsx
-  const {
-    props: { children: selectedOption }
-  }: SelectOption = useMemo(() => {
-    // Selected option
-    const selected: SelectOption | undefined = constructOptions?.find(option => option.props.value === selectedValue)
-    // First not disabled option
-    const firstNotDisabled: SelectOption | undefined = constructOptions?.find(option => !option.props.disabled)
-
-    return selected || firstNotDisabled || constructOptions[0]
-  }, [constructOptions])
+  const firstNotDisabledOption = (Array.isArray(options) ? options : [options]).find(({ disabled }) => !disabled)
 
   return (
-    <div ref={dropdownRef} className={classes} style={{ minWidth }}>
-      {label && <span className={`mu-label ${styles.Label}`}>{label}</span>}
+    <div ref={dropdownRef} className={styles.SelectContainer}>
+      {label && <span className={styles.Label}>{label}</span>}
 
-      <div
-        className={`mu-select ${styles.Select}`}
-        onClick={() => setOpen(prevOpen => !prevOpen)}
-        onKeyDown={() => {}}
-        role="button"
-        tabIndex={0}
-        {...props}
-      >
-        {selectedOption}
-        <Icon icon={isOpen ? 'icon-dropdown-up' : 'icon-dropdown-down'} presetSize={10} />
-      </div>
+      <button {...props} type="button" className={clssesSelect} onClick={handleToggleDropdown}>
+        {value || defaultValue || firstNotDisabledOption?.children || 'Select'}
 
-      {isOpen && !disabled && (
-        <div className={`mu-dropdown ${styles.Dropdown}`}>
-          {constructOptions.map((option, index) => (
-            <Fragment key={`option-${index}`}>{option}</Fragment>
+        <svg
+          className={isOpen && !props.disabled ? styles.Up : styles.Down}
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M6 0l12 12-12 12z" />
+        </svg>
+      </button>
+
+      {isOpen && !props.disabled && (
+        <ul className={clssesDropdown}>
+          {localOptions.map(option => (
+            <li key={`option-${option.props.tabIndex}`}>{option}</li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   )
 }
 
 Select.defaultProps = {
-  label: '',
-  presetSize: 'md',
+  layout: 'filled',
   shape: 'squared',
-  className: '',
-  minWidth: 60,
-  disabled: false
+  presetSize: 'md',
+  color: 'black',
+  textWeight: 400
 }
 
 export default Select

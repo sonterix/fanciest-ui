@@ -24,6 +24,7 @@ export { default as Skeleton } from 'components/appearance/Skeleton'
 
 export { default as Input } from 'components/form/Input'
 export { default as Textarea } from 'components/form/Textarea'
+export { default as Select } from 'components/form/Select'
 export { default as Checkbox } from 'components/form/Checkbox'
 export { default as Radio } from 'components/form/Radio'
 export { default as Switch } from 'components/form/Switch'

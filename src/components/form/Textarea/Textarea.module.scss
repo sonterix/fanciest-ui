@@ -11,7 +11,7 @@
   }
 
   .Textarea {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
@@ -42,8 +42,8 @@
       background-color: var(--color-white);
       border-color: var(--color-black8);
 
-      &:not(.Disabled):hover,
-      &:not(.Disabled):focus {
+      &:hover,
+      &:focus {
         border-color: var(--color-black5);
       }
     }
@@ -55,8 +55,8 @@
       border-bottom-color: var(--color-black8);
       border-radius: 0;
 
-      &:not(.Disabled):hover,
-      &:not(.Disabled):focus {
+      &:hover,
+      &:focus {
         border-bottom-color: var(--color-black5);
       }
     }
@@ -79,6 +79,7 @@
     > textarea {
       flex: 1;
       padding: 0;
+      min-width: 150px;
       width: 100%;
       font-size: inherit;
       color: inherit;

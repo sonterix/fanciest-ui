@@ -29,6 +29,7 @@ import {
   P4,
   Radio,
   Rating,
+  Select,
   Skeleton,
   Switch,
   Textarea
@@ -37,6 +38,7 @@ import {
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
   const [textarea, setTextarea] = useState<{ [key: string]: string }>({})
+  const [select, setSelect] = useState<string>('One')
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
   const [radio, setRadio] = useState<{ [key: string]: string }>({})
   const [switchValue, setSwitchValue] = useState<{ [key: string]: boolean }>({})
@@ -410,6 +412,88 @@ const Dev = (): JSX.Element => {
             value={textarea?.mask || ''}
             placeholder="Resize"
             onChange={({ target }) => setTextarea(prev => ({ ...prev, [target.name]: target.value }))}
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Select</h2>
+        <div className="dev__block__preview">
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select options={[]} disabled />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two', disabled: true },
+              { value: 'three', children: 'Three' }
+            ]}
+            label="Select something"
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            layout="outlined"
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            shape="rounded"
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            presetSize="sm"
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            textSize={20}
+            textWeight={600}
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
+          />
+
+          <Select
+            options={[
+              { value: 'one', children: 'One' },
+              { value: 'two', children: 'Two' },
+              { value: 'three', children: 'Three' }
+            ]}
+            color="orange"
+            value={select}
+            onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
           />
         </div>
 
