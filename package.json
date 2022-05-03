@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "license": "MIT",
-  "name": "fancy-ui",
+  "name": "fanciest-ui",
   "author": "Nick Bukovskyi",
   "homepage": "",
   "repository": {
@@ -22,8 +22,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && rollup -c",
-    "pub": "npm publish --access public",
-    "dev-build": "rm -rf ./demo && rollup -c rollup.dev.config.js"
+    "dev-build": "rm -rf ./demo && rollup -c rollup.dev.config.js",
+    "pub": "npm publish --access public"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
