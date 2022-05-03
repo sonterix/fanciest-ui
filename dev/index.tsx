@@ -38,7 +38,7 @@ import {
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
   const [textarea, setTextarea] = useState<{ [key: string]: string }>({})
-  const [select, setSelect] = useState<string>('One')
+  const [select, setSelect] = useState<string>('three')
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
   const [radio, setRadio] = useState<{ [key: string]: string }>({})
   const [switchValue, setSwitchValue] = useState<{ [key: string]: boolean }>({})
@@ -479,7 +479,6 @@ const Dev = (): JSX.Element => {
               { value: 'two', children: 'Two' },
               { value: 'three', children: 'Three' }
             ]}
-            textSize={20}
             textWeight={600}
             value={select}
             onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}

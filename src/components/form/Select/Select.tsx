@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 
 import { arrayToClasslist, getColorClasses, getTextWeight } from 'helpers'
 import { SelectProps } from './Select.type'
@@ -43,26 +44,45 @@ const Select = ({
 
   const clssesDropdown = arrayToClasslist([styles.Dropdown, ...classes])
 
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const selectRef = useRef<HTMLButtonElement>(null)
+  const dropdownRef = useRef<HTMLUListElement>(null)
 
-  const [isOpen, setOpen] = useState(false)
+  const [isOpen, setOpen] = useState<boolean>(false)
+
+  // Set Dropdown position when the select is open
+  useEffect(() => {
+    if (isOpen && selectRef.current && dropdownRef.current) {
+      const rect = selectRef.current.getBoundingClientRect()
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
+      dropdownRef.current.style.top = `${rect.top + scrollTop + rect.height + 3}px`
+      dropdownRef.current.style.left = `${rect.left + scrollLeft}px`
+      dropdownRef.current.style.width = `${rect.width}px`
+    }
+  }, [isOpen])
 
   // Detect click outside of the dropdown
   useEffect(() => {
-    const dropdownRefClick = ({ target }: Event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(target as Node)) {
+    const outSideClick = ({ target }: Event) => {
+      if (
+        selectRef.current &&
+        dropdownRef.current &&
+        !selectRef.current.contains(target as Node) &&
+        !dropdownRef.current.contains(target as Node)
+      ) {
         setOpen(false)
       }
     }
 
     if (isOpen) {
-      document.addEventListener('mousedown', dropdownRefClick)
+      document.addEventListener('mousedown', outSideClick)
     } else {
-      document.removeEventListener('mousedown', dropdownRefClick)
+      document.removeEventListener('mousedown', outSideClick)
     }
 
     return () => {
-      document.removeEventListener('mousedown', dropdownRefClick)
+      document.removeEventListener('mousedown', outSideClick)
     }
   }, [isOpen])
 
@@ -91,10 +111,10 @@ const Select = ({
   const firstNotDisabledOption = (Array.isArray(options) ? options : [options]).find(({ disabled }) => !disabled)
 
   return (
-    <div ref={dropdownRef} className={styles.SelectContainer}>
+    <div className={styles.SelectContainer}>
       {label && <span className={styles.Label}>{label}</span>}
 
-      <button {...props} type="button" className={clssesSelect} onClick={handleToggleDropdown}>
+      <button {...props} ref={selectRef} type="button" className={clssesSelect} onClick={handleToggleDropdown}>
         {value || defaultValue || firstNotDisabledOption?.children || 'Select'}
 
         <svg
@@ -106,13 +126,16 @@ const Select = ({
         </svg>
       </button>
 
-      {isOpen && !props.disabled && (
-        <ul className={clssesDropdown}>
-          {localOptions.map(option => (
-            <li key={`option-${option.props.tabIndex}`}>{option}</li>
-          ))}
-        </ul>
-      )}
+      {isOpen &&
+        !props.disabled &&
+        createPortal(
+          <ul ref={dropdownRef} className={clssesDropdown}>
+            {localOptions.map(option => (
+              <li key={`option-${option.props.tabIndex}`}>{option}</li>
+            ))}
+          </ul>,
+          document.body
+        )}
     </div>
   )
 }

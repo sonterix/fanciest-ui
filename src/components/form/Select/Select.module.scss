@@ -18,7 +18,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    min-width: 150px;
+    min-width: 80px;
+    width: 100%;
+    white-space: nowrap;
     color: var(--color-black);
     background-color: transparent;
     border: 1px solid transparent;
@@ -97,72 +99,70 @@
       }
     }
   }
+}
 
-  .Dropdown {
-    position: absolute;
-    left: 50%;
-    bottom: -3px;
-    transform: translate(-50%, 100%);
-    padding: 0;
-    min-width: 100%;
-    max-height: 250px;
-    list-style: none;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-black8);
-    border-radius: 3px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
-    overflow-x: hidden;
-    overflow-y: auto;
-    z-index: 99100;
+.Dropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  max-height: 250px;
+  list-style: none;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black8);
+  border-radius: 3px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 99100;
 
-    @include colorStyles($with-color: true, $with-background-color: false);
+  @include colorStyles($with-color: true, $with-background-color: false);
 
-    @include textWeightStyles();
+  @include textWeightStyles();
 
-    &.Md {
-      font-size: 16px;
-
-      > li > button {
-        padding: 8px 16px;
-      }
-    }
-
-    &.Sm {
-      font-size: 14px;
-
-      > li > button {
-        padding: 4px 12px;
-      }
-    }
-
-    > li,
-    > li > button {
-      display: block;
-      color: inherit;
-      font-size: inherit;
-      font-weight: inherit;
-    }
+  &.Md {
+    font-size: 16px;
 
     > li > button {
-      width: 100%;
-      text-align: left;
-      background-color: transparent;
-      border: none;
-      white-space: nowrap;
-      user-select: none;
-      cursor: pointer;
+      padding: 8px 16px;
+    }
+  }
 
-      &:hover,
-      &:focus {
-        background-color: var(--color-black8);
-      }
+  &.Sm {
+    font-size: 14px;
 
-      &:disabled {
-        color: var(--color-black8);
-        background-color: var(--color-white9);
-        cursor: default;
-        pointer-events: none;
-      }
+    > li > button {
+      padding: 4px 12px;
+    }
+  }
+
+  > li,
+  > li > button {
+    display: block;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  > li > button {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-black8);
+    }
+
+    &:disabled {
+      color: var(--color-black8);
+      background-color: var(--color-white9);
+      cursor: default;
+      pointer-events: none;
     }
   }
 }
