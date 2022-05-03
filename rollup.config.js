@@ -17,12 +17,14 @@ export default [
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true
+        sourcemap: true,
+        assetFileNames: 'public/[name][extname]'
       },
       {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true
+        sourcemap: true,
+        assetFileNames: 'public/[name][extname]'
       }
     ],
     plugins: [
@@ -35,6 +37,7 @@ export default [
         include: ['src/**/*']
       }),
       styles({
+        mode: ['extract', 'index.css'],
         minimize: true,
         modules: {
           generateScopedName: (name, file) => {
@@ -48,7 +51,10 @@ export default [
       typescript({ include: 'src/**/*', tsconfig: './tsconfig.json' }),
       terser(),
       copy({
-        targets: [{ src: './src/styles/icons.css', dest: 'dist/public' }]
+        targets: [
+          { src: './src/styles/icons.css', dest: 'dist/cjs/public' },
+          { src: './src/styles/icons.css', dest: 'dist/esm/public' }
+        ]
       })
     ]
   },
