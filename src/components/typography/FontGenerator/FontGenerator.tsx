@@ -24,6 +24,8 @@ const FontGenerator = ({
   )
 
   const classes = arrayToClasslist([
+    `fui-${as || 'p'}`,
+
     styles.Font,
 
     ...getTextFamily(family, styles),
