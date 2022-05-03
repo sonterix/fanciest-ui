@@ -25,9 +25,9 @@ const CircleButton = ({
 
     ...getColorClasses(color, styles),
 
-    ...getTextFamily(textFamily, styles),
+    ...getTextFamily(textFamily),
 
-    ...getTextWeight(textWeight, styles),
+    ...getTextWeight(textWeight),
 
     className || ''
   ])

@@ -6,10 +6,6 @@
   overflow-wrap: break-word;
   color: var(--color-black);
 
-  @include textFamilyStyles();
-
-  @include textWeightStyles();
-
   &.InheritToChildren {
     *:not(strong):not(b):not(i):not(a):not(:global(.fui-ignore)) {
       font-family: inherit !important;

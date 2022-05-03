@@ -11,10 +11,6 @@
 
   @include colorStyles();
 
-  @include textFamilyStyles();
-
-  @include textWeightStyles();
-
   .Image {
     max-width: inherit;
     max-height: inherit;

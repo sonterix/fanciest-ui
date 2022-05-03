@@ -127,10 +127,6 @@
     @include colorStylesLocal(var(--color-purple), var(--color-white));
   }
 
-  @include textFamilyStyles();
-
-  @include textWeightStyles();
-
   &:disabled {
     cursor: default;
     pointer-events: none;

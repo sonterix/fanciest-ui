@@ -31,8 +31,6 @@
 
     @include colorStyles($with-color: true, $with-background-color: false);
 
-    @include textWeightStyles();
-
     &.Md {
       padding: 12px 16px;
       font-size: 18px;
@@ -120,8 +118,6 @@
 
   @include colorStyles($with-color: true, $with-background-color: false);
 
-  @include textWeightStyles();
-
   &.Md {
     font-size: 16px;
 
@@ -134,7 +130,7 @@
     font-size: 14px;
 
     > li > button {
-      padding: 4px 12px;
+      padding: 6px 12px;
     }
   }
 

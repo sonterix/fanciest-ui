@@ -25,7 +25,7 @@ const Select = ({
 
     ...getColorClasses(color, styles),
 
-    ...getTextWeight(textWeight, styles)
+    ...getTextWeight(textWeight)
   ]
 
   // Classes are based on 'classes' variable

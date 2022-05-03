@@ -23,29 +23,26 @@ export const getColorClasses = (color: Color | undefined, styles: { [className: 
   return classesArr
 }
 
-export const getTextFamily = (textFamily: TextFamiy | undefined, styles: { [className: string]: string }): string[] => {
+export const getTextFamily = (textFamily: TextFamiy | undefined): string[] => {
   const classesArr = [
-    ...(textFamily === 'main' ? [styles.Main] : []),
-    ...(textFamily === 'heading' ? [styles.Heading] : [])
+    ...(textFamily === 'main' ? ['fui-family-main'] : []),
+    ...(textFamily === 'heading' ? ['fui-family-heading'] : [])
   ]
 
   return classesArr
 }
 
-export const getTextWeight = (
-  textWeight: TextWeight | undefined,
-  styles: { [className: string]: string }
-): string[] => {
+export const getTextWeight = (textWeight: TextWeight | undefined): string[] => {
   const classesArr = [
-    ...(textWeight === 100 ? [styles.Weight100] : []),
-    ...(textWeight === 200 ? [styles.Weight200] : []),
-    ...(textWeight === 300 ? [styles.Weight300] : []),
-    ...(textWeight === 400 ? [styles.Weight400] : []),
-    ...(textWeight === 500 ? [styles.Weight500] : []),
-    ...(textWeight === 600 ? [styles.Weight600] : []),
-    ...(textWeight === 700 ? [styles.Weight700] : []),
-    ...(textWeight === 800 ? [styles.Weight800] : []),
-    ...(textWeight === 900 ? [styles.Weight900] : [])
+    ...(textWeight === 100 ? ['fui-weight-100'] : []),
+    ...(textWeight === 200 ? ['fui-weight-200'] : []),
+    ...(textWeight === 300 ? ['fui-weight-300'] : []),
+    ...(textWeight === 400 ? ['fui-weight-400'] : []),
+    ...(textWeight === 500 ? ['fui-weight-500'] : []),
+    ...(textWeight === 600 ? ['fui-weight-600'] : []),
+    ...(textWeight === 700 ? ['fui-weight-700'] : []),
+    ...(textWeight === 800 ? ['fui-weight-800'] : []),
+    ...(textWeight === 900 ? ['fui-weight-900'] : [])
   ]
 
   return classesArr

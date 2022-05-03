@@ -27,9 +27,9 @@ const FontGenerator = ({
 
     styles.Font,
 
-    ...getTextFamily(family, styles),
+    ...getTextFamily(family),
 
-    ...getTextWeight(weight, styles),
+    ...getTextWeight(weight),
 
     ...(inheritToChildren ? [styles.InheritToChildren] : []),
 
