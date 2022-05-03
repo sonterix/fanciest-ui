@@ -20,9 +20,7 @@ const FontGenerator = ({
   children,
   ...props
 }: FontProps): JSX.Element => {
-  const [fontSize, setFontSize] = useState<string | number>(
-    getFontSize(media, typeof window !== 'undefined' ? window.innerWidth : 0)
-  )
+  const [fontSize, setFontSize] = useState<string | number>(getFontSize(media, 0))
 
   const classes = arrayToClasslist([
     selector || 'fui-p',

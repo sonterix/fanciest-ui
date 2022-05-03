@@ -4,8 +4,8 @@ import { UseWindowSizeValues } from './useWindowSize.type'
 
 const useWindowSize = (): UseWindowSizeValues => {
   const [windowSize, setWindowSize] = useState<UseWindowSizeValues>({
-    screenWidth: typeof window !== 'undefined' ? window.innerWidth : 0,
-    screenWeight: typeof window !== 'undefined' ? window.innerHeight : 0
+    screenWidth: 0,
+    screenWeight: 0
   })
 
   useEffect(() => {
