@@ -419,9 +419,9 @@ const Dev = (): JSX.Element => {
         <div className="dev__block__preview">
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             value={select}
             onChange={({ currentTarget }) => setSelect(String(currentTarget.getAttribute('value')))}
@@ -431,9 +431,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two', disabled: true },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One big line of text is here' },
+              { value: 'two', label: 'Two', disabled: true },
+              { value: 'three', label: 'Three' }
             ]}
             label="Select something"
             value={select}
@@ -442,9 +442,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             layout="outlined"
             value={select}
@@ -453,9 +453,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             shape="rounded"
             value={select}
@@ -464,9 +464,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             presetSize="sm"
             value={select}
@@ -475,9 +475,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             textWeight={600}
             value={select}
@@ -486,9 +486,9 @@ const Dev = (): JSX.Element => {
 
           <Select
             options={[
-              { value: 'one', children: 'One' },
-              { value: 'two', children: 'Two' },
-              { value: 'three', children: 'Three' }
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
             ]}
             color="orange"
             value={select}

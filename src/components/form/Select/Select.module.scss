@@ -21,10 +21,12 @@
     min-width: 80px;
     width: 100%;
     white-space: nowrap;
+    text-overflow: ellipsis;
     color: var(--color-black);
     background-color: transparent;
     border: 1px solid transparent;
     transition: color var(--trans), background-color var(--trans), border-color var(--trans);
+    overflow: hidden;
     cursor: pointer;
 
     @include colorStyles($with-color: true, $with-background-color: false);
@@ -101,7 +103,7 @@
   }
 }
 
-.Dropdown {
+.SelectDropdown {
   position: absolute;
   top: 0;
   left: 0;
@@ -149,7 +151,6 @@
     text-align: left;
     background-color: transparent;
     border: none;
-    white-space: nowrap;
     user-select: none;
     cursor: pointer;
 

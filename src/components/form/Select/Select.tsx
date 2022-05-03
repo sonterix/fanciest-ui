@@ -42,10 +42,16 @@ const Select = ({
     className || ''
   ])
 
-  const clssesDropdown = arrayToClasslist([styles.Dropdown, ...classes])
+  const clssesDropdown = arrayToClasslist([styles.SelectDropdown, ...classes])
 
+  // Refs need to match positions
   const selectRef = useRef<HTMLButtonElement>(null)
   const dropdownRef = useRef<HTMLUListElement>(null)
+
+  // Find possible selected options
+  const seletedOption = options.find(option => option.value === value)
+  const seletedDefaultOption = options.find(option => option.value === defaultValue)
+  const firstNotDisabledOption = options.find(option => !option.disabled)
 
   const [isOpen, setOpen] = useState<boolean>(false)
 
@@ -100,31 +106,33 @@ const Select = ({
   }
 
   // Recteate option to add onClick
-  const localOptions = (Array.isArray(options) ? options : [options]).map((option, index) =>
+  const localOptions = options.map((option, index) =>
     React.createElement(
       'button',
       { ...option, type: 'button', tabIndex: index, role: 'option', onClick: handleSelectOption },
-      option.children
+      option.label
     )
   )
 
-  const firstNotDisabledOption = (Array.isArray(options) ? options : [options]).find(({ disabled }) => !disabled)
-
   return (
-    <div className={styles.SelectContainer}>
-      {label && <span className={styles.Label}>{label}</span>}
+    <>
+      <div className={styles.SelectContainer}>
+        {label && <span className={styles.Label}>{label}</span>}
 
-      <button {...props} ref={selectRef} type="button" className={clssesSelect} onClick={handleToggleDropdown}>
-        {value || defaultValue || firstNotDisabledOption?.children || 'Select'}
+        <button {...props} ref={selectRef} type="button" className={clssesSelect} onClick={handleToggleDropdown}>
+          <span>
+            {seletedOption?.label || seletedDefaultOption?.label || firstNotDisabledOption?.label || 'Select'}
+          </span>
 
-        <svg
-          className={isOpen && !props.disabled ? styles.Up : styles.Down}
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-        >
-          <path d="M6 0l12 12-12 12z" />
-        </svg>
-      </button>
+          <svg
+            className={isOpen && !props.disabled ? styles.Up : styles.Down}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M6 0l12 12-12 12z" />
+          </svg>
+        </button>
+      </div>
 
       {isOpen &&
         !props.disabled &&
@@ -136,7 +144,7 @@ const Select = ({
           </ul>,
           document.body
         )}
-    </div>
+    </>
   )
 }
 
