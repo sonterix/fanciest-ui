@@ -1,7 +1,7 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useEffect } from 'react'
 
 const useLockBodyScroll = (disable: boolean, defaultOverflow?: string, defaultHeight?: string): void => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (disable) {
       document.body.style.overflow = 'hidden'
       document.body.style.height = '100%'

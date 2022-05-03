@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useLayoutEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import parse from 'html-react-parser'
 
 import { arrayToClasslist, getTextFamily, getTextWeight } from 'helpers'
@@ -42,7 +42,7 @@ const FontGenerator = ({
   )
 
   // Update screen width on resize screen
-  useLayoutEffect(() => {
+  useEffect(() => {
     const updateSize = () => {
       setFontSize(getFontSize(media, window.innerWidth))
     }
