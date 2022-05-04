@@ -14,7 +14,7 @@
   }
 
   .Select {
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
@@ -119,19 +119,11 @@
   @include colorStyles($with-color: true, $with-background-color: false);
 
   &.Md {
-    font-size: 16px;
-
-    > li > button {
-      padding: 8px 16px;
-    }
+    font-size: 18px;
   }
 
   &.Sm {
-    font-size: 14px;
-
-    > li > button {
-      padding: 6px 12px;
-    }
+    font-size: 16px;
   }
 
   > li,
@@ -143,6 +135,7 @@
   }
 
   > li > button {
+    padding: 10px 12px;
     width: 100%;
     text-align: left;
     background-color: transparent;
