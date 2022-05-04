@@ -13,6 +13,7 @@ const Select = ({
   label,
   color,
   textWeight,
+  limitDropdown,
   className,
   value,
   defaultValue,
@@ -58,15 +59,20 @@ const Select = ({
   // Set Dropdown position when the select is open
   useEffect(() => {
     if (isOpen && selectRef.current && dropdownRef.current) {
-      const rect = selectRef.current.getBoundingClientRect()
+      const rectSelect = selectRef.current.getBoundingClientRect()
       const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
-      dropdownRef.current.style.top = `${rect.top + scrollTop + rect.height + 3}px`
-      dropdownRef.current.style.left = `${rect.left + scrollLeft}px`
-      dropdownRef.current.style.width = `${rect.width}px`
+      // Calculate dropdown position based on select position
+      dropdownRef.current.style.top = `${rectSelect.top + scrollTop + rectSelect.height + 3}px`
+      dropdownRef.current.style.left = `${rectSelect.left + scrollLeft + rectSelect.width / 2}px`
+      dropdownRef.current.style.minWidth = `${rectSelect.width}px`
+      // Limit witdth of the dropdown to select width
+      if (limitDropdown) {
+        dropdownRef.current.style.maxWidth = `${rectSelect.width}px`
+      }
     }
-  }, [isOpen])
+  }, [isOpen, limitDropdown])
 
   // Detect click outside of the dropdown
   useEffect(() => {
@@ -153,7 +159,8 @@ Select.defaultProps = {
   shape: 'squared',
   presetSize: 'md',
   color: 'black',
-  textWeight: 400
+  textWeight: 400,
+  limitDropdown: false
 }
 
 export default Select

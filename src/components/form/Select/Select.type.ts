@@ -13,7 +13,7 @@ export interface SelectProps extends Omit<React.ComponentProps<'button'>, 'onCha
   presetSize: PresetSize
   label?: React.ReactNode
   color?: Color
-  textSize?: string | number
   textWeight?: TextWeight
+  limitDropdown?: boolean
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }
