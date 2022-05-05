@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "html-react-parser": "^1.4.12",
-    "react-spring": "^9.4.4"
+    "react-spring": "^9.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
