@@ -337,6 +337,18 @@ const Dev = (): JSX.Element => {
           <Tooltip content="purple" color="purple">
             Hover me
           </Tooltip>
+
+          <Tooltip content="Hello World" textFamily="heading" textSize="18px" textWeight={600}>
+            Custom text
+          </Tooltip>
+
+          <Tooltip content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quas." width={250}>
+            Custom width
+          </Tooltip>
+
+          <Tooltip content="Bottom right" position="bottom-right">
+            Custom Position
+          </Tooltip>
         </div>
       </div>
 
