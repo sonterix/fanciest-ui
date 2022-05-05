@@ -22,6 +22,8 @@ export { default as Loader } from 'components/appearance/Loader'
 export { default as Rating } from 'components/appearance/Rating'
 export { default as Skeleton } from 'components/appearance/Skeleton'
 
+export { default as Tooltip } from 'components/floating/Tooltip'
+
 export { default as Input } from 'components/form/Input'
 export { default as Textarea } from 'components/form/Textarea'
 export { default as Select } from 'components/form/Select'

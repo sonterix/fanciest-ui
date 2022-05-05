@@ -1,78 +1,86 @@
-@import '../../../scss/variables';
+@import '../../../styles/helper.scss';
+
+.TooltipChildren {
+  cursor: default;
+}
 
 .Tooltip {
   position: absolute;
+  top: 0;
+  left: 0;
   padding: 4px 8px;
-  font-size: 12px;
-  font-weight: normal;
-  font-style: normal;
-  line-height: 16px;
-  // white-space: nowrap;
-  color: $color-black;
-  background-color: $color-white;
   border-radius: 4px;
-  box-shadow: $popover-shadow;
-  z-index: 99999999100;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 99100;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+  }
+
+  @mixin colorStylesLocal($color-primary, $color-secondary) {
+    color: $color-secondary;
+
+    &:before {
+      background-color: $color-primary;
+    }
+  }
+
+  &.Black {
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
+  }
 
   &.White {
-    color: $color-black;
-    background-color: $color-white;
+    @include colorStylesLocal(var(--color-white), var(--color-black));
   }
 
-  &.Dark {
-    color: $color-white;
-    background-color: $color-black3;
+  &.Yellow {
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
   }
 
-  &.TopLeftPos {
-    transform: translateY(calc(-100% - 5px));
+  &.Orange {
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
   }
 
-  &.TopPos {
-    transform: translate(-50%, calc(-100% - 5px));
+  &.Red {
+    @include colorStylesLocal(var(--color-red), var(--color-white));
   }
 
-  &.TopRightPos {
-    transform: translate(-100%, calc(-100% - 5px));
+  &.Rose {
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
   }
 
-  &.RightTopPos {
-    transform: translateX(5px);
+  &.Green {
+    @include colorStylesLocal(var(--color-green), var(--color-white));
   }
 
-  &.RightPos {
-    transform: translate(5px, -50%);
+  &.Teal {
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
   }
 
-  &.RightBottomPos {
-    transform: translate(5px, -100%);
+  &.Turquoise {
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
   }
 
-  &.BottomLeftPos {
-    transform: translateY(5px);
+  &.Blue {
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
   }
 
-  &.BottomPos {
-    transform: translate(-50%, 5px);
+  &.Purple {
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
   }
 
-  &.BottomRightPos {
-    transform: translate(-100%, 5px);
-  }
+  @include positionStyles();
 
-  &.LeftTopPos {
-    transform: translateX(calc(-100% - 5px));
-  }
-
-  &.LeftPos {
-    transform: translate(calc(-100% - 5px), -50%);
-  }
-
-  &.LeftBottomPos {
-    transform: translate(calc(-100% - 5px), -100%);
-  }
-
-  * {
+  .Content {
+    position: relative;
     color: inherit;
+    z-index: 99101;
   }
 }

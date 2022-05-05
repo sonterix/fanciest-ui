@@ -2,189 +2,181 @@ import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
+import { arrayToClasslist, getColorClasses, getPositions, getTextFamily, getTextWeight } from 'helpers'
+import { TooltipProps } from './Tooltip.type'
 import styles from './Tooltip.module.scss'
 
-type TooltipProps = {
-  className?: string
-  tooltipText: string | React.ReactNode
-  children: React.ReactNode
-  color?: 'white' | 'dark'
-  width?: string | number
-  position?:
-    | 'top-left'
-    | 'top'
-    | 'top-right'
-    | 'right-top'
-    | 'right'
-    | 'right-bottom'
-    | 'bottom-left'
-    | 'bottom'
-    | 'bottom-right'
-    | 'left-top'
-    | 'left'
-    | 'left-bottom'
-}
-
 const Tooltip = ({
-  className,
-  tooltipText,
-  children,
-  color,
+  content,
+  position,
   width,
-  position
+  color,
+  textFamily,
+  textSize,
+  textWeight,
+  className,
+  style,
+  children,
+  ...props
 }: TooltipProps): JSX.Element => {
-  const [isOpen, setOpen] = useState<null | EventTarget>(null)
-  const [modalPos, setModalPos] = useState({
+  const classesTooltip = arrayToClasslist([
+    styles.Tooltip,
+
+    ...getPositions(position, styles),
+
+    ...getColorClasses(color, styles),
+
+    ...getTextFamily(textFamily),
+
+    ...getTextWeight(textWeight)
+  ])
+
+  const classesTooltipChildren = arrayToClasslist([styles.TooltipChildren, className || ''])
+
+  const [target, setTarget] = useState<null | HTMLDivElement>(null)
+  const [modalPos, setModalPos] = useState<{ top: number; left: number }>({
     top: 0,
     left: 0
   })
 
-  const transition = useTransition(isOpen, {
+  const transition = useTransition(!!target, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: {
-      duration: 100
+      duration: 200
     }
   })
 
-  const classes: string = [
-    'mu-tooltip-modal',
-    styles.Tooltip,
-
-    ...(color === 'white' ? [styles.White] : []),
-    ...(color === 'dark' ? [styles.Dark] : []),
-
-    ...(position === 'top-left' ? [styles.TopLeftPos] : []),
-    ...(position === 'top' ? [styles.TopPos] : []),
-    ...(position === 'top-right' ? [styles.TopRightPos] : []),
-    ...(position === 'right-top' ? [styles.RightTopPos] : []),
-    ...(position === 'right' ? [styles.RightPos] : []),
-    ...(position === 'right-bottom' ? [styles.RightBottomPos] : []),
-    ...(position === 'bottom-left' ? [styles.BottomLeftPos] : []),
-    ...(position === 'bottom' ? [styles.BottomPos] : []),
-    ...(position === 'bottom-right' ? [styles.BottomRightPos] : []),
-    ...(position === 'left-top' ? [styles.LeftTopPos] : []),
-    ...(position === 'left' ? [styles.LeftPos] : []),
-    ...(position === 'left-bottom' ? [styles.LeftBottomPos] : [])
-  ].join(' ')
-
+  // Set position of element based on target element
   useEffect(() => {
-    if (!isOpen || typeof isOpen === 'boolean') return
+    if (target) {
+      const targetRect = target.getBoundingClientRect()
 
-    const currentTarget = isOpen as HTMLElement
-    const { top, left, width, height } = currentTarget.getBoundingClientRect()
+      switch (position) {
+        case 'top-left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-    switch (position) {
-      case 'top-left':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset
-        })
-        break
+        case 'top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+          })
+          break
 
-      case 'top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width / 2
-        })
-        break
+        case 'top-right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'top-right':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width
-        })
-        break
+        case 'right-top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'right-top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width
-        })
-        break
+        case 'right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'right':
-        setModalPos({
-          top: top + window.pageYOffset + height / 2,
-          left: left + window.pageXOffset + width
-        })
-        break
+        case 'right-bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'right-bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width
-        })
-        break
+        case 'bottom-left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'bottom-left':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset
-        })
-        break
+        case 'bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+          })
+          break
 
-      case 'bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width / 2
-        })
-        break
+        case 'bottom-right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'bottom-right':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width
-        })
-        break
+        case 'left-top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'left-top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset
-        })
-        break
+        case 'left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'left':
-        setModalPos({
-          top: top + window.pageYOffset + height / 2,
-          left: left + window.pageXOffset
-        })
-        break
+        case 'left-bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'left-bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset
-        })
-        break
-
-      default:
-        break
+        default:
+          break
+      }
     }
-  }, [isOpen])
+  }, [target, position])
+
+  // When mouse is over the childern
+  const handleMouseOver = (event: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>): void => {
+    setTarget(event.target as HTMLDivElement)
+  }
+
+  // When mouse is out the childern
+  const handleMouseOut = (): void => {
+    setTarget(null)
+  }
 
   return (
     <>
       <div
-        className={`mu-tooltip ${className}`}
-        onMouseOver={event => setOpen(event.currentTarget)}
-        onMouseOut={() => setOpen(null)}
-        onFocus={() => {}}
-        onBlur={() => {}}
+        {...props}
+        className={classesTooltipChildren}
+        style={style}
+        onMouseOver={handleMouseOver}
+        onFocus={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        onBlur={handleMouseOut}
       >
         {children}
       </div>
 
       {transition(
-        (springStyles, item) =>
-          item &&
+        (animationStyles, isTarget) =>
+          isTarget &&
           createPortal(
-            <animated.div style={springStyles}>
-              <div className={classes} style={{ ...modalPos, maxWidth: width }}>
-                {tooltipText}
-              </div>
+            <animated.div
+              className={classesTooltip}
+              style={{ ...modalPos, maxWidth: width, fontSize: textSize, ...animationStyles }}
+            >
+              <div className={styles.Content}>{content}</div>
             </animated.div>,
             document.body
           )
@@ -194,10 +186,12 @@ const Tooltip = ({
 }
 
 Tooltip.defaultProps = {
-  className: '',
   position: 'top',
-  width: 'auto',
-  color: 'dark'
+  width: 'none',
+  color: 'black',
+  textFamily: '',
+  textSize: '12px',
+  textWeight: 400
 }
 
 export default Tooltip

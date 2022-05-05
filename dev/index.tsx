@@ -32,7 +32,8 @@ import {
   Select,
   Skeleton,
   Switch,
-  Textarea
+  Textarea,
+  Tooltip
 } from '../src/components'
 
 const Dev = (): JSX.Element => {
@@ -294,6 +295,48 @@ const Dev = (): JSX.Element => {
           <Skeleton width={500} height={60} />
 
           <Skeleton layout="circle" width={80} height={80} />
+        </div>
+      </div>
+
+      <div className="dev__block">
+        <h1 className="dev__block__title">Floating</h1>
+
+        <h2 className="dev__block__subtitle">Tooltip</h2>
+
+        <div className="dev__block__preview">
+          <Tooltip content="black" color="black">
+            Hover me
+          </Tooltip>
+          <Tooltip content="white" color="white">
+            Hover me
+          </Tooltip>
+          <Tooltip content="yellow" color="yellow">
+            Hover me
+          </Tooltip>
+          <Tooltip content="orange" color="orange">
+            Hover me
+          </Tooltip>
+          <Tooltip content="red" color="red">
+            Hover me
+          </Tooltip>
+          <Tooltip content="rose" color="rose">
+            Hover me
+          </Tooltip>
+          <Tooltip content="green" color="green">
+            Hover me
+          </Tooltip>
+          <Tooltip content="teal" color="teal">
+            Hover me
+          </Tooltip>
+          <Tooltip content="turquoise" color="turquoise">
+            Hover me
+          </Tooltip>
+          <Tooltip content="blue" color="blue">
+            Hover me
+          </Tooltip>
+          <Tooltip content="purple" color="purple">
+            Hover me
+          </Tooltip>
         </div>
       </div>
 

@@ -1,4 +1,4 @@
-import { Color, TextFamiy, TextWeight } from 'types'
+import { Color, Position, TextFamiy, TextWeight } from 'types'
 
 export const arrayToClasslist = (arr: string[]): string => {
   const joined = arr.join(' ').trim()
@@ -43,6 +43,25 @@ export const getTextWeight = (textWeight: TextWeight | undefined): string[] => {
     ...(textWeight === 700 ? ['fui-weight-700'] : []),
     ...(textWeight === 800 ? ['fui-weight-800'] : []),
     ...(textWeight === 900 ? ['fui-weight-900'] : [])
+  ]
+
+  return classesArr
+}
+
+export const getPositions = (position: Position | undefined, styles: { [className: string]: string }): string[] => {
+  const classesArr = [
+    ...(position === 'top-left' ? [styles.TopLeftPos] : []),
+    ...(position === 'top' ? [styles.TopPos] : []),
+    ...(position === 'top-right' ? [styles.TopRightPos] : []),
+    ...(position === 'right-top' ? [styles.RightTopPos] : []),
+    ...(position === 'right' ? [styles.RightPos] : []),
+    ...(position === 'right-bottom' ? [styles.RightBottomPos] : []),
+    ...(position === 'bottom-left' ? [styles.BottomLeftPos] : []),
+    ...(position === 'bottom' ? [styles.BottomPos] : []),
+    ...(position === 'bottom-right' ? [styles.BottomRightPos] : []),
+    ...(position === 'left-top' ? [styles.LeftTopPos] : []),
+    ...(position === 'left' ? [styles.LeftPos] : []),
+    ...(position === 'left-bottom' ? [styles.LeftBottomPos] : [])
   ]
 
   return classesArr

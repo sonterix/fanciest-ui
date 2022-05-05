@@ -130,50 +130,52 @@ $xxxl: 1981px;
   }
 }
 
-@mixin textFamilyStyles {
-  &.Main {
-    font-family: var(--font-main);
+@mixin positionStyles() {
+  &.TopLeftPos {
+    transform: translateY(calc(-100% - 5px));
   }
 
-  &.Heading {
-    font-family: var(--font-heading);
-  }
-}
-
-@mixin textWeightStyles {
-  &.Weight100 {
-    font-weight: 100;
+  &.TopPos {
+    transform: translate(-50%, calc(-100% - 5px));
   }
 
-  &.Weight200 {
-    font-weight: 200;
+  &.TopRightPos {
+    transform: translate(-100%, calc(-100% - 5px));
   }
 
-  &.Weight300 {
-    font-weight: 300;
+  &.RightTopPos {
+    transform: translateX(5px);
   }
 
-  &.Weight400 {
-    font-weight: 400;
+  &.RightPos {
+    transform: translate(5px, -50%);
   }
 
-  &.Weight500 {
-    font-weight: 500;
+  &.RightBottomPos {
+    transform: translate(5px, -100%);
   }
 
-  &.Weight600 {
-    font-weight: 600;
+  &.BottomLeftPos {
+    transform: translateY(5px);
   }
 
-  &.Weight700 {
-    font-weight: 700;
+  &.BottomPos {
+    transform: translate(-50%, 5px);
   }
 
-  &.Weight800 {
-    font-weight: 800;
+  &.BottomRightPos {
+    transform: translate(-100%, 5px);
   }
 
-  &.Weight900 {
-    font-weight: 900;
+  &.LeftTopPos {
+    transform: translateX(calc(-100% - 5px));
+  }
+
+  &.LeftPos {
+    transform: translate(calc(-100% - 5px), -50%);
+  }
+
+  &.LeftBottomPos {
+    transform: translate(calc(-100% - 5px), -100%);
   }
 }
