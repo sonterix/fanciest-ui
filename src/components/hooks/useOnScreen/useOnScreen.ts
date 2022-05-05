@@ -4,6 +4,8 @@ const useOnScreen = (ref: React.MutableRefObject<HTMLElement>, rootMargin?: stri
   const [isIntersecting, setIntersecting] = useState<boolean>(false)
 
   useEffect(() => {
+    const element = ref.current
+
     const options = {
       rootMargin,
       threshold
@@ -14,12 +16,14 @@ const useOnScreen = (ref: React.MutableRefObject<HTMLElement>, rootMargin?: stri
       setIntersecting(entry.isIntersecting)
     }, options)
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (element) {
+      observer.observe(element)
     }
 
     return () => {
-      observer.unobserve(ref.current)
+      if (element) {
+        observer.unobserve(element)
+      }
     }
   }, [ref, rootMargin, threshold])
 
