@@ -349,6 +349,10 @@ const Dev = (): JSX.Element => {
           <Tooltip content="Bottom right" position="bottom-right">
             Custom Position
           </Tooltip>
+
+          <Tooltip content="On click action" actionType="click">
+            Works on click
+          </Tooltip>
         </div>
       </div>
 

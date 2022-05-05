@@ -1,7 +1,7 @@
 @import '../../../styles/helper.scss';
 
 .TooltipChildren {
-  cursor: default;
+  user-select: none;
 }
 
 .Tooltip {

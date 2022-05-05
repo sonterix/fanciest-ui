@@ -14,6 +14,7 @@ const Tooltip = ({
   textFamily,
   textSize,
   textWeight,
+  actionType,
   className,
   style,
   children,
@@ -44,7 +45,7 @@ const Tooltip = ({
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: {
-      duration: 200
+      duration: 150
     }
   })
 
@@ -154,16 +155,29 @@ const Tooltip = ({
     setTarget(null)
   }
 
+  const handleToggle = (event: React.MouseEvent<HTMLDivElement>): void => {
+    setTarget(prev => (prev ? null : (event.target as HTMLDivElement)))
+  }
+
   return (
     <>
       <div
         {...props}
         className={classesTooltipChildren}
-        style={style}
-        onMouseOver={handleMouseOver}
-        onFocus={handleMouseOver}
-        onMouseOut={handleMouseOut}
-        onBlur={handleMouseOut}
+        style={{ ...style, ...(actionType === 'click' ? { cursor: 'pointer' } : {}) }}
+        {...(actionType === 'click'
+          ? {
+              onClick: handleToggle
+            }
+          : {})}
+        {...(actionType === 'hover'
+          ? {
+              onMouseOver: handleMouseOver,
+              onFocus: handleMouseOver,
+              onMouseOut: handleMouseOut,
+              onBlur: handleMouseOut
+            }
+          : {})}
       >
         {children}
       </div>
@@ -191,7 +205,8 @@ Tooltip.defaultProps = {
   color: 'black',
   textFamily: '',
   textSize: '12px',
-  textWeight: 400
+  textWeight: 400,
+  actionType: 'hover'
 }
 
 export default Tooltip

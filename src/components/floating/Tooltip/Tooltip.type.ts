@@ -8,4 +8,5 @@ export interface TooltipProps extends React.ComponentProps<'div'> {
   textFamily?: TextFamiy
   textSize?: string | number
   textWeight?: TextWeight
+  actionType?: 'hover' | 'click'
 }
