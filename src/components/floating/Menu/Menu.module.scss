@@ -1,0 +1,71 @@
+@import '../../../scss/variables';
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999090;
+}
+
+.Menu {
+  position: absolute;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: fit-content;
+  background-color: $color-white;
+  border-radius: 5px;
+  box-shadow: $nav-shadow;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 99999999100;
+
+  &.TopLeftPos {
+    transform: translateY(calc(-100% - 5px));
+  }
+
+  &.TopPos {
+    transform: translate(-50%, calc(-100% - 5px));
+  }
+
+  &.TopRightPos {
+    transform: translate(-100%, calc(-100% - 5px));
+  }
+
+  &.RightTopPos {
+    transform: translateX(5px);
+  }
+
+  &.RightPos {
+    transform: translate(5px, -50%);
+  }
+
+  &.RightBottomPos {
+    transform: translate(5px, -100%);
+  }
+
+  &.BottomLeftPos {
+    transform: translateY(5px);
+  }
+
+  &.BottomPos {
+    transform: translate(-50%, 5px);
+  }
+
+  &.BottomRightPos {
+    transform: translate(-100%, 5px);
+  }
+
+  &.LeftTopPos {
+    transform: translateX(calc(-100% - 5px));
+  }
+
+  &.LeftPos {
+    transform: translate(calc(-100% - 5px), -50%);
+  }
+
+  &.LeftBottomPos {
+    transform: translate(calc(-100% - 5px), -100%);
+  }
+}

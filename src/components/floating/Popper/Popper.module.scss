@@ -1,0 +1,78 @@
+@import '../../../scss/variables';
+
+.Popper {
+  position: absolute;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 16px;
+  white-space: nowrap;
+  color: $color-black;
+  background-color: $color-white;
+  border-radius: 4px;
+  box-shadow: $popover-shadow;
+  z-index: 99999999100;
+
+  &.White {
+    color: $color-black;
+    background-color: $color-white;
+  }
+
+  &.Dark {
+    color: $color-white;
+    background-color: $color-black3;
+  }
+
+  &.TopLeftPos {
+    transform: translateY(calc(-100% - 2px));
+  }
+
+  &.TopPos {
+    transform: translate(-50%, calc(-100% - 2px));
+  }
+
+  &.TopRightPos {
+    transform: translate(-100%, calc(-100% - 2px));
+  }
+
+  &.RightTopPos {
+    transform: translateX(2px);
+  }
+
+  &.RightPos {
+    transform: translate(2px, -50%);
+  }
+
+  &.RightBottomPos {
+    transform: translate(2px, -100%);
+  }
+
+  &.BottomLeftPos {
+    transform: translateY(2px);
+  }
+
+  &.BottomPos {
+    transform: translate(-50%, 2px);
+  }
+
+  &.BottomRightPos {
+    transform: translate(-100%, 2px);
+  }
+
+  &.LeftTopPos {
+    transform: translateX(calc(-100% - 2px));
+  }
+
+  &.LeftPos {
+    transform: translate(calc(-100% - 2px), -50%);
+  }
+
+  &.LeftBottomPos {
+    transform: translate(calc(-100% - 2px), -100%);
+  }
+
+  * {
+    color: inherit;
+  }
+}
