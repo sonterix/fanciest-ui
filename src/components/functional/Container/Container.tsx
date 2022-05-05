@@ -25,9 +25,9 @@ const Container = ({
         ...(style || {}),
         maxWidth: width,
         ...(spaceTop ? { paddingTop: spaceTop } : {}),
-        paddingRight: spaceRight || '15px',
+        ...(spaceRight ? { paddingRight: spaceRight } : {}),
         ...(spaceBottom ? { paddingBottom: spaceBottom } : {}),
-        paddingLeft: spaceLeft || '15px'
+        ...(spaceLeft ? { paddingLeft: spaceLeft } : {})
       }}
     >
       {children}
