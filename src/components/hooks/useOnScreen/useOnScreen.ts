@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 
-const useOnScreen = (ref: React.MutableRefObject<HTMLElement>, rootMargin?: string, threshold?: number): boolean => {
+const useOnScreen = (ref: React.RefObject<HTMLElement>, rootMargin?: string, threshold?: number): boolean => {
   const [isIntersecting, setIntersecting] = useState<boolean>(false)
 
   useEffect(() => {
     const element = ref.current
 
     const options = {
-      rootMargin,
-      threshold
+      rootMargin: rootMargin || '0px',
+      threshold: threshold || 1
     }
 
     // Track element viewport status
