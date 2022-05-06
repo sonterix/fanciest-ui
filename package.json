@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "license": "MIT",
   "name": "fanciest-ui",
   "author": "Nick Bukovskyi",
@@ -19,6 +19,7 @@
   ],
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "types": "dist/cjs/types/index.d.ts",
   "scripts": {
     "build": "rm -rf ./dist && rollup -c",
     "dev-build": "rm -rf ./demo && rollup -c rollup.dev.config.js",
