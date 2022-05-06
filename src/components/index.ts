@@ -24,6 +24,7 @@ export { default as Skeleton } from 'components/appearance/Skeleton'
 
 export { default as Tooltip } from 'components/floating/Tooltip'
 export { default as Menu } from 'components/floating/Menu'
+export { default as Modal } from 'components/floating/Modal'
 
 export { default as Input } from 'components/form/Input'
 export { default as Textarea } from 'components/form/Textarea'

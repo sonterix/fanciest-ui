@@ -24,6 +24,7 @@ import {
   Input,
   Loader,
   Menu,
+  Modal,
   P1,
   P2,
   P3,
@@ -53,6 +54,8 @@ const Dev = (): JSX.Element => {
   const menuTriggerRef = useRef<HTMLButtonElement>(null)
   const [isMenu, setMenu] = useState<boolean>(false)
   const [menuProps, setMenuProps] = useState<{ [key: string]: string }>({})
+
+  const [isModal, setModal] = useState<boolean>(false)
 
   return (
     <section className="dev">
@@ -263,7 +266,7 @@ const Dev = (): JSX.Element => {
 
           <Loader color="turquoise" width={130} height={130} />
 
-          <Loader wrapperWidth={200} wrapperHeight={200} />
+          <Loader wrapperMaxWidth={200} wrapperMaxHeight={200} />
         </div>
 
         <h2 className="dev__block__subtitle">Rating</h2>
@@ -416,6 +419,41 @@ const Dev = (): JSX.Element => {
               <div style={{ padding: '5px 10px' }}>Menu 3</div>
             </Menu>
           )}
+        </div>
+
+        <h2 className="dev__block__subtitle">Modal</h2>
+
+        <div className="dev__block__preview">
+          <button type="button" onClick={() => setModal(true)}>
+            Open modal
+          </button>
+
+          <Modal
+            isOpen={isModal}
+            onClose={() => setModal(false)}
+            maxWidth={400}
+            position="center"
+            shape="rounded"
+            header={<h2>Header content</h2>}
+            footer={<h2>Footer content</h2>}
+          >
+            <h1>Lorem ipsum dolor sit.</h1>
+            <hr />
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cum vero. Quaerat commodi dicta, sunt
+              omnis sit officia magnam quasi!
+            </p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iste esse cupiditate aut officia
+              perferendis provident maxime alias, blanditiis, veritatis vitae impedit possimus ex quae minus saepe sed
+              quaerat accusantium eum, facere asperiores consequuntur sapiente quisquam? In ea unde sint eligendi ipsam
+              sapiente delectus quos aliquam officia voluptas veniam repellat exercitationem soluta eveniet hic officiis
+              impedit, id dicta natus eum. Eum maxime deleniti, in dolorum dolorem quibusdam iure magnam a, molestias
+              pariatur sint, asperiores facere esse odit consectetur iste ea.
+            </p>
+          </Modal>
         </div>
       </div>
 
