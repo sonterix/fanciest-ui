@@ -3,7 +3,7 @@ import { Color, Position, TextFamiy, TextWeight } from 'types'
 export interface TooltipProps extends React.ComponentProps<'div'> {
   content: React.ReactNode
   position?: Position
-  width?: string | number
+  maxWidth?: string | number
   color?: Color
   textFamily?: TextFamiy
   textSize?: string | number

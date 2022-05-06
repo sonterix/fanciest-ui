@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 import './index.scss'
@@ -23,6 +23,7 @@ import {
   Icon,
   Input,
   Loader,
+  Menu,
   P1,
   P2,
   P3,
@@ -38,11 +39,20 @@ import {
 
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
+
   const [textarea, setTextarea] = useState<{ [key: string]: string }>({})
+
   const [select, setSelect] = useState<string>('three')
+
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
+
   const [radio, setRadio] = useState<{ [key: string]: string }>({})
+
   const [switchValue, setSwitchValue] = useState<{ [key: string]: boolean }>({})
+
+  const menuTriggerRef = useRef<HTMLButtonElement>(null)
+  const [isMenu, setMenu] = useState<boolean>(false)
+  const [menuProps, setMenuProps] = useState<{ [key: string]: string }>({})
 
   return (
     <section className="dev">
@@ -353,6 +363,59 @@ const Dev = (): JSX.Element => {
           <Tooltip content="On click action" actionType="click">
             Works on click
           </Tooltip>
+        </div>
+
+        <h2 className="dev__block__subtitle">Menu</h2>
+
+        <div className="dev__block__preview">
+          <button type="button" ref={menuTriggerRef} onClick={() => setMenu(prev => !prev)}>
+            Toggle menu
+          </button>
+
+          <select
+            value={menuProps?.color || 'white'}
+            onChange={({ target }) => setMenuProps(prev => ({ ...prev, color: target.value }))}
+          >
+            <option value="black">Black</option>
+            <option value="white">White</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="red">Red</option>
+            <option value="rose">Rose</option>
+            <option value="green">Green</option>
+            <option value="teal">Teal</option>
+            <option value="turquoise">Turquoise</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purplr</option>
+          </select>
+
+          <select
+            value={menuProps?.position || 'bottom'}
+            onChange={({ target }) => setMenuProps(prev => ({ ...prev, position: target.value }))}
+          >
+            <option value="top-left">top-left</option>
+            <option value="top">top</option>
+            <option value="top-right">top-right</option>
+            <option value="right-top">right-top</option>
+            <option value="right">right</option>
+            <option value="right-bottom">right-bottom</option>
+            <option value="bottom-left">bottom-left</option>
+            <option value="bottom">bottom</option>
+            <option value="bottom-right">bottom-right</option>
+            <option value="left-top">left-top</option>
+            <option value="left">left</option>
+            <option value="left-bottom">left-bottom</option>
+          </select>
+
+          {menuTriggerRef.current && (
+            <Menu anchor={menuTriggerRef.current} isOpen={isMenu} onClose={() => setMenu(false)} {...menuProps}>
+              <div style={{ padding: '5px 10px' }}>Menu 1</div>
+              <hr />
+              <div style={{ padding: '5px 10px' }}>Menu 2</div>
+              <hr />
+              <div style={{ padding: '5px 10px' }}>Menu 3</div>
+            </Menu>
+          )}
         </div>
       </div>
 

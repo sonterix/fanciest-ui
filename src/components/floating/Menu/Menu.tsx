@@ -1,235 +1,151 @@
-// @ts-ignore
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { MenuItemProps } from '../MenuItem/MenuItem'
+import { arrayToClasslist, getColorClasses, getPositions } from 'helpers'
+import { MenuProps } from './Menu.type'
 import styles from './Menu.module.scss'
 
-const isInViewport = (top: number, left: number, bottom: number, right: number) =>
-  top >= 0 &&
-  left >= 0 &&
-  bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-  right <= (window.innerWidth || document.documentElement.clientWidth)
-
-interface MenuItem extends JSX.Element {
-  props: MenuItemProps
-}
-
-type MenuProps = {
-  className?: string
-  isOpen: null | EventTarget
-  handleClose: () => void
-  children: MenuItem | Array<MenuItem>
-  position?:
-    | 'top-left'
-    | 'top'
-    | 'top-right'
-    | 'right-top'
-    | 'right'
-    | 'right-bottom'
-    | 'bottom-left'
-    | 'bottom'
-    | 'bottom-right'
-    | 'left-top'
-    | 'left'
-    | 'left-bottom'
-}
-
-type MenuPostition = {
-  top: number
-  left: number
-  maxHeight: number | string
-  transform?: string
-}
-
 const Menu = ({
-  className,
   isOpen,
+  onClose,
+  anchor,
   position,
-  handleClose,
-  children
+  maxWidth,
+  maxHeight,
+  color,
+  className,
+  style,
+  children,
+  ...props
 }: MenuProps): JSX.Element | null => {
+  const classes = arrayToClasslist([
+    styles.Menu,
+
+    ...getPositions(position, styles),
+
+    ...getColorClasses(color, styles),
+
+    className || ''
+  ])
+
+  const [modalPos, setModalPos] = useState<{ top: number; left: number }>({
+    top: 0,
+    left: 0
+  })
+
   const transition = useTransition(isOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: {
-      duration: 100
+      duration: 150
     }
   })
 
-  const menuRef = useRef<HTMLDivElement>(null)
-  const [modalPos, setModalPos] = useState<MenuPostition>({
-    top: 0,
-    left: 0,
-    maxHeight: '100%'
-  })
-
-  const classes: string = [
-    'mu-menu-modal',
-    styles.Menu,
-
-    ...(position === 'top-left' ? [styles.TopLeftPos] : []),
-    ...(position === 'top' ? [styles.TopPos] : []),
-    ...(position === 'top-right' ? [styles.TopRightPos] : []),
-    ...(position === 'right-top' ? [styles.RightTopPos] : []),
-    ...(position === 'right' ? [styles.RightPos] : []),
-    ...(position === 'right-bottom' ? [styles.RightBottomPos] : []),
-    ...(position === 'bottom-left' ? [styles.BottomLeftPos] : []),
-    ...(position === 'bottom' ? [styles.BottomPos] : []),
-    ...(position === 'bottom-right' ? [styles.BottomRightPos] : []),
-    ...(position === 'left-top' ? [styles.LeftTopPos] : []),
-    ...(position === 'left' ? [styles.LeftPos] : []),
-    ...(position === 'left-bottom' ? [styles.LeftBottomPos] : []),
-
-    className
-  ].join(' ')
-
-  // Prevent scroll when menu is open
+  // Set position of element based on target element
   useEffect(() => {
-    if (isOpen) document.body.classList.add('modal-open')
+    if (anchor) {
+      const targetRect = anchor.getBoundingClientRect()
 
-    return () => document.body.classList.remove('modal-open')
-  }, [isOpen])
+      switch (position) {
+        case 'top-left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-  useEffect(() => {
-    if (!isOpen) return
+        case 'top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+          })
+          break
 
-    const currentTarget = isOpen as HTMLElement
-    const { top = 0, left = 0, width = 0, height = 0 } = currentTarget?.getBoundingClientRect()
+        case 'top-right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-    switch (position) {
-      case 'top-left':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset,
-          maxHeight: '100%'
-        })
-        break
+        case 'right-top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width / 2,
-          maxHeight: '100%'
-        })
-        break
+        case 'right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'top-right':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width,
-          maxHeight: '100%'
-        })
-        break
+        case 'right-bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'right-top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset + width,
-          maxHeight: '100%'
-        })
-        break
+        case 'bottom-left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'right':
-        setModalPos({
-          top: top + window.pageYOffset + height / 2,
-          left: left + window.pageXOffset + width,
-          maxHeight: '100%'
-        })
-        break
+        case 'bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+          })
+          break
 
-      case 'right-bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width,
-          maxHeight: '100%'
-        })
-        break
+        case 'bottom-right':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset + targetRect.width
+          })
+          break
 
-      case 'bottom-left':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset,
-          maxHeight: '100%'
-        })
-        break
+        case 'left-top':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width / 2,
-          maxHeight: '100%'
-        })
-        break
+        case 'left':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'bottom-right':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset + width,
-          maxHeight: '100%'
-        })
-        break
+        case 'left-bottom':
+          setModalPos({
+            top: targetRect.top + window.pageYOffset + targetRect.height,
+            left: targetRect.left + window.pageXOffset
+          })
+          break
 
-      case 'left-top':
-        setModalPos({
-          top: top + window.pageYOffset,
-          left: left + window.pageXOffset,
-          maxHeight: '100%'
-        })
-        break
-
-      case 'left':
-        setModalPos({
-          top: top + window.pageYOffset + height / 2,
-          left: left + window.pageXOffset,
-          maxHeight: '100%'
-        })
-        break
-
-      case 'left-bottom':
-        setModalPos({
-          top: top + window.pageYOffset + height,
-          left: left + window.pageXOffset,
-          maxHeight: '100%'
-        })
-        break
-
-      default:
-        break
+        default:
+          break
+      }
     }
-  }, [isOpen])
-
-  useEffect(() => {
-    if (!menuRef.current || !isOpen) return
-
-    const currentTarget = isOpen as HTMLElement
-    const target = currentTarget?.getBoundingClientRect()
-
-    const currentMenu = menuRef.current as HTMLElement
-    const { top = 0, left = 0, bottom = 0, right = 0 } = currentMenu?.getBoundingClientRect()
-
-    if (!isInViewport(top, left, bottom, right))
-      setModalPos({
-        top: target.top + window.pageYOffset,
-        left: target.left + window.pageXOffset,
-        maxHeight: `calc(100% - ${target.y + 5}px)`,
-        transform: 'none'
-      })
-  }, [menuRef.current])
+  }, [anchor, position])
 
   return transition(
-    (springStyles, item) =>
-      item &&
+    (animationStyles, isItem) =>
+      isItem &&
       createPortal(
-        <animated.div style={springStyles}>
-          <div
-            className={`mu-overlay ${styles.Overlay}`}
-            onClick={handleClose}
-            aria-hidden="true"
-          />
-          <div ref={menuRef} className={classes} style={{ ...modalPos }}>
+        <animated.div style={animationStyles}>
+          <div className={styles.MenuOverlay} onClick={onClose} aria-hidden="true" />
+          <div {...props} className={classes} style={{ ...modalPos, ...style, maxWidth, maxHeight }}>
             {children}
           </div>
         </animated.div>,
@@ -239,8 +155,10 @@ const Menu = ({
 }
 
 Menu.defaultProps = {
-  className: '',
-  position: 'bottom-left'
+  position: 'bottom',
+  maxWidth: 'none',
+  maxHeight: 'none',
+  color: 'white'
 }
 
 export default Menu

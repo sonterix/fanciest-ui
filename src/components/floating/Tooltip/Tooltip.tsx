@@ -9,7 +9,7 @@ import styles from './Tooltip.module.scss'
 const Tooltip = ({
   content,
   position,
-  width,
+  maxWidth,
   color,
   textFamily,
   textSize,
@@ -188,7 +188,7 @@ const Tooltip = ({
           createPortal(
             <animated.div
               className={classesTooltip}
-              style={{ ...modalPos, maxWidth: width, fontSize: textSize, ...animationStyles }}
+              style={{ ...modalPos, maxWidth, fontSize: textSize, ...animationStyles }}
             >
               <div className={styles.Content}>{content}</div>
             </animated.div>,

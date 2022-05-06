@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import Icon from '../../display/Icon/Icon'
 import styles from './MainModal.module.scss'
 
 type MainModalProps = {
@@ -100,18 +99,16 @@ const MainModal = ({
           {transitionSlide(
             (springStylesSlide, itemSlide) =>
               itemSlide && (
-                <animated.div
-                  className={classes}
-                  style={{ maxWidth, ...springStylesSlide }}
-                  {...props}
-                >
-                  {!hideCloseActions && <button
-                    type="button"
-                    className={`mu-close-btn ${styles.XMarkBtn}`}
-                    onClick={hideCloseActions ? () => {} : handleClose}
-                  >
-                    <Icon icon="icon-x-mark" size={10} />
-                  </button>}
+                <animated.div className={classes} style={{ maxWidth, ...springStylesSlide }} {...props}>
+                  {!hideCloseActions && (
+                    <button
+                      type="button"
+                      className={`mu-close-btn ${styles.XMarkBtn}`}
+                      onClick={hideCloseActions ? () => {} : handleClose}
+                    >
+                      <Icon icon="icon-x-mark" size={10} />
+                    </button>
+                  )}
 
                   {header && <div className={`mu-header ${styles.Header}`}>{header}</div>}
                   <div className={`mu-body ${styles.Body}`}>{children}</div>
