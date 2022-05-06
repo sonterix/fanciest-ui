@@ -60,11 +60,11 @@ const Select = ({
   useEffect(() => {
     if (isOpen && selectRef.current && dropdownRef.current) {
       const rectSelect = selectRef.current.getBoundingClientRect()
-      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
 
       // Calculate dropdown position based on select position
-      dropdownRef.current.style.top = `${rectSelect.top + scrollTop + rectSelect.height + 3}px`
+      dropdownRef.current.style.top = `${rectSelect.top + scrollTop + rectSelect.height}px`
       dropdownRef.current.style.left = `${rectSelect.left + scrollLeft + rectSelect.width / 2}px`
       dropdownRef.current.style.minWidth = `${rectSelect.width}px`
       // Limit witdth of the dropdown to select width

@@ -50,18 +50,18 @@ export const getTextWeight = (textWeight: TextWeight | undefined): string[] => {
 
 export const getPositions = (position: Position | undefined, styles: { [className: string]: string }): string[] => {
   const classesArr = [
-    ...(position === 'top-left' ? [styles.TopLeftPos] : []),
-    ...(position === 'top' ? [styles.TopPos] : []),
-    ...(position === 'top-right' ? [styles.TopRightPos] : []),
-    ...(position === 'right-top' ? [styles.RightTopPos] : []),
-    ...(position === 'right' ? [styles.RightPos] : []),
-    ...(position === 'right-bottom' ? [styles.RightBottomPos] : []),
-    ...(position === 'bottom-left' ? [styles.BottomLeftPos] : []),
-    ...(position === 'bottom' ? [styles.BottomPos] : []),
-    ...(position === 'bottom-right' ? [styles.BottomRightPos] : []),
-    ...(position === 'left-top' ? [styles.LeftTopPos] : []),
-    ...(position === 'left' ? [styles.LeftPos] : []),
-    ...(position === 'left-bottom' ? [styles.LeftBottomPos] : [])
+    ...(position === 'top-left' ? [styles.TopLeft] : []),
+    ...(position === 'top' ? [styles.Top] : []),
+    ...(position === 'top-right' ? [styles.TopRight] : []),
+    ...(position === 'right-top' ? [styles.RightTop] : []),
+    ...(position === 'right' ? [styles.Right] : []),
+    ...(position === 'right-bottom' ? [styles.RightBottom] : []),
+    ...(position === 'bottom-left' ? [styles.BottomLeft] : []),
+    ...(position === 'bottom' ? [styles.Bottom] : []),
+    ...(position === 'bottom-right' ? [styles.BottomRight] : []),
+    ...(position === 'left-top' ? [styles.LeftTop] : []),
+    ...(position === 'left' ? [styles.Left] : []),
+    ...(position === 'left-bottom' ? [styles.LeftBottom] : [])
   ]
 
   return classesArr

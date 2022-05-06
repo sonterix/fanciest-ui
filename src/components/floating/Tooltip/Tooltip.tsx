@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -34,13 +34,14 @@ const Tooltip = ({
 
   const classesTooltipChildren = arrayToClasslist([styles.TooltipChildren, className || ''])
 
-  const [target, setTarget] = useState<null | HTMLDivElement>(null)
+  const tooltipChildrenRef = useRef<HTMLDivElement>(null)
+  const [isOpen, setOpen] = useState<boolean>(false)
   const [modalPos, setModalPos] = useState<{ top: number; left: number }>({
     top: 0,
     left: 0
   })
 
-  const transition = useTransition(!!target, {
+  const transition = useTransition(isOpen, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
@@ -51,91 +52,93 @@ const Tooltip = ({
 
   // Set position of element based on target element
   useEffect(() => {
-    if (target) {
-      const targetRect = target.getBoundingClientRect()
+    if (isOpen && tooltipChildrenRef.current) {
+      const tooltipRect = tooltipChildrenRef.current.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
 
       switch (position) {
         case 'top-left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset
+            top: tooltipRect.top + scrollTop,
+            left: tooltipRect.left + scrollLeft
           })
           break
 
         case 'top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+            top: tooltipRect.top + scrollTop,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width / 2
           })
           break
 
         case 'top-right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: tooltipRect.top + scrollTop,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width
           })
           break
 
         case 'right-top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: tooltipRect.top + scrollTop,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width
           })
           break
 
         case 'right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: tooltipRect.top + scrollTop + tooltipRect.height / 2,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width
           })
           break
 
         case 'right-bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: tooltipRect.top + scrollTop + tooltipRect.height,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width
           })
           break
 
         case 'bottom-left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset
+            top: tooltipRect.top + scrollTop + tooltipRect.height,
+            left: tooltipRect.left + scrollLeft
           })
           break
 
         case 'bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+            top: tooltipRect.top + scrollTop + tooltipRect.height,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width / 2
           })
           break
 
         case 'bottom-right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: tooltipRect.top + scrollTop + tooltipRect.height,
+            left: tooltipRect.left + scrollLeft + tooltipRect.width
           })
           break
 
         case 'left-top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset
+            top: tooltipRect.top + scrollTop,
+            left: tooltipRect.left + scrollLeft
           })
           break
 
         case 'left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
-            left: targetRect.left + window.pageXOffset
+            top: tooltipRect.top + scrollTop + tooltipRect.height / 2,
+            left: tooltipRect.left + scrollLeft
           })
           break
 
         case 'left-bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset
+            top: tooltipRect.top + scrollTop + tooltipRect.height,
+            left: tooltipRect.left + scrollLeft
           })
           break
 
@@ -143,17 +146,21 @@ const Tooltip = ({
           break
       }
     }
-  }, [target, position])
+  }, [isOpen, position])
 
   // Detect click outside of the dropdown
   useEffect(() => {
-    const outsideClick = () => {
-      if (actionType === 'click') {
-        setTarget(null)
+    const outsideClick = ({ target }: Event): void => {
+      if (
+        actionType === 'click' &&
+        tooltipChildrenRef.current &&
+        !tooltipChildrenRef.current.contains(target as Node)
+      ) {
+        setOpen(false)
       }
     }
 
-    if (target) {
+    if (isOpen) {
       document.addEventListener('mousedown', outsideClick)
     } else {
       document.removeEventListener('mousedown', outsideClick)
@@ -162,26 +169,25 @@ const Tooltip = ({
     return () => {
       document.removeEventListener('mousedown', outsideClick)
     }
-  }, [actionType, target])
+  }, [actionType, isOpen])
 
-  // When mouse is over the childern
-  const handleMouseOver = (event: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>): void => {
-    setTarget(event.target as HTMLDivElement)
+  const handleToggle = (): void => {
+    setOpen(prev => !prev)
   }
 
-  // When mouse is out the childern
-  const handleMouseOut = (): void => {
-    setTarget(null)
+  const handleOpen = (): void => {
+    setOpen(true)
   }
 
-  const handleToggle = (event: React.MouseEvent<HTMLDivElement>): void => {
-    setTarget(prev => (prev ? null : (event.target as HTMLDivElement)))
+  const handleClose = (): void => {
+    setOpen(false)
   }
 
   return (
     <>
       <div
         {...props}
+        ref={tooltipChildrenRef}
         className={classesTooltipChildren}
         style={{ ...(style || {}), ...(actionType === 'click' ? { cursor: 'pointer' } : {}) }}
         {...(actionType === 'click'
@@ -191,10 +197,10 @@ const Tooltip = ({
           : {})}
         {...(actionType === 'hover'
           ? {
-              onMouseOver: handleMouseOver,
-              onFocus: handleMouseOver,
-              onMouseOut: handleMouseOut,
-              onBlur: handleMouseOut
+              onMouseOver: handleOpen,
+              onFocus: handleOpen,
+              onMouseOut: handleClose,
+              onBlur: handleClose
             }
           : {})}
       >
@@ -220,7 +226,7 @@ const Tooltip = ({
 
 Tooltip.defaultProps = {
   position: 'top',
-  width: 'none',
+  maxWidth: 'none',
   color: 'black',
   textFamily: '',
   textSize: '12px',

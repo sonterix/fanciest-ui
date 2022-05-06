@@ -131,51 +131,51 @@ $xxxl: 1981px;
 }
 
 @mixin positionStyles() {
-  &.TopLeftPos {
+  &.TopLeft {
     transform: translateY(calc(-100% - 5px));
   }
 
-  &.TopPos {
+  &.Top {
     transform: translate(-50%, calc(-100% - 5px));
   }
 
-  &.TopRightPos {
+  &.TopRight {
     transform: translate(-100%, calc(-100% - 5px));
   }
 
-  &.RightTopPos {
+  &.RightTop {
     transform: translateX(5px);
   }
 
-  &.RightPos {
+  &.Right {
     transform: translate(5px, -50%);
   }
 
-  &.RightBottomPos {
+  &.RightBottom {
     transform: translate(5px, -100%);
   }
 
-  &.BottomLeftPos {
+  &.BottomLeft {
     transform: translateY(5px);
   }
 
-  &.BottomPos {
+  &.Bottom {
     transform: translate(-50%, 5px);
   }
 
-  &.BottomRightPos {
+  &.BottomRight {
     transform: translate(-100%, 5px);
   }
 
-  &.LeftTopPos {
+  &.LeftTop {
     transform: translateX(calc(-100% - 5px));
   }
 
-  &.LeftPos {
+  &.Left {
     transform: translate(calc(-100% - 5px), -50%);
   }
 
-  &.LeftBottomPos {
+  &.LeftBottom {
     transform: translate(calc(-100% - 5px), -100%);
   }
 }

@@ -369,6 +369,10 @@ const Dev = (): JSX.Element => {
           <Tooltip content="On click action" actionType="click">
             Works on click
           </Tooltip>
+
+          <Tooltip content="With component">
+            <Button>Hover me</Button>
+          </Tooltip>
         </div>
 
         <h2 className="dev__block__subtitle">Menu</h2>

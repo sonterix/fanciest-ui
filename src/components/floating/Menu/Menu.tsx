@@ -47,90 +47,92 @@ const Menu = ({
   // Set position of element based on target element
   useEffect(() => {
     if (anchor) {
-      const targetRect = anchor.getBoundingClientRect()
+      const anchorRect = anchor.getBoundingClientRect()
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
 
       switch (position) {
         case 'top-left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset
+            top: anchorRect.top + scrollTop,
+            left: anchorRect.left + scrollLeft
           })
           break
 
         case 'top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+            top: anchorRect.top + scrollTop,
+            left: anchorRect.left + scrollLeft + anchorRect.width / 2
           })
           break
 
         case 'top-right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: anchorRect.top + scrollTop,
+            left: anchorRect.left + scrollLeft + anchorRect.width
           })
           break
 
         case 'right-top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: anchorRect.top + scrollTop,
+            left: anchorRect.left + scrollLeft + anchorRect.width
           })
           break
 
         case 'right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: anchorRect.top + scrollTop + anchorRect.height / 2,
+            left: anchorRect.left + scrollLeft + anchorRect.width
           })
           break
 
         case 'right-bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: anchorRect.top + scrollTop + anchorRect.height,
+            left: anchorRect.left + scrollLeft + anchorRect.width
           })
           break
 
         case 'bottom-left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset
+            top: anchorRect.top + scrollTop + anchorRect.height,
+            left: anchorRect.left + scrollLeft
           })
           break
 
         case 'bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width / 2
+            top: anchorRect.top + scrollTop + anchorRect.height,
+            left: anchorRect.left + scrollLeft + anchorRect.width / 2
           })
           break
 
         case 'bottom-right':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset + targetRect.width
+            top: anchorRect.top + scrollTop + anchorRect.height,
+            left: anchorRect.left + scrollLeft + anchorRect.width
           })
           break
 
         case 'left-top':
           setModalPos({
-            top: targetRect.top + window.pageYOffset,
-            left: targetRect.left + window.pageXOffset
+            top: anchorRect.top + scrollTop,
+            left: anchorRect.left + scrollLeft
           })
           break
 
         case 'left':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height / 2,
-            left: targetRect.left + window.pageXOffset
+            top: anchorRect.top + scrollTop + anchorRect.height / 2,
+            left: anchorRect.left + scrollLeft
           })
           break
 
         case 'left-bottom':
           setModalPos({
-            top: targetRect.top + window.pageYOffset + targetRect.height,
-            left: targetRect.left + window.pageXOffset
+            top: anchorRect.top + scrollTop + anchorRect.height,
+            left: anchorRect.left + scrollLeft
           })
           break
 

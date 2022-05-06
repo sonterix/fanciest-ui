@@ -107,9 +107,7 @@
 
 .SelectDropdown {
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateX(-50%);
+  transform: translate(-50%, 3px);
   padding: 0;
   max-height: 250px;
   list-style: none;
