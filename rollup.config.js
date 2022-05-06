@@ -6,7 +6,6 @@ import typescript from '@rollup/plugin-typescript'
 import styles from 'rollup-plugin-styles'
 import { terser } from 'rollup-plugin-terser'
 import copy from 'rollup-plugin-copy'
-import dts from 'rollup-plugin-dts'
 
 const packageJson = require('./package.json')
 
@@ -18,12 +17,14 @@ export default [
         file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
+        exports: 'named',
         assetFileNames: 'public/[name][extname]'
       },
       {
         file: packageJson.module,
         format: 'esm',
         sourcemap: true,
+        exports: 'named',
         assetFileNames: 'public/[name][extname]'
       }
     ],
@@ -57,11 +58,5 @@ export default [
         ]
       })
     ]
-  },
-  {
-    input: './dist/esm/types/index.d.ts',
-    output: [{ file: './dist/index.d.ts', format: 'esm' }],
-    external: [/\.scss$/],
-    plugins: [dts()]
   }
 ]
