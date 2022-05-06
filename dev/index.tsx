@@ -33,6 +33,7 @@ import {
   Rating,
   Select,
   Skeleton,
+  SlideModal,
   Switch,
   Textarea,
   Tooltip
@@ -56,6 +57,8 @@ const Dev = (): JSX.Element => {
   const [menuProps, setMenuProps] = useState<{ [key: string]: string }>({})
 
   const [isModal, setModal] = useState<boolean>(false)
+
+  const [isSlideModal, setSlideModal] = useState<boolean>(false)
 
   return (
     <section className="dev">
@@ -355,7 +358,7 @@ const Dev = (): JSX.Element => {
             Custom text
           </Tooltip>
 
-          <Tooltip content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quas." width={250}>
+          <Tooltip content="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero, quas." maxWidth={250}>
             Custom width
           </Tooltip>
 
@@ -454,6 +457,33 @@ const Dev = (): JSX.Element => {
               pariatur sint, asperiores facere esse odit consectetur iste ea.
             </p>
           </Modal>
+        </div>
+
+        <h2 className="dev__block__subtitle">Slide modal</h2>
+
+        <div className="dev__block__preview">
+          <button type="button" onClick={() => setSlideModal(true)}>
+            Open slide modal
+          </button>
+
+          <SlideModal isOpen={isSlideModal} onClose={() => setSlideModal(false)} shape="rounded">
+            <h1>Lorem ipsum dolor sit.</h1>
+            <hr />
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, cum vero. Quaerat commodi dicta, sunt
+              omnis sit officia magnam quasi!
+            </p>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum iste esse cupiditate aut officia
+              perferendis provident maxime alias, blanditiis, veritatis vitae impedit possimus ex quae minus saepe sed
+              quaerat accusantium eum, facere asperiores consequuntur sapiente quisquam? In ea unde sint eligendi ipsam
+              sapiente delectus quos aliquam officia voluptas veniam repellat exercitationem soluta eveniet hic officiis
+              impedit, id dicta natus eum. Eum maxime deleniti, in dolorum dolorem quibusdam iure magnam a, molestias
+              pariatur sint, asperiores facere esse odit consectetur iste ea.
+            </p>
+          </SlideModal>
         </div>
       </div>
 

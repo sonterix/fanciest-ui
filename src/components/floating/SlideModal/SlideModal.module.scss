@@ -1,13 +1,13 @@
-@import '../../../scss/variables';
+@import '../../../styles/helper.scss';
 
-.Overlay {
+.ModalOverlay {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba($color-black, 0.8);
-  z-index: 99999999900;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99090;
 }
 
 .Modal {
@@ -16,85 +16,105 @@
   position: fixed;
   top: 0;
   max-height: 100%;
-  min-width: 140px;
+  min-width: 180px;
   min-height: 100%;
   width: 100%;
-  background-color: $color-white;
+  background-color: var(--color-white);
   border-radius: 3px;
   overflow-x: hidden;
   overflow-y: auto;
-  z-index: 99999999910;
+  z-index: 99090;
 
   ::-webkit-scrollbar {
     width: 5px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: $color-white;
+    background-color: var(--color-white);
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: $color-black5;
+    background-color: var(--color-black5);
     border-radius: 3px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: $color-black3;
+    background-color: var(--color-black3);
   }
 
-  &.PosLeft {
+  &.Left {
     left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 
-    .XMarkBtn {
-      right: 5px;
+    .XMark {
+      right: 0;
     }
   }
 
-  &.PosRight {
+  &.Right {
     right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 
-    .XMarkBtn {
-      left: 5px;
+    .XMark {
+      left: 0;
     }
   }
 
-  &.FullWidth {
-    width: 100%;
+  &.Rounded {
+    &.Left {
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    &.Right {
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
   }
 
-  .XMarkBtn {
+  &.Squared {
+    border-radius: 0px;
+  }
+
+  .XMark {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 5px;
-    width: 30px;
-    height: 30px;
-    font-size: 20px;
-    color: $color-black3;
+    top: 0;
+    padding: 15px;
+    color: var(--color-black3);
     background-color: transparent;
     border: none;
-    transition: color $trans;
+    transition: color var(--trans);
     cursor: pointer;
     z-index: 10;
 
     &:hover {
-      color: $color-black2;
+      color: var(--color-black2);
+    }
+
+    > svg {
+      width: 12px;
+      height: 12px;
     }
   }
 
-  .Body {
-    padding: 30px 25px;
+  .Children {
+    padding: 30px 15px;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
+
+    @media (min-width: $sm) {
+      padding: 35px 20px;
+    }
   }
 
   @media (max-width: $md) {
     max-width: 90% !important;
-    width: 100%;
+    width: 100% !important;
   }
 }
