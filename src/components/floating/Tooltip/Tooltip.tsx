@@ -164,7 +164,7 @@ const Tooltip = ({
       <div
         {...props}
         className={classesTooltipChildren}
-        style={{ ...style, ...(actionType === 'click' ? { cursor: 'pointer' } : {}) }}
+        style={{ ...(style || {}), ...(actionType === 'click' ? { cursor: 'pointer' } : {}) }}
         {...(actionType === 'click'
           ? {
               onClick: handleToggle
@@ -190,7 +190,7 @@ const Tooltip = ({
               className={classesTooltip}
               style={{ ...modalPos, maxWidth, fontSize: textSize, ...animationStyles }}
             >
-              <div className={styles.Content}>{content}</div>
+              <div className={styles.Childern}>{content}</div>
             </animated.div>,
             document.body
           )

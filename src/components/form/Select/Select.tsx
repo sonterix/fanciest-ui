@@ -76,7 +76,7 @@ const Select = ({
 
   // Detect click outside of the dropdown
   useEffect(() => {
-    const outSideClick = ({ target }: Event) => {
+    const outsideClick = ({ target }: Event) => {
       if (
         selectRef.current &&
         dropdownRef.current &&
@@ -88,13 +88,13 @@ const Select = ({
     }
 
     if (isOpen) {
-      document.addEventListener('mousedown', outSideClick)
+      document.addEventListener('mousedown', outsideClick)
     } else {
-      document.removeEventListener('mousedown', outSideClick)
+      document.removeEventListener('mousedown', outsideClick)
     }
 
     return () => {
-      document.removeEventListener('mousedown', outSideClick)
+      document.removeEventListener('mousedown', outsideClick)
     }
   }, [isOpen])
 

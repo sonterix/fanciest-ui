@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -29,6 +29,7 @@ const Menu = ({
     className || ''
   ])
 
+  const menuRef = useRef<HTMLDivElement>(null)
   const [modalPos, setModalPos] = useState<{ top: number; left: number }>({
     top: 0,
     left: 0
@@ -139,15 +140,36 @@ const Menu = ({
     }
   }, [anchor, position])
 
+  // Detect click outside of the dropdown
+  useEffect(() => {
+    const outsideClick = ({ target }: Event) => {
+      if (anchor && menuRef.current && !anchor.contains(target as Node) && !menuRef.current.contains(target as Node)) {
+        onClose()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', outsideClick)
+    } else {
+      document.removeEventListener('mousedown', outsideClick)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', outsideClick)
+    }
+  }, [anchor, isOpen, onClose])
+
   return transition(
     (animationStyles, isItem) =>
       isItem &&
       createPortal(
-        <animated.div style={animationStyles}>
-          <div className={styles.MenuOverlay} onClick={onClose} aria-hidden="true" />
-          <div {...props} className={classes} style={{ ...modalPos, ...style, maxWidth, maxHeight }}>
-            {children}
-          </div>
+        <animated.div
+          {...props}
+          ref={menuRef}
+          className={classes}
+          style={{ ...modalPos, ...(style || {}), maxWidth, maxHeight, ...animationStyles }}
+        >
+          <div className={styles.Childern}>{children}</div>
         </animated.div>,
         document.body
       )
