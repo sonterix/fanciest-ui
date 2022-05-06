@@ -32,6 +32,7 @@ import {
   Radio,
   Rating,
   Select,
+  SemicircleBar,
   Skeleton,
   SlideModal,
   Switch,
@@ -311,6 +312,14 @@ const Dev = (): JSX.Element => {
           <Skeleton width={500} height={60} />
 
           <Skeleton layout="circle" width={80} height={80} />
+        </div>
+
+        <h2 className="dev__block__subtitle">SemicircleBar</h2>
+
+        <div className="dev__block__preview">
+          <SemicircleBar value={35}>
+            <H1 weight={700}>35</H1>
+          </SemicircleBar>
         </div>
       </div>
 

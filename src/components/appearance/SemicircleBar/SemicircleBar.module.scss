@@ -1,0 +1,98 @@
+.SemicircleBar {
+  position: relative;
+
+  .BarContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .Space {
+      position: absolute;
+      z-index: 4;
+
+      &.Space1 {
+        top: 50%;
+        transform: translateY(-50%) rotateZ(120deg) skewY(-3.5deg);
+      }
+
+      &.Space2 {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+
+      &.Space3 {
+        top: 50%;
+        transform: translateY(-50%) rotateZ(-120deg) skewY(3.5deg);
+      }
+    }
+
+    .EmplyCircle,
+    .ProgressCircle,
+    .DotCircle {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-style: solid;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .EmplyCircle {
+      border-color: var(--color-black8);
+      z-index: 1;
+    }
+
+    .ProgressCircle {
+      border-color: var(--color-turquoise);
+      border-left-color: transparent;
+      z-index: 3;
+    }
+
+    .DotCircle {
+      border-color: transparent;
+      z-index: 5;
+
+      .Dot {
+        position: absolute;
+        top: 90%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        border-style: solid;
+        border-color: var(--color-turquoise);
+        background-color: var(--color-white);
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .Text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 65%;
+      transform: translateY(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+
+    .BottomRoundup > svg {
+      position: absolute;
+      z-index: 4;
+
+      &:first-child {
+        transform: rotate(-12deg);
+      }
+
+      &:last-child {
+        transform: rotate(12deg);
+      }
+    }
+  }
+}

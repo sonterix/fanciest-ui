@@ -21,6 +21,7 @@ export { default as Icon } from './appearance/Icon'
 export { default as Loader } from './appearance/Loader'
 export { default as Rating } from './appearance/Rating'
 export { default as Skeleton } from './appearance/Skeleton'
+export { default as SemicircleBar } from './appearance/SemicircleBar'
 
 export { default as Tooltip } from './floating/Tooltip'
 export { default as Menu } from './floating/Menu'
