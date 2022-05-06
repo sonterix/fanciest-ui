@@ -20,7 +20,7 @@ const SlideModal = ({
   ...props
 }: SlideModalProps): JSX.Element => {
   const classes = arrayToClasslist([
-    styles.Modal,
+    styles.SlideModal,
 
     ...(position === 'left' ? [styles.Left] : []),
     ...(position === 'right' ? [styles.Right] : []),
@@ -68,7 +68,7 @@ const SlideModal = ({
           isItem &&
           createPortal(
             <animated.div
-              className={styles.ModalOverlay}
+              className={styles.SlideModalOverlay}
               style={animationFadeStyles}
               {...(closeButton ? { onClick: onClose } : {})}
               aria-hidden="true"
