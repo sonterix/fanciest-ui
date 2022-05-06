@@ -36,7 +36,7 @@ const Container = ({
 }
 
 Container.defaultProps = {
-  width: '1230px'
+  maxWidth: '1230px'
 }
 
 export default Container

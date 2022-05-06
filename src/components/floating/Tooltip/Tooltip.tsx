@@ -145,6 +145,25 @@ const Tooltip = ({
     }
   }, [target, position])
 
+  // Detect click outside of the dropdown
+  useEffect(() => {
+    const outsideClick = () => {
+      if (actionType === 'click') {
+        setTarget(null)
+      }
+    }
+
+    if (target) {
+      document.addEventListener('mousedown', outsideClick)
+    } else {
+      document.removeEventListener('mousedown', outsideClick)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', outsideClick)
+    }
+  }, [actionType, target])
+
   // When mouse is over the childern
   const handleMouseOver = (event: React.MouseEvent<HTMLDivElement> | React.FocusEvent<HTMLDivElement>): void => {
     setTarget(event.target as HTMLDivElement)
