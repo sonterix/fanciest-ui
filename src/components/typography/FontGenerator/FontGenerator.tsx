@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import parse from 'html-react-parser'
 
-import { arrayToClasslist, getTextFamily, getTextWeight } from 'helpers'
+import { arrayToClasslist, getTextFamily, getTextWeight } from '../../../helpers'
 import { FontProps } from './FontGenerator.type'
 import { getFontSize } from './helper'
 import styles from './FontGenerator.module.scss'

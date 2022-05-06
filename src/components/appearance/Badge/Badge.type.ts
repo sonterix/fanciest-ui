@@ -1,4 +1,4 @@
-import { Color, Shape, PresetSize, TextFamiy, TextWeight } from 'types'
+import { Color, Shape, PresetSize, TextFamiy, TextWeight } from '../../../types'
 
 export interface BadgeProps extends React.ComponentProps<'div'> {
   shape?: Shape

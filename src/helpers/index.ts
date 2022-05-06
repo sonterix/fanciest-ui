@@ -1,4 +1,4 @@
-import { Color, Position, TextFamiy, TextWeight } from 'types'
+import { Color, Position, TextFamiy, TextWeight } from '../types'
 
 export const arrayToClasslist = (arr: string[]): string => {
   const joined = arr.join(' ').trim()

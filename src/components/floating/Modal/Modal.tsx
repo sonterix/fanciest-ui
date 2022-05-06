@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { ModalProps } from './Modal.type'
 import styles from './Modal.module.scss'
 

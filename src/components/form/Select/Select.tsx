@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import { arrayToClasslist, getColorClasses, getTextWeight } from 'helpers'
+import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
 import { SelectProps } from './Select.type'
 import styles from './Select.module.scss'
 

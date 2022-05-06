@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { InputProps } from './Input.type'
 import { getMaskedValue } from './helper'
 import styles from './Input.module.scss'

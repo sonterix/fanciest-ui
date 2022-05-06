@@ -1,4 +1,4 @@
-import { Color } from 'types'
+import { Color } from '../../../types'
 
 export interface LoaderProps extends React.ComponentProps<'div'> {
   layout: 'ball' | 'spinline' | 'spindot' | 'rolling' | 'dualring' | 'ellipsis' | 'pulse' | 'magnify'

@@ -1,4 +1,4 @@
-import { Shape, PresetSize } from 'types'
+import { Shape, PresetSize } from '../../../types'
 
 export interface InputProps extends React.ComponentProps<'input'> {
   layout?: 'filled' | 'outlined'

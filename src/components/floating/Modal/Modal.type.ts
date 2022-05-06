@@ -1,4 +1,4 @@
-import { Shape } from 'types'
+import { Shape } from '../../../types'
 
 export interface ModalProps extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean

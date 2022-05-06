@@ -1,4 +1,4 @@
-import { TextFamiy, TextWeight } from 'types'
+import { TextFamiy, TextWeight } from '../../../types'
 
 export interface FontMedia {
   default?: number | string

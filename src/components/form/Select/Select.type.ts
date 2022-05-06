@@ -1,5 +1,5 @@
 import React from 'react'
-import { Color, PresetSize, Shape, TextWeight } from 'types'
+import { Color, PresetSize, Shape, TextWeight } from '../../../types'
 
 export interface OptionProps extends React.ComponentProps<'option'> {
   label: string

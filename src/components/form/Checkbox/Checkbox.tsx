@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClasses } from 'helpers'
+import { arrayToClasslist, getColorClasses } from '../../../helpers'
 import { CheckboxProps } from './Checkbox.type'
 import styles from './Checkbox.module.scss'
 

@@ -1,4 +1,4 @@
-import { Color, TextFamiy, TextWeight } from 'types'
+import { Color, TextFamiy, TextWeight } from '../../../types'
 
 export interface AvatarProps extends React.ComponentProps<'div'> {
   width?: string | number

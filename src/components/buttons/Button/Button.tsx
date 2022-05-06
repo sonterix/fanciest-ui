@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses, getTextFamily, getTextWeight } from 'helpers'
+import { arrayToClasslist, getColorClasses, getTextFamily, getTextWeight } from '../../../helpers'
 import { ButtonLinkProps, ButtonProps } from './Button.type'
 import styles from './Button.module.scss'
 

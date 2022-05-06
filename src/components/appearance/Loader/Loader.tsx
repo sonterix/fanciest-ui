@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses } from 'helpers'
+import { arrayToClasslist, getColorClasses } from '../../../helpers'
 import { LoaderProps } from './Loader.type'
 import styles from './Loader.module.scss'
 

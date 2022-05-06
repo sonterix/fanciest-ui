@@ -13,8 +13,7 @@
     "sourceMap": true,
     "outDir": "./dist",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src"
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"]
 }

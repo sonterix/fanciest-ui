@@ -1,4 +1,4 @@
-import { Color, Position } from 'types'
+import { Color, Position } from '../../../types'
 
 export interface MenuProps extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean

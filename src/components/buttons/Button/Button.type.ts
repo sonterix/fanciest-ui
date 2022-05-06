@@ -1,4 +1,4 @@
-import { Color, Shape, PresetSize, TextWeight, TextFamiy } from 'types'
+import { Color, Shape, PresetSize, TextWeight, TextFamiy } from '../../../types'
 
 export interface ButtonProps extends React.ComponentProps<'button'> {
   layout?: 'filled' | 'outlined'

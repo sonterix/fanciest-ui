@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { SkeletonProps } from './Skeleton.type'
 import styles from './Skeleton.module.scss'
 

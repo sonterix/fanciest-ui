@@ -1,4 +1,4 @@
-import { Color } from 'types'
+import { Color } from '../../../types'
 
 export interface RatingProps extends React.ComponentProps<'div'> {
   rating: 0 | 1 | 2 | 3 | 4 | 5

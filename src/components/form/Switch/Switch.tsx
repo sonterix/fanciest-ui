@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClasses } from 'helpers'
+import { arrayToClasslist, getColorClasses } from '../../../helpers'
 import { SwitchProps } from './Switch.type'
 import styles from './Switch.module.scss'
 

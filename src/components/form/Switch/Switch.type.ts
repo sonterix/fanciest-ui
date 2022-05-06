@@ -1,4 +1,4 @@
-import { Color } from 'types'
+import { Color } from '../../../types'
 
 export interface SwitchProps extends React.ComponentProps<'input'> {
   color?: Color

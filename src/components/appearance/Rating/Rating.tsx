@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses } from 'helpers'
+import { arrayToClasslist, getColorClasses } from '../../../helpers'
 import { RatingProps } from './Rating.type'
 import styles from './Rating.module.scss'
 

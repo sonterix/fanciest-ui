@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { arrayToClasslist, getColorClasses, getPositions } from 'helpers'
+import { arrayToClasslist, getColorClasses, getPositions } from '../../../helpers'
 import { MenuProps } from './Menu.type'
 import styles from './Menu.module.scss'
 

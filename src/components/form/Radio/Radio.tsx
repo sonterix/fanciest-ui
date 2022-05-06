@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClasses } from 'helpers'
+import { arrayToClasslist, getColorClasses } from '../../../helpers'
 import { RadioProps } from './Radio.type'
 import styles from './Radio.module.scss'
 

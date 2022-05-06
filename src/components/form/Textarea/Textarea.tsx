@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { InputProps } from './Textarea.type'
 import styles from './Textarea.module.scss'
 

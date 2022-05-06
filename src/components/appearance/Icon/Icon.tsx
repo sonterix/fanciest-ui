@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { IconPropsType } from './Icon.type'
 
 const Icon = ({ icon, iconSize, pathNumber, className, style, ...props }: IconPropsType): JSX.Element => {

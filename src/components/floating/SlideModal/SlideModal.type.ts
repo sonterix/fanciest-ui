@@ -1,4 +1,4 @@
-import { Shape } from 'types'
+import { Shape } from '../../../types'
 
 export interface SlideModalProps extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean

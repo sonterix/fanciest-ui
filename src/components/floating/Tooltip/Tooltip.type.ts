@@ -1,4 +1,4 @@
-import { Color, Position, TextFamiy, TextWeight } from 'types'
+import { Color, Position, TextFamiy, TextWeight } from '../../../types'
 
 export interface TooltipProps extends React.ComponentProps<'div'> {
   content: React.ReactNode

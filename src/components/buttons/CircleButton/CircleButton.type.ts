@@ -1,4 +1,4 @@
-import { Color, PresetSize, TextFamiy, TextWeight } from 'types'
+import { Color, PresetSize, TextFamiy, TextWeight } from '../../../types'
 
 export interface CircleButtonProps extends React.ComponentProps<'button'> {
   layout?: 'filled' | 'outlined'

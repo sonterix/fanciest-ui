@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist } from 'helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { ContainerProps } from './Container.type'
 import styles from './Container.module.scss'
 
