@@ -785,7 +785,7 @@ const Dev = (): JSX.Element => {
 
         <div className="dev__block__preview">
           <Container style={{ border: '1px dotted #ccc' }}>Container</Container>
-          <Container style={{ border: '1px dotted #ccc' }} width={630}>
+          <Container style={{ border: '1px dotted #ccc' }} maxWidth={630}>
             Container with Custom Width
           </Container>
           <Container

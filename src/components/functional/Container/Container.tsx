@@ -5,7 +5,7 @@ import { ContainerProps } from './Container.type'
 import styles from './Container.module.scss'
 
 const Container = ({
-  width,
+  maxWidth,
   spaceTop,
   spaceRight,
   spaceBottom,
@@ -23,7 +23,7 @@ const Container = ({
       className={classes}
       style={{
         ...(style || {}),
-        maxWidth: width,
+        maxWidth,
         ...(spaceTop ? { paddingTop: spaceTop } : {}),
         ...(spaceRight ? { paddingRight: spaceRight } : {}),
         ...(spaceBottom ? { paddingBottom: spaceBottom } : {}),

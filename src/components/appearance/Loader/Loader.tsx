@@ -6,8 +6,8 @@ import styles from './Loader.module.scss'
 
 const Loader = ({
   layout,
-  wrapperWidth,
-  wrapperHeight,
+  wrapperMaxWidth,
+  wrapperMaxHeight,
   width,
   height,
   color,
@@ -21,7 +21,7 @@ const Loader = ({
     <div
       {...props}
       className={classes}
-      style={{ ...(style || {}), minWidth: wrapperWidth || 0, minHeight: wrapperHeight || 0 }}
+      style={{ ...(style || {}), minWidth: wrapperMaxWidth, minHeight: wrapperMaxHeight }}
     >
       {layout === 'ball' && (
         <svg
@@ -677,6 +677,8 @@ const Loader = ({
 
 Loader.defaultProps = {
   layout: 'ball',
+  wrapperMaxWidth: 'none',
+  wrapperMaxHeight: 'none',
   width: '60px',
   height: '60px',
   color: 'rose'

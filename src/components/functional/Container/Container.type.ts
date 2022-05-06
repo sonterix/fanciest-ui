@@ -1,5 +1,5 @@
 export interface ContainerProps extends React.ComponentProps<'section'> {
-  width?: number | string
+  maxWidth?: number | string
   spaceTop?: number | string
   spaceRight?: number | string
   spaceBottom?: number | string
