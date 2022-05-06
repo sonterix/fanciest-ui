@@ -47,7 +47,7 @@ const Modal = ({
     enter: { transform: `translate(-50%, ${position === 'center' ? '-50%' : '0px'})` },
     leave: { transform: `translate(-50%, ${position === 'center' ? '-45%' : '-10px'})` },
     config: {
-      duration: 150
+      duration: 100
     }
   })
 

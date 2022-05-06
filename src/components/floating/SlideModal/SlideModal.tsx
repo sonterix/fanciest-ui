@@ -51,7 +51,7 @@ const SlideModal = ({
       ...(position === 'left' ? { x: '-100%' } : position === 'right' ? { x: '100%' } : {})
     },
     config: {
-      duration: 150
+      duration: 100
     }
   })
 
