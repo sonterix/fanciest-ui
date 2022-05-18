@@ -58,7 +58,6 @@ Avatar.defaultProps = {
   src: '',
   alt: 'avatar',
   objectFit: 'cover',
-  color: 'black',
   textSize: '18px',
   textWeight: 800
 }
