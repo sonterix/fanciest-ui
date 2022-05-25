@@ -320,6 +320,10 @@ const Dev = (): JSX.Element => {
           <SemicircleBar value={35}>
             <H1 weight={700}>35</H1>
           </SemicircleBar>
+
+          <SemicircleBar value={70} size={40}>
+            <P4 weight={800}>70</P4>
+          </SemicircleBar>
         </div>
       </div>
 

@@ -59,7 +59,7 @@ const SemicircleBar = ({
     // Spaces betwen each dash
     const spaces = [
       {
-        left: circleSize * 0.082,
+        left: circleSize * 0.08,
         width: circleSize * 0.08,
         height: circleSize * 0.08
       },
@@ -69,7 +69,7 @@ const SemicircleBar = ({
         height: circleSize * 0.08
       },
       {
-        right: circleSize * 0.082,
+        right: circleSize * 0.08,
         width: circleSize * 0.08,
         height: circleSize * 0.08
       }
@@ -138,20 +138,8 @@ const SemicircleBar = ({
                 style={{ ...elementsSizes.spaces[spaceNumber], backgroundColor }}
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <ellipse
-                  ry="45%"
-                  rx="45%"
-                  cy="50%"
-                  cx="-10%"
-                  fill={getDashesState(spaceNumber) === 'active' ? '#23CDC3' : '#E8E8EB'}
-                />
-                <ellipse
-                  ry="45%"
-                  rx="45%"
-                  cy="50%"
-                  cx="110%"
-                  fill={getDashesState(spaceNumber) === 'active' ? '#23CDC3' : '#E8E8EB'}
-                />
+                <ellipse ry="45%" rx="45%" cy="50%" cx="-10%" data-active={getDashesState(spaceNumber) === 'active'} />
+                <ellipse ry="45%" rx="45%" cy="50%" cx="110%" data-active={getDashesState(spaceNumber) === 'active'} />
               </svg>
             ))}
           </>
@@ -169,11 +157,11 @@ const SemicircleBar = ({
 
         <div className={styles.BottomRoundup}>
           <svg style={{ ...elementsSizes.bottomRoundupSpases[0], backgroundColor }} xmlns="http://www.w3.org/2000/svg">
-            <ellipse ry="60%" rx="40%" cy="0" cx="50%" fill="#23CDC3" />
+            <ellipse ry="60%" rx="40%" cy="0" cx="50%" data-active="true" />
           </svg>
 
           <svg style={{ ...elementsSizes.bottomRoundupSpases[1], backgroundColor }} xmlns="http://www.w3.org/2000/svg">
-            <ellipse ry="60%" rx="40%" cy="0" cx="50%" fill={Number(value) >= 100 ? '#23CDC3' : '#E8E8EB'} />
+            <ellipse ry="60%" rx="40%" cy="0" cx="50%" data-active={Number(value) >= 100} />
           </svg>
         </div>
       </div>

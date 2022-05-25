@@ -28,6 +28,18 @@
         top: 50%;
         transform: translateY(-50%) rotateZ(-120deg) skewY(3.5deg);
       }
+
+      > ellipse {
+        fill: currentColor;
+
+        &[data-active='true'] {
+          color: var(--color-turquoise);
+        }
+
+        &[data-active='false'] {
+          color: var(--color-black8);
+        }
+      }
     }
 
     .EmplyCircle,
@@ -92,6 +104,18 @@
 
       &:last-child {
         transform: rotate(12deg);
+      }
+
+      > ellipse {
+        fill: currentColor;
+
+        &[data-active='true'] {
+          color: var(--color-turquoise);
+        }
+
+        &[data-active='false'] {
+          color: var(--color-black8);
+        }
       }
     }
   }
