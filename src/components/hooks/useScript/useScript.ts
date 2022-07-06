@@ -53,6 +53,7 @@ const useScript = (src: string): ScriptStatuses => {
       }
     }
   }, [src])
+
   return status
 }
 
