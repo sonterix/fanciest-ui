@@ -1,1 +1,1 @@
-export { default } from './useMutationObserverw'
+export { default } from './useMutationObserver'
