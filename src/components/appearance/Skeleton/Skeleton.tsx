@@ -41,6 +41,7 @@ const Skeleton = ({
       className: classes,
       style: {
         ...(style || {}),
+        flexBasis: width,
         maxWidth: width,
         height,
         marginTop: spaceTop,

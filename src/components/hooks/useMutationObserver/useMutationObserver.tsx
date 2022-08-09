@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 const useMutationObserver = (
   ref: React.MutableRefObject<HTMLElement>,
   callback: MutationCallback,
-  options?: MutationObserverInit
+  options: MutationObserverInit
 ): null => {
   useEffect(() => {
     if (ref.current) {
