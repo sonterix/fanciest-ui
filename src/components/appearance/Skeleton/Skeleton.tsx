@@ -15,6 +15,7 @@ const Skeleton = ({
   spaceRight,
   as,
   animation,
+  withBasis,
   className,
   style,
   ...props
@@ -41,7 +42,7 @@ const Skeleton = ({
       className: classes,
       style: {
         ...(style || {}),
-        flexBasis: width,
+        ...(withBasis ? { flexBasis: width } : {}),
         maxWidth: width,
         height,
         marginTop: spaceTop,
@@ -64,7 +65,8 @@ Skeleton.defaultProps = {
   spaceLeft: 0,
   spaceRight: 0,
   as: 'span',
-  animation: 'pulse'
+  animation: 'pulse',
+  withBasis: false
 }
 
 export default Skeleton

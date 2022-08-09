@@ -9,4 +9,5 @@ export interface SkeletonProps extends React.ComponentProps<'div'> {
   spaceRight?: string | number
   as?: string
   animation?: 'pulse' | 'wave' | 'none'
+  withBasis?: boolean
 }
