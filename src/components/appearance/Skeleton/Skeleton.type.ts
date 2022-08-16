@@ -1,3 +1,5 @@
+import React from 'react'
+
 export interface SkeletonProps extends React.ComponentProps<'div'> {
   layout?: 'rect' | 'circle'
   type?: 'inline' | 'block'

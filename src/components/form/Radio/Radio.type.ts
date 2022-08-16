@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color } from '../../../types'
 
 export interface RadioProps extends React.ComponentProps<'input'> {

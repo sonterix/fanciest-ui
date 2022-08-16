@@ -1,3 +1,4 @@
+import React from 'react'
 import { Color, TextFamiy, TextWeight } from '../../../types'
 
 export interface AvatarProps extends React.ComponentProps<'div'> {

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color } from '../../../types'
 
 export interface CheckboxProps extends React.ComponentProps<'input'> {

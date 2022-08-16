@@ -7,7 +7,7 @@ export interface OptionProps extends React.ComponentProps<'option'> {
   value: string
 }
 
-export interface SelectProps extends Omit<React.ComponentProps<'button'>, 'onChange'> {
+export interface MultiselectProps extends Omit<React.ComponentProps<'div'>, 'onChange'> {
   options: OptionProps[]
   layout?: 'filled' | 'outlined'
   shape?: Shape
@@ -16,7 +16,9 @@ export interface SelectProps extends Omit<React.ComponentProps<'button'>, 'onCha
   color?: Color
   textWeight?: TextWeight
   limitDropdown?: boolean
-  value?: string
-  defaultValue?: string
+  value?: string[]
+  defaultValue?: string[]
+  placeholder?: string
+  disabled?: boolean
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void
 }

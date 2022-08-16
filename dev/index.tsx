@@ -39,6 +39,7 @@ import {
   Textarea,
   Tooltip
 } from '../src/components'
+import Multiselect from '../src/components/form/Multiselect'
 
 const Dev = (): JSX.Element => {
   const [input, setInput] = useState<{ [key: string]: string }>({})
@@ -46,6 +47,8 @@ const Dev = (): JSX.Element => {
   const [textarea, setTextarea] = useState<{ [key: string]: string }>({})
 
   const [select, setSelect] = useState<string>('three')
+
+  const [multiselect, setMultiselect] = useState<string[]>([])
 
   const [checkbox, setCheckbox] = useState<{ [key: string]: boolean }>({})
 
@@ -700,6 +703,101 @@ const Dev = (): JSX.Element => {
             color="orange"
             value={select}
             onChange={({ target: { value } }) => setSelect(String(value))}
+          />
+        </div>
+
+        <h2 className="dev__block__subtitle">Multiselect</h2>
+        <div className="dev__block__preview">
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect options={[]} disabled />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One big line of text is here' },
+              { value: 'two', label: 'Two', disabled: true },
+              { value: 'three', label: 'Three' }
+            ]}
+            label="Select something"
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            layout="outlined"
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            shape="rounded"
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            presetSize="sm"
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            textWeight={600}
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            color="orange"
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
           />
         </div>
 

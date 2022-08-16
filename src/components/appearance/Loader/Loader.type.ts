@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color } from '../../../types'
 
 export interface LoaderProps extends React.ComponentProps<'div'> {

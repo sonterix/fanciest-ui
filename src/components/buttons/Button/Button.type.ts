@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color, Shape, PresetSize, TextWeight, TextFamiy } from '../../../types'
 
 export interface ButtonProps extends React.ComponentProps<'button'> {

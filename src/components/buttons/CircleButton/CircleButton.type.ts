@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color, PresetSize, TextFamiy, TextWeight } from '../../../types'
 
 export interface CircleButtonProps extends React.ComponentProps<'button'> {

@@ -140,16 +140,16 @@ const Select = ({
         </button>
       </div>
 
-      {isOpen &&
-        !props.disabled &&
-        createPortal(
-          <ul ref={dropdownRef} className={clssesDropdown}>
-            {localOptions.map(option => (
-              <li key={`option-${option.props.tabIndex}`}>{option}</li>
-            ))}
-          </ul>,
-          document.body
-        )}
+      {isOpen && !props.disabled
+        ? createPortal(
+            <ul ref={dropdownRef} className={clssesDropdown}>
+              {localOptions.map(option => (
+                <li key={`option-${option.props.tabIndex}`}>{option}</li>
+              ))}
+            </ul>,
+            document.body
+          )
+        : null}
     </>
   )
 }

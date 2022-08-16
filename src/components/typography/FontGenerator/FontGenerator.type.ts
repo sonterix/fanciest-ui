@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { TextFamiy, TextWeight } from '../../../types'
 
 export interface FontMedia {

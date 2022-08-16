@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    min-width: 80px;
+    min-width: 110px;
     width: 100%;
     color: var(--color-black);
     background-color: transparent;
@@ -122,11 +122,11 @@
   @include colorStyles($with-color: true, $with-background-color: false);
 
   &.Md {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   &.Sm {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   > li,

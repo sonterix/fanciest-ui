@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Color, Position, TextFamiy, TextWeight } from '../../../types'
 
 export interface TooltipProps extends React.ComponentProps<'div'> {

@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Shape, PresetSize } from '../../../types'
 
 export interface InputProps extends React.ComponentProps<'textarea'> {

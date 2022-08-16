@@ -1,3 +1,4 @@
+import React from 'react'
 import { Color, Shape, PresetSize, TextFamiy, TextWeight } from '../../../types'
 
 export interface BadgeProps extends React.ComponentProps<'div'> {
