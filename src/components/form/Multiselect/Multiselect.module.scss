@@ -94,7 +94,7 @@
       }
 
       > svg {
-        top: 14px;
+        top: 16px;
       }
 
       .MultiselectSearch,
@@ -113,7 +113,7 @@
       }
 
       > svg {
-        top: 10px;
+        top: 14px;
       }
 
       .MultiselectSearch,
@@ -168,10 +168,10 @@
 
     > svg {
       position: absolute;
-      right: 10px;
+      right: 12px;
       padding: 5px;
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       color: var(--color-black3);
       fill: currentColor;
       transition: transform var(--trans-fast);
