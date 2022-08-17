@@ -189,6 +189,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
+      flex-wrap: wrap;
       gap: 8px;
       padding: 0;
       list-style: none;
@@ -199,6 +200,7 @@
         align-items: center;
         gap: 5px;
         padding: 3px 10px;
+        white-space: nowrap;
 
         > [data-active='true'] {
           padding: 3px;
