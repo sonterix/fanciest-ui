@@ -799,6 +799,19 @@ const Dev = (): JSX.Element => {
               setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
             }
           />
+
+          <Multiselect
+            options={[
+              { value: 'one', label: 'One' },
+              { value: 'two', label: 'Two' },
+              { value: 'three', label: 'Three' }
+            ]}
+            limit={1}
+            value={multiselect}
+            onChange={({ target: { value } }) =>
+              setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
+            }
+          />
         </div>
 
         <h2 className="dev__block__subtitle">Checkbox</h2>

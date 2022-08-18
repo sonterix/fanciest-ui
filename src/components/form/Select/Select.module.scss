@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    padding: 8px 16px;
     min-width: 110px;
     width: 100%;
     color: var(--color-black);
@@ -28,12 +29,12 @@
     @include colorStyles($with-color: true, $with-background-color: false);
 
     &.Md {
-      padding: 12px 16px;
+      min-height: 50px;
       font-size: 18px;
     }
 
     &.Sm {
-      padding: 10px 16px;
+      min-height: 40px;
       font-size: 16px;
     }
 
@@ -88,6 +89,7 @@
     }
 
     > svg {
+      flex-shrink: 0;
       width: 10px;
       height: 10px;
       color: var(--color-black3);
