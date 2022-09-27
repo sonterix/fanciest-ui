@@ -91,7 +91,7 @@ const Modal = ({
               )}
 
               {header && <div className={styles.Header}>{header}</div>}
-              <div className={styles.Children}>{children}</div>
+              <div className={styles.ModalChildren}>{children}</div>
               {footer && <div className={styles.Footer}>{footer}</div>}
             </animated.div>,
             document.body
