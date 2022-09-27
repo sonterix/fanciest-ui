@@ -1,3 +1,3 @@
 export interface DetectClickOutsideProps extends React.ComponentProps<'div'> {
-  oneClickOutside: (event: MouseEvent) => void
+  onClickOutside: (event: MouseEvent) => void
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 
 import { DetectClickOutsideProps } from './DetectClickOutside.type'
 
-const DetectClickOutside = ({ oneClickOutside, children, ...props }: DetectClickOutsideProps): JSX.Element => {
+const DetectClickOutside = ({ onClickOutside, children, ...props }: DetectClickOutsideProps): JSX.Element => {
   const elRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const DetectClickOutside = ({ oneClickOutside, children, ...props }: DetectClick
 
       if (!current || !target) return
 
-      if (!current.contains(target as Node)) oneClickOutside(event)
+      if (!current.contains(target as Node)) onClickOutside(event)
     }
 
     // Add when mounted

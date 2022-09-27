@@ -806,7 +806,6 @@ const Dev = (): JSX.Element => {
               { value: 'two', label: 'Two' },
               { value: 'three', label: 'Three' }
             ]}
-            limit={1}
             value={multiselect}
             onChange={({ target: { value } }) =>
               setMultiselect(prev => (prev.includes(value) ? prev.filter(val => val !== value) : [...prev, value]))
@@ -959,7 +958,7 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">DetectClickOutside</h2>
 
         <div className="dev__block__preview">
-          <DetectClickOutside oneClickOutside={() => console.info('Clicked outside')}>
+          <DetectClickOutside onClickOutside={() => console.info('Clicked outside')}>
             <div
               style={{
                 display: 'flex',
