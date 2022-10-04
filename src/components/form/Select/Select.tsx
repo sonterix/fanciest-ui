@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
@@ -57,8 +57,8 @@ const Select = ({
   const [isOpen, setOpen] = useState<boolean>(false)
 
   // Set Dropdown position when the select is open
-  useEffect(() => {
-    if (isOpen && selectRef.current && dropdownRef.current) {
+  const handleUpdatePosition = useCallback((): void => {
+    if (selectRef.current && dropdownRef.current) {
       const rectSelect = selectRef.current.getBoundingClientRect()
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
@@ -72,7 +72,17 @@ const Select = ({
         dropdownRef.current.style.maxWidth = `${rectSelect.width}px`
       }
     }
-  }, [isOpen, limitDropdown])
+  }, [limitDropdown])
+
+  // Update position on each open and track scroll
+  useEffect(() => {
+    if (isOpen) {
+      handleUpdatePosition()
+      window.addEventListener('scroll', handleUpdatePosition)
+    } else {
+      window.removeEventListener('scroll', handleUpdatePosition)
+    }
+  }, [handleUpdatePosition, isOpen])
 
   // Detect click outside of the dropdown
   useEffect(() => {

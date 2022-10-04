@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -51,8 +51,8 @@ const Tooltip = ({
   })
 
   // Set position of element based on target element
-  useEffect(() => {
-    if (isOpen && tooltipChildrenRef.current) {
+  const handleUpdatePosition = useCallback((): void => {
+    if (tooltipChildrenRef.current) {
       const tooltipRect = tooltipChildrenRef.current.getBoundingClientRect()
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
@@ -146,7 +146,17 @@ const Tooltip = ({
           break
       }
     }
-  }, [isOpen, position])
+  }, [position])
+
+  // Update position on each open and track scroll
+  useEffect(() => {
+    if (isOpen) {
+      handleUpdatePosition()
+      window.addEventListener('scroll', handleUpdatePosition)
+    } else {
+      window.removeEventListener('scroll', handleUpdatePosition)
+    }
+  }, [handleUpdatePosition, isOpen])
 
   // Detect click outside of the dropdown
   useEffect(() => {

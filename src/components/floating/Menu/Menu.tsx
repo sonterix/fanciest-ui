@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -45,7 +45,7 @@ const Menu = ({
   })
 
   // Set position of element based on target element
-  useEffect(() => {
+  const handleUpdatePosition = useCallback((): void => {
     if (anchor) {
       const anchorRect = anchor.getBoundingClientRect()
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
@@ -141,6 +141,16 @@ const Menu = ({
       }
     }
   }, [anchor, position])
+
+  // Update position on each open and track scroll
+  useEffect(() => {
+    if (isOpen) {
+      handleUpdatePosition()
+      window.addEventListener('scroll', handleUpdatePosition)
+    } else {
+      window.removeEventListener('scroll', handleUpdatePosition)
+    }
+  }, [handleUpdatePosition, isOpen])
 
   // Detect click outside of the dropdown
   useEffect(() => {
