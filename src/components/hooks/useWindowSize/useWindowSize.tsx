@@ -5,14 +5,14 @@ import { UseWindowSizeValues } from './useWindowSize.type'
 const useWindowSize = (): UseWindowSizeValues => {
   const [windowSize, setWindowSize] = useState<UseWindowSizeValues>({
     screenWidth: 0,
-    screenWeight: 0
+    screenHeight: 0
   })
 
   useEffect(() => {
     const updateSize = () => {
       setWindowSize({
         screenWidth: window.innerWidth,
-        screenWeight: window.innerHeight
+        screenHeight: window.innerHeight
       })
     }
 
