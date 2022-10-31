@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -9,6 +9,7 @@ import styles from './SlideModal.module.scss'
 const SlideModal = ({
   isOpen,
   onClose,
+  onInit,
   maxWidth,
   fullWidth,
   closeButton,
@@ -19,6 +20,8 @@ const SlideModal = ({
   children,
   ...props
 }: SlideModalProps): JSX.Element => {
+  const modalRef = useRef<HTMLDivElement | null>(null)
+
   const classes = arrayToClasslist([
     styles.SlideModal,
 
@@ -61,6 +64,10 @@ const SlideModal = ({
     return () => document.body.classList.remove('fui-modal-open')
   }, [isOpen])
 
+  useEffect(() => {
+    onInit(modalRef.current)
+  }, [onInit])
+
   return (
     <>
       {transitionFade(
@@ -85,6 +92,7 @@ const SlideModal = ({
               {...props}
               className={classes}
               style={{ ...(style || {}), maxWidth, ...(fullWidth ? { width: '100%' } : {}), ...animationSlideStyles }}
+              ref={modalRef}
             >
               {closeButton && (
                 <button type="button" className={styles.XMark} {...(closeButton ? { onClick: onClose } : {})}>

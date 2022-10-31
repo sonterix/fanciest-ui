@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
@@ -9,6 +9,7 @@ import styles from './Modal.module.scss'
 const Modal = ({
   isOpen,
   onClose,
+  onInit,
   maxWidth,
   fullWidth,
   closeButton,
@@ -21,6 +22,8 @@ const Modal = ({
   children,
   ...props
 }: ModalProps): JSX.Element => {
+  const modalRef = useRef<HTMLDivElement | null>(null)
+
   const classes = arrayToClasslist([
     styles.Modal,
 
@@ -57,6 +60,10 @@ const Modal = ({
     return () => document.body.classList.remove('fui-modal-open')
   }, [isOpen])
 
+  useEffect(() => {
+    onInit(modalRef.current)
+  }, [onInit])
+
   return (
     <>
       {transitionFade(
@@ -81,6 +88,7 @@ const Modal = ({
               {...props}
               className={classes}
               style={{ ...(style || {}), maxWidth, ...(fullWidth ? { width: '100%' } : {}), ...animationSlideStyles }}
+              ref={modalRef}
             >
               {closeButton && (
                 <button type="button" className={styles.XMark} {...(closeButton ? { onClick: onClose } : {})}>
