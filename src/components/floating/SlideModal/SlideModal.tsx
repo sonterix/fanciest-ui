@@ -65,7 +65,9 @@ const SlideModal = ({
   }, [isOpen])
 
   useEffect(() => {
-    onInit(modalRef.current)
+    if (onInit) {
+      onInit(modalRef.current)
+    }
   }, [onInit])
 
   return (
