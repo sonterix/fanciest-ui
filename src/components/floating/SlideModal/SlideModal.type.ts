@@ -8,5 +8,5 @@ export interface SlideModalProps extends React.ComponentPropsWithoutRef<'div'> {
   closeButton?: boolean
   position?: 'left' | 'right'
   shape?: Shape
-  onInit?: (modal: HTMLDivElement | null) => void
+  onInit?: (modal: HTMLElement) => void
 }

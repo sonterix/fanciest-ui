@@ -10,5 +10,5 @@ export interface ModalProps extends React.ComponentPropsWithoutRef<'div'> {
   shape?: Shape
   header?: React.ReactNode
   footer?: React.ReactNode
-  onInit?: (modal: HTMLDivElement | null) => void
+  onInit?: (modal: HTMLElement) => void
 }

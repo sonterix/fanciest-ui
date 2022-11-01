@@ -17,12 +17,16 @@ const Modal = ({
   shape,
   header,
   footer,
+  id,
   className,
   style,
   children,
   ...props
 }: ModalProps): JSX.Element => {
-  const modalRef = useRef<HTMLDivElement | null>(null)
+  // Id for modal element
+  const generatedId = useRef(`modal-${Math.floor((1 + Math.random()) * 0x10000).toString(16)}`)
+
+  const ids = arrayToClasslist([generatedId.current, id || ''])
 
   const classes = arrayToClasslist([
     styles.Modal,
@@ -51,6 +55,15 @@ const Modal = ({
     leave: { transform: `translate(-50%, ${position === 'center' ? '-45%' : '-10px'})` },
     config: {
       duration: 100
+    },
+    onDestroyed: () => {
+      if (onInit) {
+        const element: HTMLElement | null = document.querySelector(`#${generatedId.current}`) || null
+
+        if (element) {
+          onInit(element)
+        }
+      }
     }
   })
 
@@ -59,12 +72,6 @@ const Modal = ({
     if (isOpen) document.body.classList.add('fui-modal-open')
     return () => document.body.classList.remove('fui-modal-open')
   }, [isOpen])
-
-  useEffect(() => {
-    if (onInit) {
-      onInit(modalRef.current)
-    }
-  }, [onInit])
 
   return (
     <>
@@ -88,9 +95,9 @@ const Modal = ({
           createPortal(
             <animated.div
               {...props}
+              id={ids}
               className={classes}
               style={{ ...(style || {}), maxWidth, ...(fullWidth ? { width: '100%' } : {}), ...animationSlideStyles }}
-              ref={modalRef}
             >
               {closeButton && (
                 <button type="button" className={styles.XMark} {...(closeButton ? { onClick: onClose } : {})}>
