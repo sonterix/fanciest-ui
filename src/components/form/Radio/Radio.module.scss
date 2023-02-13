@@ -19,47 +19,47 @@
   }
 
   &.Black {
-    @include colorStylesLocal(var(--color-black2), var(--color-white));
+    @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
   }
 
   &.White {
-    @include colorStylesLocal(var(--color-white), var(--color-black));
+    @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
   }
 
   &.Yellow {
-    @include colorStylesLocal(var(--color-yellow), var(--color-white));
+    @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
   }
 
   &.Orange {
-    @include colorStylesLocal(var(--color-orange), var(--color-white));
+    @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
   }
 
   &.Red {
-    @include colorStylesLocal(var(--color-red), var(--color-white));
+    @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
   }
 
   &.Rose {
-    @include colorStylesLocal(var(--color-rose), var(--color-white));
+    @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
   }
 
   &.Green {
-    @include colorStylesLocal(var(--color-green), var(--color-white));
+    @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
   }
 
   &.Teal {
-    @include colorStylesLocal(var(--color-teal), var(--color-white));
+    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
   }
 
   &.Turquoise {
-    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
+    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
   }
 
   &.Blue {
-    @include colorStylesLocal(var(--color-blue), var(--color-white));
+    @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
   }
 
   &.Purple {
-    @include colorStylesLocal(var(--color-purple), var(--color-white));
+    @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
   }
 
   &.Disabled {
@@ -69,10 +69,10 @@
     .Checked,
     .Unchecked {
       background-color: var(--color-white9);
-      border-color: var(--color-black8);
+      border-color: var(--color-neutral-200);
 
       &::before {
-        background-color: var(--color-black8);
+        background-color: var(--color-neutral-200);
       }
     }
   }
@@ -81,7 +81,7 @@
     display: block;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-black3);
+    color: var(--color-neutral-700);
     user-select: none;
   }
 
@@ -109,12 +109,12 @@
   }
 
   .Unchecked {
-    background-color: var(--color-white);
-    border-color: var(--color-black8);
+    background-color: var(--color-neutral-0);
+    border-color: var(--color-neutral-200);
 
     &:hover,
     &:focus {
-      border-color: var(--color-black5);
+      border-color: var(--color-neutral-500);
     }
   }
 
