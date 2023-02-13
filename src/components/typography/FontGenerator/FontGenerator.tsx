@@ -2,15 +2,16 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import parse from 'html-react-parser'
 
-import { arrayToClasslist, getTextWeight } from '../../../helpers'
+import { arrayToClasslist } from '../../../helpers'
 import { FontProps } from './FontGenerator.type'
-import { getFontSize } from './helper'
+import { getFont } from './helper'
 import styles from './FontGenerator.module.scss'
 
 const FontGenerator = ({
-  family,
+  size,
   weight,
-  media,
+  lineHeight,
+  letterSpacing,
   as,
   selector,
   inheritToChildren,
@@ -20,14 +21,17 @@ const FontGenerator = ({
   children,
   ...props
 }: FontProps): JSX.Element => {
-  const [fontSize, setFontSize] = useState<string | number>(getFontSize(media, 0))
+  const [font, setFont] = useState<{
+    size: number | string | undefined
+    weight: number | string | undefined
+    lineHeight: number | string | undefined
+    letterSpacing: number | string | undefined
+  }>(getFont(size, weight, lineHeight, letterSpacing, 0))
 
   const classes = arrayToClasslist([
     selector || 'fui-p',
 
     styles.Font,
-
-    ...getTextWeight(weight),
 
     ...(inheritToChildren ? [styles.InheritToChildren] : []),
 
@@ -42,7 +46,7 @@ const FontGenerator = ({
   // Update screen width on resize screen
   useEffect(() => {
     const updateSize = () => {
-      setFontSize(getFontSize(media, window.innerWidth))
+      setFont(getFont(size, weight, lineHeight, letterSpacing, window.innerWidth))
     }
 
     updateSize()
@@ -51,20 +55,39 @@ const FontGenerator = ({
     return () => {
       window.removeEventListener('resize', updateSize)
     }
-  }, [media])
+  }, [letterSpacing, lineHeight, size, weight])
 
   return htmlContent ? (
-    <div {...props} className={classes} style={{ ...(style || {}), fontSize }}>
+    <div
+      {...props}
+      className={classes}
+      style={{
+        ...(style || {}),
+        fontSize: font.size,
+        fontWeight: font.weight,
+        lineHeight: font.lineHeight,
+        letterSpacing: font.letterSpacing
+      }}
+    >
       {htmlContent}
     </div>
   ) : (
-    React.createElement(as || 'p', { className: classes, style: { ...(style || {}), fontSize }, ...props }, children)
+    React.createElement(
+      as || 'p',
+      {
+        className: classes,
+        style: {
+          ...(style || {}),
+          fontSize: font.size,
+          fontWeight: font.weight,
+          lineHeight: font.lineHeight,
+          letterSpacing: font.letterSpacing
+        },
+        ...props
+      },
+      children
+    )
   )
-}
-
-FontGenerator.defaultProps = {
-  weight: 400,
-  inheritToChildren: false
 }
 
 export default FontGenerator

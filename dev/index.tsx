@@ -95,7 +95,7 @@ const Dev = (): JSX.Element => {
             L
           </CircleButton>
 
-          <CircleButton color="teal" textFamily="heading" textWeight={100}>
+          <CircleButton color="teal" textWeight={100}>
             T
           </CircleButton>
         </div>
@@ -136,7 +136,7 @@ const Dev = (): JSX.Element => {
             Outlined
           </Button>
 
-          <Button color="purple" textFamily="heading" textWeight={100}>
+          <Button color="purple" textWeight={100}>
             Custom Text
           </Button>
 
@@ -159,14 +159,19 @@ const Dev = (): JSX.Element => {
           <P2 weight={300}>Paragraph 2</P2>
           <P3 weight={200}>Paragraph 3</P3>
           <P4 weight={100}>Paragraph 4</P4>
-          <Font as="div" family="main">
-            Custom 1
-          </Font>
-          <Font as="span" family="heading">
-            Custom 2
-          </Font>
-          <Font as="del" media={{ default: 10, xs: 11, sm: 12, md: 13, lg: 14, xl: 15, xxl: 16, xxxl: 17 }}>
+          <Font as="div">Custom 1</Font>
+          <Font as="span">Custom 2</Font>
+          <Font as="del" size={{ default: 10, xs: 11, sm: 12, md: 13, lg: 14, xl: 15, xxl: 16, xxxl: 17 }}>
             Custom 3
+          </Font>
+          <Font as="b" weight={{ default: 100, xs: 200, sm: 300, md: 400, lg: 500, xl: 600, xxl: 700, xxxl: 800 }}>
+            Custom 4
+          </Font>
+          <Font as="i" letterSpacing={{ default: 1, xs: 2, sm: 3, md: 4, lg: 5, xl: 6, xxl: 7, xxxl: 8 }}>
+            Custom 5
+          </Font>
+          <Font as="mark" lineHeight={{ default: 1, xs: 1.2, sm: 1.4, md: 1.6, lg: 1.8, xl: 2, xxl: 2.2, xxxl: 2.4 }}>
+            Custom 6
           </Font>
         </div>
       </div>
@@ -202,7 +207,7 @@ const Dev = (): JSX.Element => {
             Size
           </Avatar>
 
-          <Avatar color="red" textFamily="heading" textSize={24} textWeight={300}>
+          <Avatar color="red" textSize={24} textWeight={300}>
             Txt
           </Avatar>
         </div>
@@ -233,7 +238,7 @@ const Dev = (): JSX.Element => {
             Click me
           </Badge>
 
-          <Badge textFamily="heading" textSize={20} textWeight={300}>
+          <Badge textSize={20} textWeight={300}>
             Custom Text
           </Badge>
 
@@ -370,7 +375,7 @@ const Dev = (): JSX.Element => {
             Hover me
           </Tooltip>
 
-          <Tooltip content="Hello World" textFamily="heading" textSize="18px" textWeight={600}>
+          <Tooltip content="Hello World" textSize="18px" textWeight={600}>
             Custom text
           </Tooltip>
 

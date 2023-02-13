@@ -1,7 +1,32 @@
-import { FontMedia } from './FontGenerator.type'
+import { TextWeight } from '../../../types'
+import { FontMedia, FontWeightMedia } from './FontGenerator.type'
 
-// eslint-disable-next-line
-export const getFontSize = (media: FontMedia | undefined, screenWidth: number): string | number => {
+export const getParams = (
+  param: number | string | FontMedia | FontWeightMedia | undefined,
+  defaultParam: number | string | FontMedia
+) => {
+  if (typeof param !== 'undefined' && typeof param === 'object') {
+    if (typeof defaultParam === 'object') {
+      return {
+        ...defaultParam,
+        ...param
+      }
+    }
+
+    return {
+      default: defaultParam,
+      ...param
+    }
+  }
+
+  if (typeof param !== 'undefined') {
+    return param
+  }
+
+  return defaultParam
+}
+
+export const getMedia = (media: FontMedia, screenWidth: number): number | string | undefined => {
   const breackpoints = {
     xs: 361,
     sm: 576,
@@ -12,36 +37,69 @@ export const getFontSize = (media: FontMedia | undefined, screenWidth: number): 
     xxxl: 1981
   } as const
 
-  let size = media?.default || '16px'
+  let value = media?.default
 
-  // XXXL font
+  // XXXL
   if ((typeof media?.xxxl === 'string' || typeof media?.xxxl === 'number') && screenWidth >= breackpoints.xxxl) {
-    size = media.xxxl
+    value = media.xxxl
   }
-  // XXL font
+  // XXL
   else if ((typeof media?.xxl === 'string' || typeof media?.xxl === 'number') && screenWidth >= breackpoints.xxl) {
-    size = media.xxl
+    value = media.xxl
   }
-  // XL font
+  // XL
   else if ((typeof media?.xl === 'string' || typeof media?.xl === 'number') && screenWidth >= breackpoints.xl) {
-    size = media.xl
+    value = media.xl
   }
-  // LG font
+  // LG
   else if ((typeof media?.lg === 'string' || typeof media?.lg === 'number') && screenWidth >= breackpoints.lg) {
-    size = media.lg
+    value = media.lg
   }
-  // MD font
+  // MD
   else if ((typeof media?.md === 'string' || typeof media?.md === 'number') && screenWidth >= breackpoints.md) {
-    size = media.md
+    value = media.md
   }
-  // SM font
+  // SM
   else if ((typeof media?.sm === 'string' || typeof media?.sm === 'number') && screenWidth >= breackpoints.sm) {
-    size = media.sm
+    value = media.sm
   }
-  // XS font
+  // XS
   else if ((typeof media?.xs === 'string' || typeof media?.xs === 'number') && screenWidth >= breackpoints.xs) {
-    size = media.xs
+    value = media.xs
   }
 
-  return size
+  return value
+}
+
+export const getFont = (
+  size: number | string | FontMedia | undefined,
+  weight: TextWeight | FontWeightMedia | undefined,
+  lineHeight: number | string | FontMedia | undefined,
+  letterSpacing: number | string | FontMedia | undefined,
+  screenWidth: number
+): {
+  size: number | string | undefined
+  weight: number | string | undefined
+  lineHeight: number | string | undefined
+  letterSpacing: number | string | undefined
+} => {
+  let sizeProp: number | string | undefined
+  let weightProp: number | string | undefined
+  let lineHeightProp: number | string | undefined
+  let letterSpacingProp: number | string | undefined
+
+  if (size) {
+    sizeProp = typeof size === 'object' ? getMedia(size, screenWidth) : size
+  }
+  if (weight) {
+    weightProp = typeof weight === 'object' ? getMedia(weight, screenWidth) : weight
+  }
+  if (lineHeight) {
+    lineHeightProp = typeof lineHeight === 'object' ? getMedia(lineHeight, screenWidth) : lineHeight
+  }
+  if (letterSpacing) {
+    letterSpacingProp = typeof letterSpacing === 'object' ? getMedia(letterSpacing, screenWidth) : letterSpacing
+  }
+
+  return { size: sizeProp, weight: weightProp, lineHeight: lineHeightProp, letterSpacing: letterSpacingProp }
 }

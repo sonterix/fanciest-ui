@@ -2,16 +2,12 @@ import React from 'react'
 
 import { FontProps } from '../FontGenerator/FontGenerator.type'
 import FontGenerator from '../FontGenerator/FontGenerator'
+import { getParams } from '../FontGenerator/helper'
 
-const H0 = ({ media, as, ...props }: FontProps): JSX.Element => {
+const H0 = ({ size, as, ...props }: FontProps): JSX.Element => {
   return (
     <FontGenerator
-      media={{
-        ...media,
-        default: media?.default || '32px',
-        md: media?.md || '40px',
-        lg: media?.lg || '48px'
-      }}
+      size={getParams(size, { default: 32, md: 40, lg: 48 })}
       as={as || 'h1'}
       selector="fui-h0"
       {...props}
