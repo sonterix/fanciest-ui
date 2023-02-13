@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses, getTextFamily, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
 import { ButtonLinkProps, ButtonProps } from './Button.type'
 import styles from './Button.module.scss'
 
@@ -9,7 +9,6 @@ const Button = ({
   shape,
   presetSize,
   color,
-  textFamily,
   textWeight,
   before,
   after,
@@ -32,8 +31,6 @@ const Button = ({
     ...(presetSize === 'lg' ? [styles.Lg] : []),
 
     ...getColorClasses(color, styles),
-
-    ...getTextFamily(textFamily),
 
     ...getTextWeight(textWeight),
 

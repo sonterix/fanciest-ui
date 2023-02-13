@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { TextFamiy, TextWeight } from '../../../types'
+import { TextWeight } from '../../../types'
 
 export interface FontMedia {
   default?: number | string
@@ -14,7 +14,6 @@ export interface FontMedia {
 }
 
 export interface FontProps extends React.ComponentProps<'p'> {
-  family?: TextFamiy
   weight?: TextWeight
   media?: FontMedia
   as?: string

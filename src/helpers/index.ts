@@ -1,4 +1,4 @@
-import { Color, Position, TextFamiy, TextWeight } from '../types'
+import { Color, Position, TextWeight } from '../types'
 
 export const arrayToClasslist = (arr: string[]): string => {
   const joined = arr.join(' ').trim()
@@ -18,15 +18,6 @@ export const getColorClasses = (color: Color | undefined, styles: { [className: 
     ...(color === 'turquoise' ? [styles.Turquoise] : []),
     ...(color === 'blue' ? [styles.Blue] : []),
     ...(color === 'purple' ? [styles.Purple] : [])
-  ]
-
-  return classesArr
-}
-
-export const getTextFamily = (textFamily: TextFamiy | undefined): string[] => {
-  const classesArr = [
-    ...(textFamily === 'main' ? ['fui-family-main'] : []),
-    ...(textFamily === 'heading' ? ['fui-family-heading'] : [])
   ]
 
   return classesArr

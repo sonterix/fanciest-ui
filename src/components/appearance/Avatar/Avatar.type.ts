@@ -1,5 +1,5 @@
 import React from 'react'
-import { Color, TextFamiy, TextWeight } from '../../../types'
+import { Color, TextWeight } from '../../../types'
 
 export interface AvatarProps extends React.ComponentProps<'div'> {
   width?: string | number
@@ -9,7 +9,6 @@ export interface AvatarProps extends React.ComponentProps<'div'> {
   alt?: string
   objectFit?: 'cover' | 'contain'
   color?: Color
-  textFamily?: TextFamiy
   textSize?: string | number
   textWeight: TextWeight
 }

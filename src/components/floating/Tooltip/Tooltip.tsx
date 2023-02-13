@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { arrayToClasslist, getColorClasses, getPositions, getTextFamily, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClasses, getPositions, getTextWeight } from '../../../helpers'
 import { TooltipProps } from './Tooltip.type'
 import styles from './Tooltip.module.scss'
 
@@ -11,7 +11,6 @@ const Tooltip = ({
   position,
   maxWidth,
   color,
-  textFamily,
   textSize,
   textWeight,
   actionType,
@@ -26,8 +25,6 @@ const Tooltip = ({
     ...getPositions(position, styles),
 
     ...getColorClasses(color, styles),
-
-    ...getTextFamily(textFamily),
 
     ...getTextWeight(textWeight)
   ])
@@ -238,7 +235,6 @@ Tooltip.defaultProps = {
   position: 'top',
   maxWidth: 'none',
   color: 'black',
-  textFamily: '',
   textSize: '12px',
   textWeight: 400,
   actionType: 'hover'

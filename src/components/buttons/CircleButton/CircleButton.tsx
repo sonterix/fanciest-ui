@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses, getTextFamily, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
 import { CircleButtonLinkProps, CircleButtonProps } from './CircleButton.type'
 import styles from './CircleButton.module.scss'
 
@@ -8,7 +8,6 @@ const CircleButton = ({
   layout,
   presetSize,
   color,
-  textFamily,
   textWeight,
   className,
   children,
@@ -24,8 +23,6 @@ const CircleButton = ({
     ...(presetSize === 'md' ? [styles.Md] : []),
 
     ...getColorClasses(color, styles),
-
-    ...getTextFamily(textFamily),
 
     ...getTextWeight(textWeight),
 

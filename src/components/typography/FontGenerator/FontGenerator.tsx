@@ -2,7 +2,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import parse from 'html-react-parser'
 
-import { arrayToClasslist, getTextFamily, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getTextWeight } from '../../../helpers'
 import { FontProps } from './FontGenerator.type'
 import { getFontSize } from './helper'
 import styles from './FontGenerator.module.scss'
@@ -26,8 +26,6 @@ const FontGenerator = ({
     selector || 'fui-p',
 
     styles.Font,
-
-    ...getTextFamily(family),
 
     ...getTextWeight(weight),
 
