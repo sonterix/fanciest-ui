@@ -1,504 +1,419 @@
-/* vietnamese */
+// Aktiv Grotesk
 @font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDkv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDlv_1i4_D2E4A.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYqz_wNahGAdqQ43Rh_eZDrv_1i4_D2.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/ab3e12/000000000000000077359d4f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('opentype');
+  font-display: auto;
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/951aca/000000000000000077359d51/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/951aca/000000000000000077359d51/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/951aca/000000000000000077359d51/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/a798a9/000000000000000077359d55/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/a798a9/000000000000000077359d55/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/a798a9/000000000000000077359d55/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/8e3d9f/000000000000000077359d58/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/63d81f/000000000000000077359d5a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/63d81f/000000000000000077359d5a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/63d81f/000000000000000077359d5a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/e4f1f2/000000000000000077359d5c/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/e4f1f2/000000000000000077359d5c/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/e4f1f2/000000000000000077359d5c/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/c11a71/000000000000000077359d5e/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/939926/000000000000000077359d5f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/939926/000000000000000077359d5f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/939926/000000000000000077359d5f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/cbf647/000000000000000077359d61/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/cbf647/000000000000000077359d61/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/cbf647/000000000000000077359d61/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/af45c0/000000000000000077359d62/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/af45c0/000000000000000077359d62/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/af45c0/000000000000000077359d62/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/89c06c/000000000000000077359d63/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/89c06c/000000000000000077359d63/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/89c06c/000000000000000077359d63/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/b868ec/000000000000000077359d64/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/b868ec/000000000000000077359d64/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/b868ec/000000000000000077359d64/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/4a8d64/000000000000000077359d65/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/4a8d64/000000000000000077359d65/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/4a8d64/000000000000000077359d65/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  src: url('https://use.typekit.net/af/454bf3/000000000000000077359d66/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/454bf3/000000000000000077359d66/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/454bf3/000000000000000077359d66/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 900;
+}
+
+// Aktiv Grotesk Extended
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/2b247a/00000000000000003b9ad134/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/2b247a/00000000000000003b9ad134/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/2b247a/00000000000000003b9ad134/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/de1e2f/00000000000000003b9ad135/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/de1e2f/00000000000000003b9ad135/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/de1e2f/00000000000000003b9ad135/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i1&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/62d66c/00000000000000003b9ad136/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/62d66c/00000000000000003b9ad136/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/62d66c/00000000000000003b9ad136/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/344956/00000000000000003b9ad137/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/344956/00000000000000003b9ad137/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/344956/00000000000000003b9ad137/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i2&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/8e650e/00000000000000003b9ad138/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/8e650e/00000000000000003b9ad138/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/8e650e/00000000000000003b9ad138/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i3&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/f6d3e0/00000000000000003b9ad139/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/f6d3e0/00000000000000003b9ad139/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/f6d3e0/00000000000000003b9ad139/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/e10446/00000000000000003b9ad13a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/e10446/00000000000000003b9ad13a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/e10446/00000000000000003b9ad13a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
+      format('opentype');
+  font-display: auto;
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/ce6561/00000000000000003b9ad13b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/ce6561/00000000000000003b9ad13b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/ce6561/00000000000000003b9ad13b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
   font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-/* vietnamese */
+
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/5a2c6f/00000000000000003b9ad13c/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/5a2c6f/00000000000000003b9ad13c/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/5a2c6f/00000000000000003b9ad13c/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3')
+      format('opentype');
+  font-display: auto;
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
-/* latin-ext */
+
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/ff53a0/00000000000000003b9ad13d/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/ff53a0/00000000000000003b9ad13d/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/ff53a0/00000000000000003b9ad13d/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/3f03c1/00000000000000003b9ad13e/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/3f03c1/00000000000000003b9ad13e/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/3f03c1/00000000000000003b9ad13e/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/669c64/00000000000000003b9ad13f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/669c64/00000000000000003b9ad13f/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/669c64/00000000000000003b9ad13f/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/50539a/00000000000000003b9ad140/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/50539a/00000000000000003b9ad140/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/50539a/00000000000000003b9ad140/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/25524f/00000000000000003b9ad141/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/25524f/00000000000000003b9ad141/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/25524f/00000000000000003b9ad141/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/d8d5f7/00000000000000003b9ad142/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/d8d5f7/00000000000000003b9ad142/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/d8d5f7/00000000000000003b9ad142/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk Extended';
+  src: url('https://use.typekit.net/af/f25fdc/00000000000000003b9ad143/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('woff2'),
+    url('https://use.typekit.net/af/f25fdc/00000000000000003b9ad143/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('woff'),
+    url('https://use.typekit.net/af/f25fdc/00000000000000003b9ad143/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3')
+      format('opentype');
+  font-display: auto;
+  font-style: italic;
+  font-weight: 900;
+}
+
+// Akira Expanded
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded.woff2') format('woff2'),
+    url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded.woff') format('woff');
+  font-display: auto;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded-Outline.woff2') format('woff2'),
+    url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded-Outline.woff') format('woff');
+  font-display: auto;
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
-/* latin */
+
 @font-face {
-  font-family: 'Work Sans';
+  font-family: 'Akira Expanded';
+  src: url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded-Bold.woff2') format('woff2'),
+    url('https://assets.moneymade.io/fonts/AkiraExpanded/AkiraExpanded-Bold.woff') format('woff');
+  font-display: auto;
   font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* vietnamese */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_c6DptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_cqDptfpA4cD3.woff2') format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Work Sans';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/worksans/v18/QGYsz_wNahGAdqQ43Rh_fKDptfpA4Q.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
-    U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-weight: bold;
 }

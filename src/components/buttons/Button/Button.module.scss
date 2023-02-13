@@ -77,54 +77,54 @@
     }
 
     &:not(:disabled):hover {
-      color: var(--color-neutral-0);
-      background-color: var(--color-neutral-900);
-      border-color: var(--color-neutral-900);
+      color: var(--color-white);
+      background-color: var(--color-black);
+      border-color: var(--color-black);
     }
   }
 
   &.Black {
-    @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-black2), var(--color-white));
   }
 
   &.White {
-    @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
+    @include colorStylesLocal(var(--color-white), var(--color-black));
   }
 
   &.Yellow {
-    @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-yellow), var(--color-white));
   }
 
   &.Orange {
-    @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-orange), var(--color-white));
   }
 
   &.Red {
-    @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-red), var(--color-white));
   }
 
   &.Rose {
-    @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-rose), var(--color-white));
   }
 
   &.Green {
-    @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-green), var(--color-white));
   }
 
   &.Teal {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-teal), var(--color-white));
   }
 
   &.Turquoise {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-turquoise), var(--color-white));
   }
 
   &.Blue {
-    @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-blue), var(--color-white));
   }
 
   &.Purple {
-    @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
+    @include colorStylesLocal(var(--color-purple), var(--color-white));
   }
 
   &:disabled {
@@ -132,15 +132,15 @@
     pointer-events: none;
 
     &.Filled {
-      color: var(--color-neutral-0);
-      background-color: var(--color-neutral-400);
-      border-color: var(--color-neutral-400);
+      color: var(--color-white);
+      background-color: var(--color-black6);
+      border-color: var(--color-black6);
     }
 
     &.Outlined {
-      color: var(--color-neutral-400);
-      background-color: var(--color-neutral-50);
-      border-color: var(--color-neutral-400);
+      color: var(--color-black6);
+      background-color: var(--color-black10);
+      border-color: var(--color-black6);
     }
   }
 

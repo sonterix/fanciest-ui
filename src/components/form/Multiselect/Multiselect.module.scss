@@ -8,7 +8,7 @@
     margin-bottom: 5px;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-neutral-700);
+    color: var(--color-black3);
     user-select: none;
   }
 
@@ -22,7 +22,7 @@
     padding: 8px 42px 8px 16px;
     min-width: 110px;
     width: 100%;
-    color: var(--color-neutral-900);
+    color: var(--color-black);
     background-color: transparent;
     border: 1px solid transparent;
     transition: color var(--trans), background-color var(--trans), border-color var(--trans);
@@ -42,47 +42,47 @@
     }
 
     &.Black {
-      @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-black2), var(--color-white));
     }
 
     &.White {
-      @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
+      @include colorStylesLocal(var(--color-white), var(--color-black));
     }
 
     &.Yellow {
-      @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-yellow), var(--color-white));
     }
 
     &.Orange {
-      @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-orange), var(--color-white));
     }
 
     &.Red {
-      @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-red), var(--color-white));
     }
 
     &.Rose {
-      @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-rose), var(--color-white));
     }
 
     &.Green {
-      @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-green), var(--color-white));
     }
 
     &.Teal {
-      @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-teal), var(--color-white));
     }
 
     &.Turquoise {
-      @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-turquoise), var(--color-white));
     }
 
     &.Blue {
-      @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-blue), var(--color-white));
     }
 
     &.Purple {
-      @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
+      @include colorStylesLocal(var(--color-purple), var(--color-white));
     }
 
     &.Md {
@@ -130,12 +130,12 @@
     }
 
     &.Filled {
-      background-color: var(--color-neutral-0);
-      border-color: var(--color-neutral-200);
+      background-color: var(--color-white);
+      border-color: var(--color-black8);
 
       &:hover,
       &:focus {
-        border-color: var(--color-neutral-500);
+        border-color: var(--color-black5);
       }
     }
 
@@ -143,24 +143,24 @@
       padding-left: 0;
       padding-right: 34px;
       border-width: 2px;
-      border-bottom-color: var(--color-neutral-200);
+      border-bottom-color: var(--color-black8);
       border-radius: 0;
 
       &:hover,
       &:focus {
-        border-bottom-color: var(--color-neutral-500);
+        border-bottom-color: var(--color-black5);
       }
     }
 
     &[disabled] {
-      color: var(--color-neutral-600);
-      background-color: var(--color-neutral-100);
+      color: var(--color-black4);
+      background-color: var(--color-black9);
       pointer-events: none;
       cursor: default;
 
       .MultiselectResult {
         > svg {
-          color: var(--color-neutral-600);
+          color: var(--color-black4);
         }
       }
     }
@@ -171,7 +171,7 @@
       padding: 5px;
       width: 20px;
       height: 20px;
-      color: var(--color-neutral-700);
+      color: var(--color-black3);
       fill: currentColor;
       transition: transform var(--trans-fast);
 
@@ -236,8 +236,8 @@
   padding: 0;
   max-height: 250px;
   list-style: none;
-  background-color: var(--color-neutral-0);
-  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-black8);
   border-radius: 4px;
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
   overflow-x: hidden;
@@ -266,7 +266,7 @@
     padding: 10px 12px;
     font-weight: 500;
     text-align: center;
-    color: var(--color-neutral-600);
+    color: var(--color-black4);
   }
 
   > li,
@@ -288,16 +288,16 @@
 
     &[data-active='true'] {
       font-weight: 600;
-      background-color: var(--color-neutral-100);
+      background-color: var(--color-black9);
     }
 
     &:hover,
     &:focus {
-      background-color: var(--color-neutral-200);
+      background-color: var(--color-black8);
     }
 
     &:disabled {
-      color: var(--color-neutral-200);
+      color: var(--color-black8);
       background-color: var(--color-white9);
       cursor: default;
       pointer-events: none;

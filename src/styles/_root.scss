@@ -1,74 +1,31 @@
 :root {
   // Fonts
-  --font-main: 'Work Sans', sans-serif;
+  --font-main: 'Aktiv Grotesk', sans-serif;
   --font-heading: 'Aktiv Grotesk Extended', sans-serif;
 
-  // Colors
-  --color-primary-50: #f1f8f9;
-  --color-primary-100: #e8fcff;
-  --color-primary-200: #f8feff;
-  --color-primary-300: #cdf9ff;
-  --color-primary-400: #b5f6ff;
-  --color-primary-500: #85f0ff;
-  --color-primary-600: #50acb9;
-  --color-primary-700: #427d85;
-  --color-primary-800: #2b555b;
-  --color-primary-900: #1b383d;
+  --color-black: #000000;
+  --color-black2: #1b1b1f;
+  --color-black3: #424247;
+  --color-black4: #76767a;
+  --color-black5: #9e9ea5;
+  --color-black6: #b6b6bc;
+  --color-black7: #ceced2;
+  --color-black8: #e8e8eb;
+  --color-black9: #f2f2f4;
+  --color-black10: #f9f9fb;
 
-  --color-secondary-50: #f5f9ff;
-  --color-secondary-100: #e4ebf6;
-  --color-secondary-200: #adc0dc;
-  --color-secondary-300: #94aed1;
-  --color-secondary-400: #7792b6;
-  --color-secondary-500: #476c9e;
-  --color-secondary-600: #3b5a82;
-  --color-secondary-700: #263a55;
-  --color-secondary-800: #1e2d42;
-  --color-secondary-900: #172232;
-
-  --color-neutral-0: #ffffff;
-  --color-neutral-50: #f0f3f4;
-  --color-neutral-100: #d4dddf;
-  --color-neutral-200: #b1c0c5;
-  --color-neutral-300: #98a7af;
-  --color-neutral-400: #79929c;
-  --color-neutral-500: #6a8089;
-  --color-neutral-600: #5c717a;
-  --color-neutral-700: #45565b;
-  --color-neutral-800: #314249;
-  --color-neutral-900: #1b2d32;
-
-  --color-success-50: #edfaf6;
-  --color-success-100: #d7f4eb;
-  --color-success-400: #44ae8f;
-  --color-success-700: #245b4b;
-
-  --color-warning-50: #fffcef;
-  --color-warning-100: #ffefb7;
-  --color-warning-400: #ffd53f;
-  --color-warning-600: #ffd53f;
-  --color-warning-700: #695733;
-
-  --color-danger-50: #ffeae7;
-  --color-danger-100: #f9bfb8;
-  --color-danger-300: #fb5039;
-  --color-danger-500: #d62007;
-  --color-danger-600: #991503;
-  --color-danger-700: #6b1206;
-
-  // Gradients
-  --gradient-primary-1: linear-gradient(0deg, rgba(80, 172, 185, 0.375) -5.45%, rgba(80, 172, 185, 0) 125.85%);
-
-  --gradient-secondary-1: linear-gradient(266.37deg, #476c9e -0.29%, rgba(71, 108, 158, 0) 116.68%);
-  --gradient-secondary-2: linear-gradient(0deg, rgba(205, 217, 233, 0.5) 51.1%, rgba(173, 192, 220, 0.05) 125.85%);
-
-  --gradient-success-1: linear-gradient(266.89deg, #00b47e 0%, rgba(0, 180, 126, 0) 113.4%);
-  --gradient-success-2: linear-gradient(252.35deg, rgba(0, 180, 126, 0.15) 1.92%, rgba(0, 180, 126, 0) 98.35%);
-
-  // Shadows
-  --shadow-1: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  --shadow-2: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  --shadow-4: 0px -4px 8px rgba(0, 0, 0, 0.15);
+  --color-white: #ffffff;
+  --color-green: #00993f;
+  --color-turquoise: #23cdc3;
+  --color-teal: #14aea5;
+  --color-yellow: #f7d633;
+  --color-orange: #ff9700;
+  --color-blue: #4b99e6;
+  --color-indigo: #29328d;
+  --color-purple: #6525c2;
+  --color-red: #e62b32;
+  --color-rose: #ed2348;
+  --color-pink: #ff9fc4;
 
   // Transition
   --trans-fast: 0.1s ease;

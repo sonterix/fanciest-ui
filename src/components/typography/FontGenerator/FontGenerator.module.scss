@@ -4,7 +4,7 @@
   display: block;
   line-height: 1.3;
   overflow-wrap: break-word;
-  color: var(--color-neutral-900);
+  color: var(--color-black);
 
   &.InheritToChildren {
     *:not(strong):not(b):not(i):not(a):not(:global(.fui-ignore)) {
