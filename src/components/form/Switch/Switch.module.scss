@@ -21,47 +21,47 @@
   }
 
   &.Black {
-    @include colorStylesLocal(var(--color-black2));
+    @include colorStylesLocal(var(--color-neutral-800));
   }
 
   &.White {
-    @include colorStylesLocal(var(--color-white));
+    @include colorStylesLocal(var(--color-neutral-0));
   }
 
   &.Yellow {
-    @include colorStylesLocal(var(--color-yellow));
+    @include colorStylesLocal(var(--color-warning-400));
   }
 
   &.Orange {
-    @include colorStylesLocal(var(--color-orange));
+    @include colorStylesLocal(var(--color-warning-600));
   }
 
   &.Red {
-    @include colorStylesLocal(var(--color-red));
+    @include colorStylesLocal(var(--color-danger-500));
   }
 
   &.Rose {
-    @include colorStylesLocal(var(--color-rose));
+    @include colorStylesLocal(var(--color-primary-400));
   }
 
   &.Green {
-    @include colorStylesLocal(var(--color-green));
+    @include colorStylesLocal(var(--color-success-400));
   }
 
   &.Teal {
-    @include colorStylesLocal(var(--color-teal));
+    @include colorStylesLocal(var(--color-primary-600));
   }
 
   &.Turquoise {
-    @include colorStylesLocal(var(--color-turquoise));
+    @include colorStylesLocal(var(--color-primary-600));
   }
 
   &.Blue {
-    @include colorStylesLocal(var(--color-blue));
+    @include colorStylesLocal(var(--color-secondary-500));
   }
 
   &.Purple {
-    @include colorStylesLocal(var(--color-purple));
+    @include colorStylesLocal(var(--color-secondary-700));
   }
 
   &.Disabled {
@@ -71,11 +71,11 @@
     .Unchecked,
     .Checked {
       .Switcher {
-        background-color: var(--color-black8);
+        background-color: var(--color-neutral-200);
       }
 
       .Line {
-        background-color: var(--color-black8);
+        background-color: var(--color-neutral-200);
         opacity: 0.8;
       }
     }
@@ -85,7 +85,7 @@
     display: block;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-black3);
+    color: var(--color-neutral-700);
     user-select: none;
   }
 
@@ -126,21 +126,21 @@
   .Unchecked {
     .Switcher {
       transform: translate(0, -50%);
-      background-color: var(--color-black7);
+      background-color: var(--color-neutral-300);
     }
 
     .Line {
-      background-color: var(--color-black7);
+      background-color: var(--color-neutral-300);
     }
 
     &:hover,
     &:focus {
       .Switcher {
-        background-color: var(--color-black5);
+        background-color: var(--color-neutral-500);
       }
 
       .Line {
-        background-color: var(--color-black5);
+        background-color: var(--color-neutral-500);
       }
     }
   }

@@ -6,7 +6,7 @@
   cursor: default;
 
   .Stars {
-    color: var(--color-black8);
+    color: var(--color-neutral-200);
   }
 
   @mixin colorStylesLocal($color) {
@@ -26,47 +26,47 @@
   }
 
   &.Black .Stars {
-    @include colorStylesLocal(var(--color-black2));
+    @include colorStylesLocal(var(--color-neutral-800));
   }
 
   &.White .Stars {
-    @include colorStylesLocal(var(--color-white));
+    @include colorStylesLocal(var(--color-neutral-0));
   }
 
   &.Yellow .Stars {
-    @include colorStylesLocal(var(--color-yellow));
+    @include colorStylesLocal(var(--color-warning-400));
   }
 
   &.Orange .Stars {
-    @include colorStylesLocal(var(--color-orange));
+    @include colorStylesLocal(var(--color-warning-600));
   }
 
   &.Red .Stars {
-    @include colorStylesLocal(var(--color-red));
+    @include colorStylesLocal(var(--color-danger-500));
   }
 
   &.Rose .Stars {
-    @include colorStylesLocal(var(--color-rose));
+    @include colorStylesLocal(var(--color-primary-400));
   }
 
   &.Green .Stars {
-    @include colorStylesLocal(var(--color-green));
+    @include colorStylesLocal(var(--color-success-400));
   }
 
   &.Teal .Stars {
-    @include colorStylesLocal(var(--color-teal));
+    @include colorStylesLocal(var(--color-primary-600));
   }
 
   &.Turquoise .Stars {
-    @include colorStylesLocal(var(--color-turquoise));
+    @include colorStylesLocal(var(--color-primary-600));
   }
 
   &.Blue .Stars {
-    @include colorStylesLocal(var(--color-blue));
+    @include colorStylesLocal(var(--color-secondary-500));
   }
 
   &.Purple .Stars {
-    @include colorStylesLocal(var(--color-purple));
+    @include colorStylesLocal(var(--color-secondary-700));
   }
 
   .Stars {
@@ -93,7 +93,7 @@
 
       &:hover {
         .Checked {
-          color: var(--color-black8);
+          color: var(--color-neutral-200);
         }
       }
     }
@@ -115,6 +115,6 @@
 
   .RatingNumber {
     font-weight: 500;
-    color: var(--color-black);
+    color: var(--color-neutral-900);
   }
 }

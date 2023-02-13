@@ -6,7 +6,7 @@
     margin-bottom: 5px;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-black3);
+    color: var(--color-neutral-700);
     user-select: none;
   }
 
@@ -16,7 +16,7 @@
     align-items: center;
     gap: 12px;
     width: 100%;
-    color: var(--color-black);
+    color: var(--color-neutral-900);
     background-color: transparent;
     border: 1px solid transparent;
     transition: color var(--trans), background-color var(--trans), border-color var(--trans);
@@ -40,12 +40,12 @@
     }
 
     &.Filled {
-      background-color: var(--color-white);
-      border-color: var(--color-black8);
+      background-color: var(--color-neutral-0);
+      border-color: var(--color-neutral-200);
 
       &:hover,
       &:focus {
-        border-color: var(--color-black5);
+        border-color: var(--color-neutral-500);
       }
     }
 
@@ -53,12 +53,12 @@
       padding-left: 0;
       padding-right: 0;
       border-width: 2px;
-      border-bottom-color: var(--color-black8);
+      border-bottom-color: var(--color-neutral-200);
       border-radius: 0;
 
       &:hover,
       &:focus {
-        border-bottom-color: var(--color-black5);
+        border-bottom-color: var(--color-neutral-500);
       }
     }
 
@@ -67,13 +67,13 @@
       cursor: default;
 
       &.Filled {
-        color: var(--color-black4);
-        background-color: var(--color-black9);
+        color: var(--color-neutral-600);
+        background-color: var(--color-neutral-100);
       }
 
       &.Outlined {
-        color: var(--color-black8);
-        border-bottom-color: var(--color-black8);
+        color: var(--color-neutral-200);
+        border-bottom-color: var(--color-neutral-200);
       }
     }
 
@@ -88,7 +88,7 @@
       border: none;
 
       &::placeholder {
-        color: var(--color-black5);
+        color: var(--color-neutral-500);
       }
 
       &:disabled {
@@ -96,7 +96,7 @@
         cursor: inherit;
 
         &::placeholder {
-          color: var(--color-black7);
+          color: var(--color-neutral-300);
         }
       }
     }
