@@ -205,38 +205,33 @@ const Dev = (): JSX.Element => {
         </div>
 
         <h2 className="dev__block__subtitle">Loader</h2>
-        {/* 
+
         <div className="dev__block__preview">
-          <Loader color="black" />
-          <Loader color="white" />
-          <Loader color="yellow" />
-          <Loader color="orange" />
-          <Loader color="red" />
-          <Loader color="rose" />
-          <Loader color="green" />
-          <Loader color="teal" />
-          <Loader color="turquoise" />
-          <Loader color="blue" />
-          <Loader color="purple" />
+          <Loader color="danger-300" />
+          <Loader color="warning-400" />
+          <Loader color="success-400" />
+          <Loader color="primary-300" />
+          <Loader color="neutral-300" />
+          <Loader color="secondary-300" />
 
-          <Loader color="orange" layout="spinline" />
+          <Loader color="danger-700" layout="spinline" />
 
-          <Loader color="blue" layout="spindot" />
+          <Loader color="warning-700" layout="spindot" />
 
-          <Loader color="yellow" layout="rolling" />
+          <Loader color="success-700" layout="rolling" />
 
-          <Loader color="teal" layout="dualring" />
+          <Loader color="primary-900" layout="dualring" />
 
-          <Loader color="purple" layout="ellipsis" />
+          <Loader color="neutral-900" layout="ellipsis" />
 
-          <Loader color="red" layout="pulse" />
+          <Loader color="secondary-900" layout="pulse" />
 
-          <Loader color="black" layout="magnify" />
+          <Loader layout="magnify" />
 
-          <Loader color="turquoise" width={130} height={130} />
+          <Loader width={130} height={130} />
 
           <Loader wrapperMaxWidth={200} wrapperMaxHeight={200} />
-        </div> */}
+        </div>
 
         <h2 className="dev__block__subtitle">Rating</h2>
 

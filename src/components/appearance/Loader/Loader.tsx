@@ -681,7 +681,7 @@ Loader.defaultProps = {
   wrapperMaxHeight: 'none',
   width: '60px',
   height: '60px',
-  color: 'rose'
+  color: 'secondary-200'
 }
 
 export default Loader
