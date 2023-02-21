@@ -310,26 +310,33 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Menu</h2>
 
-        {/* <div className="dev__block__preview">
+        <div className="dev__block__preview">
           <button type="button" ref={menuTriggerRef} onClick={() => setMenu(prev => !prev)}>
             Toggle menu
           </button>
 
           <select
-            value={menuProps?.color || 'white'}
+            value={menuProps?.color || 'primary'}
             onChange={({ target }) => setMenuProps(prev => ({ ...prev, color: target.value }))}
           >
-            <option value="black">Black</option>
-            <option value="white">White</option>
-            <option value="yellow">Yellow</option>
-            <option value="orange">Orange</option>
-            <option value="red">Red</option>
-            <option value="rose">Rose</option>
-            <option value="green">Green</option>
-            <option value="teal">Teal</option>
-            <option value="turquoise">Turquoise</option>
-            <option value="blue">Blue</option>
-            <option value="purple">Purplr</option>
+            <option value="primary-400">primary</option>
+            <option value="secondary-400">secondary</option>
+            <option value="neutral-400">neutral</option>
+            <option value="success-400">success</option>
+            <option value="warning-400">warning</option>
+            <option value="danger-500">danger</option>
+          </select>
+
+          <select
+            value={menuProps?.backgroundColor || 'secondary'}
+            onChange={({ target }) => setMenuProps(prev => ({ ...prev, backgroundColor: target.value }))}
+          >
+            <option value="primary-400">primary</option>
+            <option value="secondary-400">secondary</option>
+            <option value="neutral-400">neutral</option>
+            <option value="success-400">success</option>
+            <option value="warning-400">warning</option>
+            <option value="danger-500">danger</option>
           </select>
 
           <select
@@ -359,7 +366,7 @@ const Dev = (): JSX.Element => {
               <div style={{ padding: '5px 10px' }}>Menu 3</div>
             </Menu>
           )}
-        </div> */}
+        </div>
 
         <h2 className="dev__block__subtitle">Modal</h2>
 

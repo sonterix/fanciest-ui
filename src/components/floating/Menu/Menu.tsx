@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { arrayToClasslist, getColorClass, getPositions } from '../../../helpers'
+import { arrayToClasslist, getBackgroundColorClass, getColorClass, getPositions } from '../../../helpers'
 import { MenuProps } from './Menu.type'
 import styles from './Menu.module.scss'
 
@@ -14,6 +14,7 @@ const Menu = ({
   maxWidth,
   maxHeight,
   color,
+  backgroundColor,
   className,
   style,
   children,
@@ -25,6 +26,8 @@ const Menu = ({
     ...getPositions(position, styles),
 
     ...getColorClass(color),
+
+    ...getBackgroundColorClass(backgroundColor),
 
     className || ''
   ])
@@ -192,7 +195,8 @@ Menu.defaultProps = {
   position: 'bottom',
   maxWidth: 'none',
   maxHeight: 'none',
-  color: 'white'
+  color: 'neutral-900',
+  backgroundColor: 'neutral-0'
 }
 
 export default Menu

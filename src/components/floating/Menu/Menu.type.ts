@@ -8,4 +8,5 @@ export interface MenuProps extends React.ComponentPropsWithoutRef<'div'> {
   maxWidth?: string | number
   maxHeight?: string | number
   color?: Color
+  backgroundColor?: Color
 }
