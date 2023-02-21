@@ -176,27 +176,22 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Badge</h2>
 
-        {/* <div className="dev__block__preview">
-          <Badge color="black">Black</Badge>
-          <Badge color="white">White</Badge>
-          <Badge color="yellow">Yellow</Badge>
-          <Badge color="orange">Orange</Badge>
-          <Badge color="red">Red</Badge>
-          <Badge color="rose">Rose</Badge>
-          <Badge color="green">Green</Badge>
-          <Badge color="teal">Teal</Badge>
-          <Badge color="turquoise">Turquoise</Badge>
-          <Badge color="blue">Blue</Badge>
-          <Badge color="purple">Purplr</Badge>
+        <div className="dev__block__preview">
+          <Badge backgroundColor="danger-300">danger</Badge>
+          <Badge backgroundColor="neutral-300">neutral</Badge>
+          <Badge backgroundColor="primary-300">primary</Badge>
+          <Badge backgroundColor="secondary-300">secondary</Badge>
+          <Badge backgroundColor="warning-400">warning</Badge>
+          <Badge backgroundColor="success-400">success</Badge>
 
-          <Badge color="red" bgOpacity={0.4}>
+          <Badge color="danger-100" bgOpacity={0.4}>
             Opacity 0.6
           </Badge>
-          <Badge color="red" bgOpacity={0.4} hoverable>
+          <Badge color="success-100" bgOpacity={0.4} hoverable>
             Opacity 0.6 Hoverable
           </Badge>
 
-          <Badge color="orange" onClose={() => alert('Clicked')}>
+          <Badge color="warning-100" onClose={() => alert('Clicked')}>
             Click me
           </Badge>
 
@@ -207,11 +202,11 @@ const Dev = (): JSX.Element => {
           <Badge shape="rounded" presetSize="sm">
             Custom Shape and Size
           </Badge>
-        </div> */}
+        </div>
 
         <h2 className="dev__block__subtitle">Loader</h2>
-
-        {/* <div className="dev__block__preview">
+        {/* 
+        <div className="dev__block__preview">
           <Loader color="black" />
           <Loader color="white" />
           <Loader color="yellow" />
