@@ -82,7 +82,7 @@ const Rating = ({
 
 Rating.defaultProps = {
   layout: 'multy',
-  color: 'yellow',
+  color: 'warning-600',
   starSize: 18,
   textSize: '18px',
   withNumber: false

@@ -6,73 +6,10 @@
   cursor: default;
 
   .Stars {
-    color: var(--color-neutral-200);
-  }
-
-  @mixin colorStylesLocal($color) {
-    &.Hoverable .InteractiveIcon {
-      &:hover ~ .InteractiveIcon,
-      &:hover {
-        .Checked,
-        .Unchecked {
-          color: $color;
-        }
-      }
-    }
-
-    .Checked {
-      color: $color;
-    }
-  }
-
-  &.Black .Stars {
-    @include colorStylesLocal(var(--color-neutral-800));
-  }
-
-  &.White .Stars {
-    @include colorStylesLocal(var(--color-neutral-0));
-  }
-
-  &.Yellow .Stars {
-    @include colorStylesLocal(var(--color-warning-400));
-  }
-
-  &.Orange .Stars {
-    @include colorStylesLocal(var(--color-warning-600));
-  }
-
-  &.Red .Stars {
-    @include colorStylesLocal(var(--color-danger-500));
-  }
-
-  &.Rose .Stars {
-    @include colorStylesLocal(var(--color-primary-400));
-  }
-
-  &.Green .Stars {
-    @include colorStylesLocal(var(--color-success-400));
-  }
-
-  &.Teal .Stars {
-    @include colorStylesLocal(var(--color-primary-600));
-  }
-
-  &.Turquoise .Stars {
-    @include colorStylesLocal(var(--color-primary-600));
-  }
-
-  &.Blue .Stars {
-    @include colorStylesLocal(var(--color-secondary-500));
-  }
-
-  &.Purple .Stars {
-    @include colorStylesLocal(var(--color-secondary-700));
-  }
-
-  .Stars {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    color: inherit;
     direction: rtl;
 
     &.Hoverable {
@@ -87,13 +24,20 @@
         cursor: pointer;
 
         svg {
-          transition: color var(--trans);
+          transition: fill var(--trans);
+        }
+
+        &:hover,
+        &:hover ~ .InteractiveIcon {
+          svg {
+            fill: currentColor;
+          }
         }
       }
 
       &:hover {
-        .Checked {
-          color: var(--color-neutral-200);
+        svg {
+          fill: var(--color-neutral-100);
         }
       }
     }
@@ -101,7 +45,11 @@
     svg {
       padding-left: 3px;
       padding-right: 3px;
-      fill: currentColor;
+      fill: var(--color-neutral-100);
+
+      &.Checked {
+        fill: currentColor;
+      }
 
       &:first-child {
         padding-left: 0;

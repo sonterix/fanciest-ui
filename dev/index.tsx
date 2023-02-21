@@ -235,32 +235,22 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Rating</h2>
 
-        {/* <div className="dev__block__preview">
-          <Rating color="black" rating={4} />
-          <Rating color="white" rating={4} />
-          <Rating color="yellow" rating={4} />
-          <Rating color="orange" rating={4} />
-          <Rating color="red" rating={4} />
-          <Rating color="rose" rating={4} />
-          <Rating color="green" rating={4} />
-          <Rating color="teal" rating={4} />
-          <Rating color="turquoise" rating={4} />
-          <Rating color="blue" rating={4} />
-          <Rating color="purple" rating={4} />
+        <div className="dev__block__preview">
+          <Rating color="warning-400" rating={4} />
+          <Rating color="success-400" rating={4} />
+          <Rating color="danger-300" rating={4} />
+          <Rating color="primary-300" rating={4} />
+          <Rating color="neutral-300" rating={4} />
+          <Rating color="secondary-300" rating={4} />
 
-          <Rating color="orange" rating={3} layout="single" />
+          <Rating rating={3} layout="single" />
 
-          <Rating color="yellow" rating={3} layout="single" withNumber />
+          <Rating rating={3} layout="single" withNumber />
 
-          <Rating
-            color="teal"
-            rating={2}
-            withNumber
-            onChangeRating={rating => console.log(`Selected Rating: ${rating}`)}
-          />
+          <Rating rating={2} withNumber onChangeRating={rating => console.log(`Selected Rating: ${rating}`)} />
 
-          <Rating color="blue" rating={5} starSize={30} textSize="26px" withNumber />
-        </div> */}
+          <Rating rating={5} starSize={30} textSize="26px" withNumber />
+        </div>
 
         <h2 className="dev__block__subtitle">Skeleton</h2>
 
