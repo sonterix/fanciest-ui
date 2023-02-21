@@ -244,8 +244,6 @@
   overflow-y: auto;
   z-index: 99100;
 
-  @include colorStyles($with-color: true, $with-background-color: false);
-
   &.Md {
     font-size: 16px;
 

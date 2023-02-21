@@ -4,11 +4,12 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   text-decoration: none;
   white-space: nowrap;
+  background-color: var(--color-neutral-0);
   border: 1px solid transparent;
-  transition: color var(--trans), background-color var(--trans), border-color var(--trans);
+  transition: color var(--trans), background-color var(--trans), border-color var(--trans), box-shadow var(--trans);
   cursor: pointer;
 
   &.Xs {
@@ -29,7 +30,7 @@
     font-size: 16px;
 
     &.Rounded {
-      border-radius: 20px;
+      border-radius: 30px;
     }
 
     &.Squared {
@@ -42,7 +43,7 @@
     font-size: 18px;
 
     &.Rounded {
-      border-radius: 24px;
+      border-radius: 40px;
     }
 
     &.Squared {
@@ -55,7 +56,7 @@
     font-size: 20px;
 
     &.Rounded {
-      border-radius: 32px;
+      border-radius: 50px;
     }
 
     &.Squared {
@@ -63,68 +64,27 @@
     }
   }
 
-  @mixin colorStylesLocal($color-primary, $color-secondary) {
+  &:hover {
+    box-shadow: var(--shadow-1);
+
     &.Filled {
-      color: $color-secondary;
-      background-color: $color-primary;
-      border-color: $color-primary;
+      background-color: var(--color-primary-200);
     }
 
     &.Outlined {
-      color: $color-primary;
-      background-color: transparent;
-      border-color: $color-primary;
-    }
-
-    &:not(:disabled):hover {
-      color: var(--color-neutral-0);
-      background-color: var(--color-neutral-900);
-      border-color: var(--color-neutral-900);
+      border-color: var(--color-secondary-200);
     }
   }
 
-  &.Black {
-    @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
-  }
+  &:active {
+    &.Filled {
+      background-color: var(--color-primary-600);
+    }
 
-  &.White {
-    @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
-  }
-
-  &.Yellow {
-    @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
-  }
-
-  &.Orange {
-    @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
-  }
-
-  &.Red {
-    @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
-  }
-
-  &.Rose {
-    @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
-  }
-
-  &.Green {
-    @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
-  }
-
-  &.Teal {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Turquoise {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Blue {
-    @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
-  }
-
-  &.Purple {
-    @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
+    &.Outlined {
+      background-color: var(--color-secondary-200);
+      border-color: var(--color-secondary-200);
+    }
   }
 
   &:disabled {
@@ -149,5 +109,6 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+    color: inherit;
   }
 }

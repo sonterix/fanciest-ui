@@ -5,22 +5,31 @@ export const arrayToClasslist = (arr: string[]): string => {
   return joined
 }
 
-export const getColorClasses = (color: Color | undefined, styles: { [className: string]: string }): string[] => {
-  const classesArr = [
-    ...(color === 'black' ? [styles.Black] : []),
-    ...(color === 'white' ? [styles.White] : []),
-    ...(color === 'yellow' ? [styles.Yellow] : []),
-    ...(color === 'orange' ? [styles.Orange] : []),
-    ...(color === 'red' ? [styles.Red] : []),
-    ...(color === 'rose' ? [styles.Rose] : []),
-    ...(color === 'green' ? [styles.Green] : []),
-    ...(color === 'teal' ? [styles.Teal] : []),
-    ...(color === 'turquoise' ? [styles.Turquoise] : []),
-    ...(color === 'blue' ? [styles.Blue] : []),
-    ...(color === 'purple' ? [styles.Purple] : [])
-  ]
+export const getColorClass = (color: Color | undefined): string[] => {
+  if (color) {
+    const colorName = `fui-color-${color}`
+    return [colorName]
+  }
 
-  return classesArr
+  return []
+}
+
+export const getBackgroundColorClass = (backgroundColor: Color | undefined): string[] => {
+  if (backgroundColor) {
+    const backgroundColorName = `fui-background-color-${backgroundColor}`
+    return [backgroundColorName]
+  }
+
+  return []
+}
+
+export const getBorderColorClass = (borderColor: Color | undefined): string[] => {
+  if (borderColor) {
+    const borderColorName = `fui-border-color-${borderColor}`
+    return [borderColorName]
+  }
+
+  return []
 }
 
 export const getTextWeight = (textWeight: TextWeight | undefined): string[] => {

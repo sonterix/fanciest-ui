@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses } from '../../../helpers'
+import { arrayToClasslist, getColorClass } from '../../../helpers'
 import { RatingProps } from './Rating.type'
 import styles from './Rating.module.scss'
 
@@ -16,7 +16,7 @@ const Rating = ({
   style,
   ...props
 }: RatingProps): JSX.Element => {
-  const classes = arrayToClasslist([styles.Rating, ...getColorClasses(color, styles), className || ''])
+  const classes = arrayToClasslist([styles.Rating, ...getColorClass(color), className || ''])
 
   const handleChangeRating = (selectedRating: number) => () => {
     if (onChangeRating) {

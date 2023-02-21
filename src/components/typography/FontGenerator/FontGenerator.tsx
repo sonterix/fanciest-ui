@@ -90,4 +90,8 @@ const FontGenerator = ({
   )
 }
 
+FontGenerator.defaultProps = {
+  inheritToChildren: false
+}
+
 export default FontGenerator

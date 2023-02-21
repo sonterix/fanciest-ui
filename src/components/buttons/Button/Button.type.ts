@@ -7,6 +7,7 @@ export interface ButtonProps extends React.ComponentProps<'button'> {
   shape?: Shape
   presetSize?: PresetSize | 'xs' | 'lg'
   color?: Color
+  backgroundColor?: Color
   textWeight: TextWeight
   before?: React.ReactNode
   after?: React.ReactNode
@@ -17,6 +18,7 @@ export interface ButtonLinkProps extends React.ComponentProps<'a'> {
   shape?: Shape
   presetSize?: PresetSize | 'xs' | 'lg'
   color?: Color
+  backgroundColor?: Color
   textWeight: TextWeight
   before?: React.ReactNode
   after?: React.ReactNode

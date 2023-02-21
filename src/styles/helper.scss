@@ -7,126 +7,146 @@ $xl: 1201px;
 $xxl: 1401px;
 $xxxl: 1981px;
 
-@mixin colorStyles($with-color: true, $with-background-color: true) {
-  &.Black {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-neutral-800);
-    } @else if $with-color {
-      color: var(--color-neutral-800);
-    } @else if $with-background-color {
-      background-color: var(--color-neutral-800);
-    }
+@mixin colorParamClasses($param: 'color') {
+  .fui-#{$param}-primary-50 {
+    #{$param}: var(--color-primary-50);
+  }
+  .fui-#{$param}-primary-100 {
+    #{$param}: var(--color-primary-100);
+  }
+  .fui-#{$param}-primary-200 {
+    #{$param}: var(--color-primary-200);
+  }
+  .fui-#{$param}-primary-300 {
+    #{$param}: var(--color-primary-300);
+  }
+  .fui-#{$param}-primary-400 {
+    #{$param}: var(--color-primary-400);
+  }
+  .fui-#{$param}-primary-500 {
+    #{$param}: var(--color-primary-500);
+  }
+  .fui-#{$param}-primary-600 {
+    #{$param}: var(--color-primary-600);
+  }
+  .fui-#{$param}-primary-700 {
+    #{$param}: var(--color-primary-700);
+  }
+  .fui-#{$param}-primary-800 {
+    #{$param}: var(--color-primary-800);
+  }
+  .fui-#{$param}-primary-900 {
+    #{$param}: var(--color-primary-900);
   }
 
-  &.White {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-900);
-      background-color: var(--color-neutral-0);
-    } @else if $with-color {
-      color: var(--color-neutral-0);
-    } @else if $with-background-color {
-      background-color: var(--color-neutral-0);
-    }
+  .fui-#{$param}-secondary-50 {
+    #{$param}: var(--color-secondary-50);
+  }
+  .fui-#{$param}-secondary-100 {
+    #{$param}: var(--color-secondary-100);
+  }
+  .fui-#{$param}-secondary-200 {
+    #{$param}: var(--color-secondary-200);
+  }
+  .fui-#{$param}-secondary-300 {
+    #{$param}: var(--color-secondary-300);
+  }
+  .fui-#{$param}-secondary-400 {
+    #{$param}: var(--color-secondary-400);
+  }
+  .fui-#{$param}-secondary-500 {
+    #{$param}: var(--color-secondary-500);
+  }
+  .fui-#{$param}-secondary-600 {
+    #{$param}: var(--color-secondary-600);
+  }
+  .fui-#{$param}-secondary-700 {
+    #{$param}: var(--color-secondary-700);
+  }
+  .fui-#{$param}-secondary-800 {
+    #{$param}: var(--color-secondary-800);
+  }
+  .fui-#{$param}-secondary-900 {
+    #{$param}: var(--color-secondary-900);
   }
 
-  &.Yellow {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-warning-400);
-    } @else if $with-color {
-      color: var(--color-warning-400);
-    } @else if $with-background-color {
-      background-color: var(--color-warning-400);
-    }
+  .fui-#{$param}-neutral-50 {
+    #{$param}: var(--color-neutral-50);
+  }
+  .fui-#{$param}-neutral-100 {
+    #{$param}: var(--color-neutral-100);
+  }
+  .fui-#{$param}-neutral-200 {
+    #{$param}: var(--color-neutral-200);
+  }
+  .fui-#{$param}-neutral-300 {
+    #{$param}: var(--color-neutral-300);
+  }
+  .fui-#{$param}-neutral-400 {
+    #{$param}: var(--color-neutral-400);
+  }
+  .fui-#{$param}-neutral-500 {
+    #{$param}: var(--color-neutral-500);
+  }
+  .fui-#{$param}-neutral-600 {
+    #{$param}: var(--color-neutral-600);
+  }
+  .fui-#{$param}-neutral-700 {
+    #{$param}: var(--color-neutral-700);
+  }
+  .fui-#{$param}-neutral-800 {
+    #{$param}: var(--color-neutral-800);
+  }
+  .fui-#{$param}-neutral-900 {
+    #{$param}: var(--color-neutral-900);
   }
 
-  &.Orange {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-warning-600);
-    } @else if $with-color {
-      color: var(--color-warning-600);
-    } @else if $with-background-color {
-      background-color: var(--color-warning-600);
-    }
+  .fui-#{$param}-success-50 {
+    #{$param}: var(--color-success-50);
+  }
+  .fui-#{$param}-success-100 {
+    #{$param}: var(--color-success-100);
+  }
+  .fui-#{$param}-success-400 {
+    #{$param}: var(--color-success-400);
+  }
+  .fui-#{$param}-success-700 {
+    #{$param}: var(--color-success-700);
   }
 
-  &.Red {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-danger-500);
-    } @else if $with-color {
-      color: var(--color-danger-500);
-    } @else if $with-background-color {
-      background-color: var(--color-danger-500);
-    }
+  .fui-#{$param}-warning-50 {
+    #{$param}: var(--color-warning-50);
+  }
+  .fui-#{$param}-warning-100 {
+    #{$param}: var(--color-warning-100);
+  }
+  .fui-#{$param}-warning-400 {
+    #{$param}: var(--color-warning-400);
+  }
+  .fui-#{$param}-warning-600 {
+    #{$param}: var(--color-warning-600);
+  }
+  .fui-#{$param}-warning-700 {
+    #{$param}: var(--color-warning-700);
   }
 
-  &.Rose {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-primary-400);
-    } @else if $with-color {
-      color: var(--color-primary-400);
-    } @else if $with-background-color {
-      background-color: var(--color-primary-400);
-    }
+  .fui-#{$param}-danger-50 {
+    #{$param}: var(--color-danger-50);
   }
-
-  &.Green {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-success-400);
-    } @else if $with-color {
-      color: var(--color-success-400);
-    } @else if $with-background-color {
-      background-color: var(--color-success-400);
-    }
+  .fui-#{$param}-danger-100 {
+    #{$param}: var(--color-danger-100);
   }
-
-  &.Teal {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-primary-600);
-    } @else if $with-color {
-      color: var(--color-primary-600);
-    } @else if $with-background-color {
-      background-color: var(--color-primary-600);
-    }
+  .fui-#{$param}-danger-300 {
+    #{$param}: var(--color-danger-300);
   }
-
-  &.Turquoise {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-primary-600);
-    } @else if $with-color {
-      color: var(--color-primary-600);
-    } @else if $with-background-color {
-      background-color: var(--color-primary-600);
-    }
+  .fui-#{$param}-danger-500 {
+    #{$param}: var(--color-danger-500);
   }
-
-  &.Blue {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-secondary-500);
-    } @else if $with-color {
-      color: var(--color-secondary-500);
-    } @else if $with-background-color {
-      background-color: var(--color-secondary-500);
-    }
+  .fui-#{$param}-danger-600 {
+    #{$param}: var(--color-danger-600);
   }
-
-  &.Purple {
-    @if $with-color and $with-background-color {
-      color: var(--color-neutral-0);
-      background-color: var(--color-secondary-700);
-    } @else if $with-color {
-      color: var(--color-secondary-700);
-    } @else if $with-background-color {
-      background-color: var(--color-secondary-700);
-    }
+  .fui-#{$param}-danger-700 {
+    #{$param}: var(--color-danger-700);
   }
 }
 

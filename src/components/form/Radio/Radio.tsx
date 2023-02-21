@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClasses } from '../../../helpers'
+import { arrayToClasslist, getColorClass } from '../../../helpers'
 import { RadioProps } from './Radio.type'
 import styles from './Radio.module.scss'
 
@@ -20,7 +20,7 @@ const Radio = ({
 
     ...(disabled ? [styles.Disabled] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     className || ''
   ])

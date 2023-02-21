@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTransition, animated } from 'react-spring'
 
-import { arrayToClasslist, getColorClasses, getPositions, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClass, getPositions, getTextWeight } from '../../../helpers'
 import { TooltipProps } from './Tooltip.type'
 import styles from './Tooltip.module.scss'
 
@@ -24,7 +24,7 @@ const Tooltip = ({
 
     ...getPositions(position, styles),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     ...getTextWeight(textWeight)
   ])

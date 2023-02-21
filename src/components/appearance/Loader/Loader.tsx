@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses } from '../../../helpers'
+import { arrayToClasslist, getColorClass } from '../../../helpers'
 import { LoaderProps } from './Loader.type'
 import styles from './Loader.module.scss'
 
@@ -15,7 +15,7 @@ const Loader = ({
   style,
   ...props
 }: LoaderProps): JSX.Element => {
-  const classes = arrayToClasslist([styles.Loader, ...getColorClasses(color, styles), className || ''])
+  const classes = arrayToClasslist([styles.Loader, ...getColorClass(color), className || ''])
 
   return (
     <div

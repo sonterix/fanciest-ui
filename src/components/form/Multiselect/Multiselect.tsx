@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClass, getTextWeight } from '../../../helpers'
 import { MultiselectProps, OptionProps } from './Multiselect.type'
 import styles from './Multiselect.module.scss'
 
@@ -25,7 +25,7 @@ const Multiselect = ({
     ...(presetSize === 'sm' ? [styles.Sm] : []),
     ...(presetSize === 'md' ? [styles.Md] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     ...getTextWeight(textWeight)
   ]

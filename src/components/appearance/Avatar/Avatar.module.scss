@@ -9,8 +9,6 @@
   overflow: hidden;
   cursor: default;
 
-  @include colorStyles();
-
   .Image {
     max-width: inherit;
     max-height: inherit;

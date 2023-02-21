@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClass, getTextWeight } from '../../../helpers'
 import { SelectProps } from './Select.type'
 import styles from './Select.module.scss'
 
@@ -24,7 +24,7 @@ const Select = ({
     ...(presetSize === 'sm' ? [styles.Sm] : []),
     ...(presetSize === 'md' ? [styles.Md] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     ...getTextWeight(textWeight)
   ]

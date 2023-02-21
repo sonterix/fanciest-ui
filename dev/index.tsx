@@ -72,73 +72,40 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Circle Button</h2>
 
         <div className="dev__block__preview">
-          <CircleButton color="black">B</CircleButton>
-          <CircleButton color="white">W</CircleButton>
-          <CircleButton color="yellow">Y</CircleButton>
-          <CircleButton color="orange">O</CircleButton>
-          <CircleButton color="red">Re</CircleButton>
-          <CircleButton color="rose">Ro</CircleButton>
-          <CircleButton color="green">G</CircleButton>
-          <CircleButton color="teal">Te</CircleButton>
-          <CircleButton color="turquoise">Tu</CircleButton>
-          <CircleButton color="blue">B</CircleButton>
-          <CircleButton color="purple">P</CircleButton>
+          <CircleButton backgroundColor="danger-300">d3</CircleButton>
+          <CircleButton backgroundColor="neutral-300">n3</CircleButton>
+          <CircleButton backgroundColor="success-400">s4</CircleButton>
+          <CircleButton backgroundColor="warning-600">w6</CircleButton>
+          <CircleButton backgroundColor="secondary-300">s3</CircleButton>
 
-          <CircleButton color="green" presetSize="sm">
-            SM
-          </CircleButton>
-          <CircleButton color="green" presetSize="md">
-            MD
-          </CircleButton>
+          <CircleButton presetSize="sm">SM</CircleButton>
+          <CircleButton presetSize="md">MD</CircleButton>
 
-          <CircleButton color="rose" layout="outlined">
-            L
-          </CircleButton>
+          <CircleButton layout="outlined">Out</CircleButton>
 
-          <CircleButton color="teal" textWeight={100}>
-            T
-          </CircleButton>
+          <CircleButton textWeight={100}>T</CircleButton>
         </div>
 
         <h2 className="dev__block__subtitle">Button</h2>
 
         <div className="dev__block__preview">
-          <Button color="black">Black</Button>
-          <Button color="white">White</Button>
-          <Button color="yellow">Yellow</Button>
-          <Button color="orange">Orange</Button>
-          <Button color="red">Red</Button>
-          <Button color="rose">Rose</Button>
-          <Button color="green">Green</Button>
-          <Button color="teal">Teal</Button>
-          <Button color="turquoise">Turquoise</Button>
-          <Button color="blue">Blue</Button>
-          <Button color="purple">Purplr</Button>
+          <Button>Button</Button>
 
-          <Button color="yellow" presetSize="xs">
-            XS
-          </Button>
-          <Button color="yellow" presetSize="sm">
-            SM
-          </Button>
-          <Button color="yellow" presetSize="md">
-            MD
-          </Button>
-          <Button color="yellow" presetSize="lg">
-            LG
-          </Button>
+          <Button backgroundColor="danger-300">danget 300</Button>
+          <Button backgroundColor="neutral-300">neutral 300</Button>
+          <Button backgroundColor="success-400">success 400</Button>
+          <Button backgroundColor="warning-600">warning 600</Button>
+          <Button backgroundColor="secondary-300">secondary 300</Button>
 
-          <Button color="red" shape="squared">
-            Squared
-          </Button>
+          <Button presetSize="sm">SM</Button>
+          <Button presetSize="md">MD</Button>
+          <Button presetSize="lg">LG</Button>
 
-          <Button color="turquoise" layout="outlined">
-            Outlined
-          </Button>
+          <Button shape="squared">Squared</Button>
 
-          <Button color="purple" textWeight={100}>
-            Custom Text
-          </Button>
+          <Button layout="outlined">Outlined</Button>
+
+          <Button textWeight={100}>Custom Text</Button>
 
           <Button before="With" after={<Icon icon="icon-email" />}>
             before and after
@@ -176,7 +143,7 @@ const Dev = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="dev__block">
+      {/* <div className="dev__block">
         <h1 className="dev__block__title">Appearance</h1>
 
         <h2 className="dev__block__subtitle">Avatar</h2>
@@ -333,9 +300,9 @@ const Dev = (): JSX.Element => {
             <P4 weight={800}>70</P4>
           </SemicircleBar>
         </div>
-      </div>
+      </div> */}
 
-      <div className="dev__block">
+      {/* <div className="dev__block">
         <h1 className="dev__block__title">Floating</h1>
 
         <h2 className="dev__block__subtitle">Tooltip</h2>
@@ -510,9 +477,9 @@ const Dev = (): JSX.Element => {
             </p>
           </SlideModal>
         </div>
-      </div>
+      </div> */}
 
-      <div className="dev__block">
+      {/* <div className="dev__block">
         <h1 className="dev__block__title">Form</h1>
 
         <h2 className="dev__block__subtitle">Input</h2>
@@ -955,9 +922,9 @@ const Dev = (): JSX.Element => {
             }
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className="dev__block">
+      {/* <div className="dev__block">
         <h1 className="dev__block__title">Functional</h1>
 
         <h2 className="dev__block__subtitle">DetectClickOutside</h2>
@@ -998,7 +965,7 @@ const Dev = (): JSX.Element => {
             Container with Custom Spaces
           </Container>
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }

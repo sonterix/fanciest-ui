@@ -1,103 +1,109 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  outline: none;
-}
+@import './helper.scss';
 
 html {
   scroll-behavior: smooth;
-}
 
-body {
-  font-family: var(--font-main);
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  -webkit-font-smoothing: antialiased;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+  * {
+    margin: 0;
+    outline: none;
+  }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+  body {
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
 
-button {
-  cursor: pointer;
-}
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
+    input,
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
 
-#app,
-#root,
-#__next {
-  isolation: isolate;
-}
+    button {
+      cursor: pointer;
+    }
 
-.fui-modal-open {
-  overflow: hidden !important;
-  height: 100% !important;
-}
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+    }
 
-.fui-family-main {
-  font-family: var(--font-main);
-}
+    #app,
+    #root,
+    #__next {
+      isolation: isolate;
+    }
 
-.fui-weight-100 {
-  font-weight: 100;
-}
+    .fui-modal-open {
+      overflow: hidden !important;
+      height: 100% !important;
+    }
 
-.fui-weight-200 {
-  font-weight: 200;
-}
+    .fui-family-main {
+      font-family: var(--font-main);
+    }
 
-.fui-weight-300 {
-  font-weight: 300;
-}
+    .fui-weight-100 {
+      font-weight: 100;
+    }
 
-.fui-weight-400 {
-  font-weight: 400;
-}
+    .fui-weight-200 {
+      font-weight: 200;
+    }
 
-.fui-weight-500 {
-  font-weight: 500;
-}
+    .fui-weight-300 {
+      font-weight: 300;
+    }
 
-.fui-weight-600 {
-  font-weight: 600;
-}
+    .fui-weight-400 {
+      font-weight: 400;
+    }
 
-.fui-weight-700 {
-  font-weight: 700;
-}
+    .fui-weight-500 {
+      font-weight: 500;
+    }
 
-.fui-weight-800 {
-  font-weight: 800;
-}
+    .fui-weight-600 {
+      font-weight: 600;
+    }
 
-.fui-weight-900 {
-  font-weight: 900;
+    .fui-weight-700 {
+      font-weight: 700;
+    }
+
+    .fui-weight-800 {
+      font-weight: 800;
+    }
+
+    .fui-weight-900 {
+      font-weight: 900;
+    }
+
+    @include colorParamClasses('color');
+    @include colorParamClasses('background-color');
+    @include colorParamClasses('border-color');
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClasses } from '../../../helpers'
+import { arrayToClasslist, getColorClass } from '../../../helpers'
 import { SwitchProps } from './Switch.type'
 import styles from './Switch.module.scss'
 
@@ -20,7 +20,7 @@ const Switch = ({
 
     ...(disabled ? [styles.Disabled] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     className || ''
   ])

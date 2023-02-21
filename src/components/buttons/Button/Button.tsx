@@ -1,6 +1,12 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
+import {
+  arrayToClasslist,
+  getBackgroundColorClass,
+  getBorderColorClass,
+  getColorClass,
+  getTextWeight
+} from '../../../helpers'
 import { ButtonLinkProps, ButtonProps } from './Button.type'
 import styles from './Button.module.scss'
 
@@ -9,6 +15,7 @@ const Button = ({
   shape,
   presetSize,
   color,
+  backgroundColor,
   textWeight,
   before,
   after,
@@ -19,8 +26,8 @@ const Button = ({
   const classes = arrayToClasslist([
     styles.Button,
 
-    ...(layout === 'filled' ? [styles.Filled] : []),
-    ...(layout === 'outlined' ? [styles.Outlined] : []),
+    ...(layout === 'filled' ? [styles.Filled, ...getBackgroundColorClass(backgroundColor)] : []),
+    ...(layout === 'outlined' ? [styles.Outlined, ...getBorderColorClass(backgroundColor)] : []),
 
     ...(shape === 'rounded' ? [styles.Rounded] : []),
     ...(shape === 'squared' ? [styles.Squared] : []),
@@ -30,7 +37,7 @@ const Button = ({
     ...(presetSize === 'md' ? [styles.Md] : []),
     ...(presetSize === 'lg' ? [styles.Lg] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     ...getTextWeight(textWeight),
 
@@ -55,8 +62,9 @@ const Button = ({
 Button.defaultProps = {
   layout: 'filled',
   shape: 'rounded',
-  presetSize: 'md',
-  color: 'rose',
+  presetSize: 'xs',
+  color: 'primary-900',
+  backgroundColor: 'primary-400',
   textWeight: 500,
   before: null,
   after: null

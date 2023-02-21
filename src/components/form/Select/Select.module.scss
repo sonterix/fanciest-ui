@@ -26,8 +26,6 @@
     transition: color var(--trans), background-color var(--trans), border-color var(--trans);
     cursor: pointer;
 
-    @include colorStyles($with-color: true, $with-background-color: false);
-
     &.Md {
       min-height: 50px;
       font-size: 18px;
@@ -120,8 +118,6 @@
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 99100;
-
-  @include colorStyles($with-color: true, $with-background-color: false);
 
   &.Md {
     font-size: 16px;

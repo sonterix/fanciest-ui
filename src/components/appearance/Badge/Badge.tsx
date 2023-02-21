@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClasses, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getColorClass, getTextWeight } from '../../../helpers'
 import { BadgeProps } from './Badge.type'
 import styles from './Badge.module.scss'
 
@@ -29,7 +29,7 @@ const Badge = ({
 
     ...(hoverable ? [styles.Hoverable] : []),
 
-    ...getColorClasses(color, styles),
+    ...getColorClass(color),
 
     ...getTextWeight(textWeight),
 
