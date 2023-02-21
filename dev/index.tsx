@@ -254,7 +254,7 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Skeleton</h2>
 
-        {/* <div className="dev__block__preview">
+        <div className="dev__block__preview">
           <Skeleton animation="pulse" />
           <Skeleton animation="wave" />
           <Skeleton animation="none" />
@@ -262,7 +262,7 @@ const Dev = (): JSX.Element => {
           <Skeleton width={500} height={60} />
 
           <Skeleton layout="circle" width={80} height={80} />
-        </div> */}
+        </div>
 
         <h2 className="dev__block__subtitle">SemicircleBar</h2>
 

@@ -3,7 +3,7 @@
   justify-content: flex-end;
   align-items: flex-start;
   width: 100%;
-  background-color: var(--color-neutral-400);
+  background-color: var(--color-neutral-200);
 
   &.Block {
     display: flex;
@@ -36,7 +36,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(90deg, transparent, rgba(#76767a, 0.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(#5c717a, 0.3), transparent);
       animation: Wave 1.6s linear 0.5s infinite;
       transform: translateX(-100%);
     }
