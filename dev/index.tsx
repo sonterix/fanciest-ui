@@ -370,7 +370,7 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Modal</h2>
 
-        {/* <div className="dev__block__preview">
+        <div className="dev__block__preview">
           <button type="button" onClick={() => setModal(true)}>
             Open modal
           </button>
@@ -401,11 +401,11 @@ const Dev = (): JSX.Element => {
               pariatur sint, asperiores facere esse odit consectetur iste ea.
             </p>
           </Modal>
-        </div> */}
+        </div>
 
         <h2 className="dev__block__subtitle">Slide modal</h2>
 
-        {/* <div className="dev__block__preview">
+        <div className="dev__block__preview">
           <button type="button" onClick={() => setSlideModal(true)}>
             Open slide modal
           </button>
@@ -428,7 +428,7 @@ const Dev = (): JSX.Element => {
               pariatur sint, asperiores facere esse odit consectetur iste ea.
             </p>
           </SlideModal>
-        </div> */}
+        </div>
       </div>
 
       {/* <div className="dev__block">
