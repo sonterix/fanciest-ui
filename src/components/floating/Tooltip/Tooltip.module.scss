@@ -22,58 +22,6 @@
     opacity: 0.9;
   }
 
-  @mixin colorStylesLocal($color-primary, $color-secondary) {
-    color: $color-secondary;
-
-    &:before {
-      background-color: $color-primary;
-    }
-  }
-
-  &.Black {
-    @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
-  }
-
-  &.White {
-    @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
-  }
-
-  &.Yellow {
-    @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
-  }
-
-  &.Orange {
-    @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
-  }
-
-  &.Red {
-    @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
-  }
-
-  &.Rose {
-    @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
-  }
-
-  &.Green {
-    @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
-  }
-
-  &.Teal {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Turquoise {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Blue {
-    @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
-  }
-
-  &.Purple {
-    @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
-  }
-
   @include positionStyles();
 
   .Childern {

@@ -32,7 +32,6 @@ import {
   Radio,
   Rating,
   Select,
-  SemicircleBar,
   Skeleton,
   SlideModal,
   Switch,
@@ -265,43 +264,26 @@ const Dev = (): JSX.Element => {
         </div>
       </div>
 
-      {/* <div className="dev__block">
+      <div className="dev__block">
         <h1 className="dev__block__title">Floating</h1>
 
         <h2 className="dev__block__subtitle">Tooltip</h2>
 
         <div className="dev__block__preview">
-          <Tooltip content="black" color="black">
+          <Tooltip content="default">Hover me</Tooltip>
+          <Tooltip content="warning" backgroundColor="warning-400">
             Hover me
           </Tooltip>
-          <Tooltip content="white" color="white">
+          <Tooltip content="secondary" backgroundColor="secondary-400">
             Hover me
           </Tooltip>
-          <Tooltip content="yellow" color="yellow">
+          <Tooltip content="success" backgroundColor="success-400">
             Hover me
           </Tooltip>
-          <Tooltip content="orange" color="orange">
+          <Tooltip content="danger" backgroundColor="danger-300">
             Hover me
           </Tooltip>
-          <Tooltip content="red" color="red">
-            Hover me
-          </Tooltip>
-          <Tooltip content="rose" color="rose">
-            Hover me
-          </Tooltip>
-          <Tooltip content="green" color="green">
-            Hover me
-          </Tooltip>
-          <Tooltip content="teal" color="teal">
-            Hover me
-          </Tooltip>
-          <Tooltip content="turquoise" color="turquoise">
-            Hover me
-          </Tooltip>
-          <Tooltip content="blue" color="blue">
-            Hover me
-          </Tooltip>
-          <Tooltip content="purple" color="purple">
+          <Tooltip content="secondary" backgroundColor="secondary-400">
             Hover me
           </Tooltip>
 
@@ -328,7 +310,7 @@ const Dev = (): JSX.Element => {
 
         <h2 className="dev__block__subtitle">Menu</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <button type="button" ref={menuTriggerRef} onClick={() => setMenu(prev => !prev)}>
             Toggle menu
           </button>
@@ -377,11 +359,11 @@ const Dev = (): JSX.Element => {
               <div style={{ padding: '5px 10px' }}>Menu 3</div>
             </Menu>
           )}
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">Modal</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <button type="button" onClick={() => setModal(true)}>
             Open modal
           </button>
@@ -412,11 +394,11 @@ const Dev = (): JSX.Element => {
               pariatur sint, asperiores facere esse odit consectetur iste ea.
             </p>
           </Modal>
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">Slide modal</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <button type="button" onClick={() => setSlideModal(true)}>
             Open slide modal
           </button>
@@ -439,8 +421,8 @@ const Dev = (): JSX.Element => {
               pariatur sint, asperiores facere esse odit consectetur iste ea.
             </p>
           </SlideModal>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
 
       {/* <div className="dev__block">
         <h1 className="dev__block__title">Form</h1>
