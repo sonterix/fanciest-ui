@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { arrayToClasslist, getColorClass, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getBackgroundColorClass, getColorClass, getTextWeight } from '../../../helpers'
 import { AvatarProps } from './Avatar.type'
 import styles from './Avatar.module.scss'
 
@@ -12,6 +12,7 @@ const Avatar = ({
   alt,
   objectFit,
   color,
+  backgroundColor,
   textSize,
   textWeight,
   className,
@@ -23,6 +24,8 @@ const Avatar = ({
     styles.Avatar,
 
     ...getColorClass(color),
+
+    ...getBackgroundColorClass(backgroundColor),
 
     ...getTextWeight(textWeight),
 
@@ -55,6 +58,8 @@ Avatar.defaultProps = {
   src: '',
   alt: 'avatar',
   objectFit: 'cover',
+  color: 'neutral-0',
+  backgroundColor: 'primary-900',
   textSize: '18px',
   textWeight: 800
 }

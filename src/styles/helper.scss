@@ -70,6 +70,9 @@ $xxxl: 1981px;
     #{$param}: var(--color-secondary-900);
   }
 
+  .fui-#{$param}-neutral-0 {
+    #{$param}: var(--color-neutral-0);
+  }
   .fui-#{$param}-neutral-50 {
     #{$param}: var(--color-neutral-50);
   }

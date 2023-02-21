@@ -143,45 +143,40 @@ const Dev = (): JSX.Element => {
         </div>
       </div>
 
-      {/* <div className="dev__block">
+      <div className="dev__block">
         <h1 className="dev__block__title">Appearance</h1>
 
         <h2 className="dev__block__subtitle">Avatar</h2>
 
         <div className="dev__block__preview">
-          <Avatar color="black">B</Avatar>
-          <Avatar color="white">W</Avatar>
-          <Avatar color="yellow">Y</Avatar>
-          <Avatar color="orange">O</Avatar>
-          <Avatar color="red">Re</Avatar>
-          <Avatar color="rose">Ro</Avatar>
-          <Avatar color="green">G</Avatar>
-          <Avatar color="teal">Te</Avatar>
-          <Avatar color="turquoise">Tu</Avatar>
-          <Avatar color="blue">B</Avatar>
-          <Avatar color="purple">P</Avatar>
+          <Avatar backgroundColor="danger-300">d</Avatar>
+          <Avatar backgroundColor="neutral-300">n</Avatar>
+          <Avatar backgroundColor="primary-300">p</Avatar>
+          <Avatar backgroundColor="secondary-300">s</Avatar>
+          <Avatar backgroundColor="warning-400">w</Avatar>
+          <Avatar backgroundColor="success-400">s</Avatar>
 
-          <Avatar src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/openmoji/292/apple-logo_f8ff.png" />
+          <Avatar src="https://picsum.photos/80/80" />
 
-          <Avatar color="green" radius="50%">
+          <Avatar color="success-100" radius="50%">
             50%
           </Avatar>
-          <Avatar color="green" radius={0}>
+          <Avatar color="warning-100" radius={0}>
             0
           </Avatar>
 
-          <Avatar color="black" width={100} height={50}>
+          <Avatar color="danger-100" width={100} height={50}>
             Size
           </Avatar>
 
-          <Avatar color="red" textSize={24} textWeight={300}>
+          <Avatar textSize={24} textWeight={300}>
             Txt
           </Avatar>
         </div>
 
         <h2 className="dev__block__subtitle">Badge</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <Badge color="black">Black</Badge>
           <Badge color="white">White</Badge>
           <Badge color="yellow">Yellow</Badge>
@@ -212,11 +207,11 @@ const Dev = (): JSX.Element => {
           <Badge shape="rounded" presetSize="sm">
             Custom Shape and Size
           </Badge>
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">Loader</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <Loader color="black" />
           <Loader color="white" />
           <Loader color="yellow" />
@@ -246,11 +241,11 @@ const Dev = (): JSX.Element => {
           <Loader color="turquoise" width={130} height={130} />
 
           <Loader wrapperMaxWidth={200} wrapperMaxHeight={200} />
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">Rating</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <Rating color="black" rating={4} />
           <Rating color="white" rating={4} />
           <Rating color="yellow" rating={4} />
@@ -275,11 +270,11 @@ const Dev = (): JSX.Element => {
           />
 
           <Rating color="blue" rating={5} starSize={30} textSize="26px" withNumber />
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">Skeleton</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <Skeleton animation="pulse" />
           <Skeleton animation="wave" />
           <Skeleton animation="none" />
@@ -287,11 +282,11 @@ const Dev = (): JSX.Element => {
           <Skeleton width={500} height={60} />
 
           <Skeleton layout="circle" width={80} height={80} />
-        </div>
+        </div> */}
 
         <h2 className="dev__block__subtitle">SemicircleBar</h2>
 
-        <div className="dev__block__preview">
+        {/* <div className="dev__block__preview">
           <SemicircleBar value={35}>
             <H1 weight={700}>35</H1>
           </SemicircleBar>
@@ -299,8 +294,8 @@ const Dev = (): JSX.Element => {
           <SemicircleBar value={70} size={40}>
             <P4 weight={800}>70</P4>
           </SemicircleBar>
-        </div>
-      </div> */}
+        </div> */}
+      </div>
 
       {/* <div className="dev__block">
         <h1 className="dev__block__title">Floating</h1>

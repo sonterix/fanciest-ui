@@ -9,6 +9,7 @@ export interface AvatarProps extends React.ComponentProps<'div'> {
   alt?: string
   objectFit?: 'cover' | 'contain'
   color?: Color
+  backgroundColor?: Color
   textSize?: string | number
   textWeight: TextWeight
 }
