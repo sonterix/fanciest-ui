@@ -1,7 +1,7 @@
 {
-  "version": "0.1.33",
+  "version": "0.1.1",
   "license": "MIT",
-  "name": "fanciest-ui",
+  "name": "@moneymade/fanciest-ui",
   "author": "Nick Bukovskyi",
   "homepage": "",
   "repository": {
