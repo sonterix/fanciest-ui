@@ -60,7 +60,7 @@ Avatar.defaultProps = {
   objectFit: 'cover',
   color: 'neutral-0',
   backgroundColor: 'primary-900',
-  textSize: '18px',
+  textSize: '14px',
   textWeight: 800
 }
 
