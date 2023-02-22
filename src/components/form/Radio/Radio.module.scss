@@ -7,61 +7,6 @@
   overflow: hidden;
   cursor: pointer;
 
-  @mixin colorStylesLocal($color-primary, $color-secondary) {
-    .Checked {
-      background-color: $color-secondary;
-      border-color: $color-primary;
-
-      &::before {
-        background-color: $color-primary;
-      }
-    }
-  }
-
-  &.Black {
-    @include colorStylesLocal(var(--color-neutral-800), var(--color-neutral-0));
-  }
-
-  &.White {
-    @include colorStylesLocal(var(--color-neutral-0), var(--color-neutral-900));
-  }
-
-  &.Yellow {
-    @include colorStylesLocal(var(--color-warning-400), var(--color-neutral-0));
-  }
-
-  &.Orange {
-    @include colorStylesLocal(var(--color-warning-600), var(--color-neutral-0));
-  }
-
-  &.Red {
-    @include colorStylesLocal(var(--color-danger-500), var(--color-neutral-0));
-  }
-
-  &.Rose {
-    @include colorStylesLocal(var(--color-primary-400), var(--color-neutral-0));
-  }
-
-  &.Green {
-    @include colorStylesLocal(var(--color-success-400), var(--color-neutral-0));
-  }
-
-  &.Teal {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Turquoise {
-    @include colorStylesLocal(var(--color-primary-600), var(--color-neutral-0));
-  }
-
-  &.Blue {
-    @include colorStylesLocal(var(--color-secondary-500), var(--color-neutral-0));
-  }
-
-  &.Purple {
-    @include colorStylesLocal(var(--color-secondary-700), var(--color-neutral-0));
-  }
-
   &.Disabled {
     pointer-events: none;
     cursor: default;
@@ -71,8 +16,8 @@
       background-color: var(--color-white9);
       border-color: var(--color-neutral-200);
 
-      &::before {
-        background-color: var(--color-neutral-200);
+      > svg {
+        fill: var(--color-neutral-200);
       }
     }
   }
@@ -87,34 +32,37 @@
 
   .Unchecked,
   .Checked {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
     height: 20px;
     border: 1px solid transparent;
+    background-color: var(--color-neutral-0);
+    border-color: var(--color-neutral-200);
     border-radius: 50%;
     transition: background-color var(--trans), border-color var(--trans);
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
+    > svg {
       width: 12px;
       height: 12px;
-      background-color: transparent;
-      border-radius: 50%;
-      transition: background-color var(--trans-fast);
+      fill: currentColor;
+      transition: opacity var(--trans-fast);
     }
   }
 
-  .Unchecked {
-    background-color: var(--color-neutral-0);
-    border-color: var(--color-neutral-200);
+  .Checked > svg {
+    opacity: 1;
+  }
 
+  .Unchecked {
     &:hover,
     &:focus {
       border-color: var(--color-neutral-500);
+    }
+
+    > svg {
+      opacity: 0;
     }
   }
 

@@ -1,11 +1,12 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClass } from '../../../helpers'
+import { arrayToClasslist, getBackgroundColorClass, getColorClass } from '../../../helpers'
 import { CheckboxProps } from './Checkbox.type'
 import styles from './Checkbox.module.scss'
 
 const Checkbox = ({
   color,
+  backgroundColor,
   label,
   labelPosition,
   customInput,
@@ -15,15 +16,7 @@ const Checkbox = ({
   disabled,
   ...props
 }: CheckboxProps): JSX.Element => {
-  const classes = arrayToClasslist([
-    styles.Checkbox,
-
-    ...(disabled ? [styles.Disabled] : []),
-
-    ...getColorClass(color),
-
-    className || ''
-  ])
+  const classes = arrayToClasslist([styles.Checkbox, ...(disabled ? [styles.Disabled] : []), className || ''])
 
   // Id for label and input
   const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
@@ -51,7 +44,7 @@ const Checkbox = ({
       <div
         className={
           checked || defaultChecked || localCustomInput?.props.checked || localCustomInput?.props.defaultChecked
-            ? styles.Checked
+            ? `${styles.Checked} ${getBackgroundColorClass(backgroundColor)[0] || ''}`
             : styles.Unchecked
         }
       >
@@ -66,7 +59,7 @@ const Checkbox = ({
 }
 
 Checkbox.defaultProps = {
-  color: 'rose',
+  backgroundColor: 'secondary-200',
   labelPosition: 'right'
 }
 

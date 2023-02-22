@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import { arrayToClasslist, getColorClass, getTextWeight } from '../../../helpers'
+import { arrayToClasslist, getTextWeight } from '../../../helpers'
 import { SelectProps } from './Select.type'
 import styles from './Select.module.scss'
 
@@ -11,7 +11,6 @@ const Select = ({
   shape,
   presetSize,
   label,
-  color,
   textWeight,
   limitDropdown,
   className,
@@ -23,8 +22,6 @@ const Select = ({
   const classes = [
     ...(presetSize === 'sm' ? [styles.Sm] : []),
     ...(presetSize === 'md' ? [styles.Md] : []),
-
-    ...getColorClass(color),
 
     ...getTextWeight(textWeight)
   ]
@@ -168,7 +165,6 @@ Select.defaultProps = {
   layout: 'filled',
   shape: 'squared',
   presetSize: 'md',
-  color: 'black',
   textWeight: 400,
   limitDropdown: false
 }

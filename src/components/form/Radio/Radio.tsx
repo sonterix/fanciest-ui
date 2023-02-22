@@ -15,15 +15,7 @@ const Radio = ({
   disabled,
   ...props
 }: RadioProps): JSX.Element => {
-  const classes = arrayToClasslist([
-    styles.Radio,
-
-    ...(disabled ? [styles.Disabled] : []),
-
-    ...getColorClass(color),
-
-    className || ''
-  ])
+  const classes = arrayToClasslist([styles.Radio, ...(disabled ? [styles.Disabled] : []), className || ''])
 
   // Id for label and input
   const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
@@ -54,7 +46,11 @@ const Radio = ({
             ? styles.Checked
             : styles.Unchecked
         }
-      />
+      >
+        <svg className={getColorClass(color)[0] || ''} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <circle cy={12} cx={12} r={12} />
+        </svg>
+      </div>
 
       {label && labelPosition === 'right' && <span className={styles.Label}>{label}</span>}
     </label>
@@ -62,7 +58,7 @@ const Radio = ({
 }
 
 Radio.defaultProps = {
-  color: 'rose',
+  color: 'secondary-200',
   labelPosition: 'right'
 }
 

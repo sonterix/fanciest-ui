@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { arrayToClasslist, getColorClass } from '../../../helpers'
+import { arrayToClasslist, getBackgroundColorClass } from '../../../helpers'
 import { SwitchProps } from './Switch.type'
 import styles from './Switch.module.scss'
 
@@ -15,15 +15,7 @@ const Switch = ({
   disabled,
   ...props
 }: SwitchProps): JSX.Element => {
-  const classes = arrayToClasslist([
-    styles.Switch,
-
-    ...(disabled ? [styles.Disabled] : []),
-
-    ...getColorClass(color),
-
-    className || ''
-  ])
+  const classes = arrayToClasslist([styles.Switch, ...(disabled ? [styles.Disabled] : []), className || ''])
 
   // Id for label and input
   const generatedId = useRef(Math.floor((1 + Math.random()) * 0x10000).toString(16))
@@ -55,8 +47,8 @@ const Switch = ({
             : styles.Unchecked
         }
       >
-        <span className={styles.Switcher} />
-        <span className={styles.Line} />
+        <span className={`${styles.Switcher} ${getBackgroundColorClass(color)[0]}`} />
+        <span className={`${styles.Line} ${getBackgroundColorClass(color)[0]}`} />
       </div>
 
       {label && labelPosition === 'right' && <span className={styles.Label}>{label}</span>}
@@ -65,7 +57,7 @@ const Switch = ({
 }
 
 Switch.defaultProps = {
-  color: 'rose',
+  color: 'secondary-200',
   labelPosition: 'right'
 }
 

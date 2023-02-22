@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Color, PresetSize, Shape, TextWeight } from '../../../types'
+import { PresetSize, Shape, TextWeight } from '../../../types'
 
 export interface OptionProps extends React.ComponentProps<'option'> {
   label: string
@@ -13,7 +13,6 @@ export interface MultiselectProps extends Omit<React.ComponentProps<'div'>, 'onC
   shape?: Shape
   presetSize?: PresetSize
   label?: React.ReactNode
-  color?: Color
   textWeight?: TextWeight
   limitDropdown?: boolean
   value?: string[]

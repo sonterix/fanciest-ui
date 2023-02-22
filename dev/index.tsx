@@ -431,7 +431,7 @@ const Dev = (): JSX.Element => {
         </div>
       </div>
 
-      {/* <div className="dev__block">
+      <div className="dev__block">
         <h1 className="dev__block__title">Form</h1>
 
         <h2 className="dev__block__subtitle">Input</h2>
@@ -550,6 +550,7 @@ const Dev = (): JSX.Element => {
         </div>
 
         <h2 className="dev__block__subtitle">Select</h2>
+
         <div className="dev__block__preview">
           <Select
             options={[
@@ -617,20 +618,10 @@ const Dev = (): JSX.Element => {
             value={select}
             onChange={({ target: { value } }) => setSelect(String(value))}
           />
-
-          <Select
-            options={[
-              { value: 'one', label: 'One' },
-              { value: 'two', label: 'Two' },
-              { value: 'three', label: 'Three' }
-            ]}
-            color="orange"
-            value={select}
-            onChange={({ target: { value } }) => setSelect(String(value))}
-          />
         </div>
 
         <h2 className="dev__block__subtitle">Multiselect</h2>
+
         <div className="dev__block__preview">
           <Multiselect
             options={[
@@ -740,19 +731,13 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Checkbox</h2>
 
         <div className="dev__block__preview">
-          <Checkbox defaultChecked color="black" />
-          <Checkbox defaultChecked color="white" />
-          <Checkbox defaultChecked color="yellow" />
-          <Checkbox defaultChecked color="orange" />
-          <Checkbox defaultChecked color="red" />
-          <Checkbox defaultChecked color="rose" />
-          <Checkbox defaultChecked color="green" />
-          <Checkbox defaultChecked color="teal" />
-          <Checkbox defaultChecked color="turquoise" />
-          <Checkbox defaultChecked color="blue" />
-          <Checkbox defaultChecked color="purple" />
-
-          <Checkbox defaultChecked disabled />
+          <Checkbox defaultChecked />
+          <Checkbox defaultChecked backgroundColor="danger-300" />
+          <Checkbox defaultChecked backgroundColor="success-400" />
+          <Checkbox defaultChecked backgroundColor="warning-400" />
+          <Checkbox defaultChecked backgroundColor="primary-400" />
+          <Checkbox defaultChecked backgroundColor="secondary-400" />
+          <Checkbox defaultChecked backgroundColor="secondary-500" disabled />
 
           <Checkbox
             name="label1"
@@ -785,19 +770,13 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Radio</h2>
 
         <div className="dev__block__preview">
-          <Radio defaultChecked color="black" />
-          <Radio defaultChecked color="white" />
-          <Radio defaultChecked color="yellow" />
-          <Radio defaultChecked color="orange" />
-          <Radio defaultChecked color="red" />
-          <Radio defaultChecked color="rose" />
-          <Radio defaultChecked color="green" />
-          <Radio defaultChecked color="teal" />
-          <Radio defaultChecked color="turquoise" />
-          <Radio defaultChecked color="blue" />
-          <Radio defaultChecked color="purple" />
-
-          <Radio defaultChecked disabled />
+          <Radio defaultChecked />
+          <Radio defaultChecked color="danger-300" />
+          <Radio defaultChecked color="success-400" />
+          <Radio defaultChecked color="warning-400" />
+          <Radio defaultChecked color="primary-400" />
+          <Radio defaultChecked color="secondary-400" />
+          <Radio defaultChecked color="secondary-500" disabled />
 
           <Radio
             name="label"
@@ -833,17 +812,13 @@ const Dev = (): JSX.Element => {
         <h2 className="dev__block__subtitle">Switch</h2>
 
         <div className="dev__block__preview">
-          <Switch defaultChecked color="black" />
-          <Switch defaultChecked color="white" />
-          <Switch defaultChecked color="yellow" />
-          <Switch defaultChecked color="orange" />
-          <Switch defaultChecked color="red" />
-          <Switch defaultChecked color="rose" />
-          <Switch defaultChecked color="green" />
-          <Switch defaultChecked color="teal" />
-          <Switch defaultChecked color="turquoise" />
-          <Switch defaultChecked color="blue" />
-          <Switch defaultChecked color="purple" />
+          <Switch defaultChecked />
+          <Switch defaultChecked color="danger-300" />
+          <Switch defaultChecked color="success-400" />
+          <Switch defaultChecked color="warning-400" />
+          <Switch defaultChecked color="primary-400" />
+          <Switch defaultChecked color="secondary-400" />
+          <Switch defaultChecked color="secondary-500" disabled />
 
           <Switch defaultChecked disabled />
 
@@ -874,9 +849,9 @@ const Dev = (): JSX.Element => {
             }
           />
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="dev__block">
+      <div className="dev__block">
         <h1 className="dev__block__title">Functional</h1>
 
         <h2 className="dev__block__subtitle">DetectClickOutside</h2>
@@ -917,7 +892,7 @@ const Dev = (): JSX.Element => {
             Container with Custom Spaces
           </Container>
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
