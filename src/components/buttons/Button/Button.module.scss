@@ -93,14 +93,14 @@
 
     &.Filled {
       color: var(--color-neutral-0);
-      background-color: var(--color-neutral-100);
-      border-color: var(--color-neutral-100);
+      background-color: var(--color-neutral-200);
+      border-color: var(--color-neutral-200);
     }
 
     &.Outlined {
-      color: var(--color-neutral-100);
+      color: var(--color-neutral-200);
       background-color: var(--color-neutral-50);
-      border-color: var(--color-neutral-100);
+      border-color: var(--color-neutral-200);
     }
   }
 
