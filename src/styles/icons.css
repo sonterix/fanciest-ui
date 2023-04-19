@@ -20,6 +20,10 @@
   line-height: 1;
 }
 
+
+.icon-money-thoughts:before {
+  content: '\e98b';
+}
 .icon-shield:before {
   content: '\e989';
 }
