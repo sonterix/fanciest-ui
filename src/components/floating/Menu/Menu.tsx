@@ -157,9 +157,14 @@ const Menu = ({
 
   // Detect click outside of the dropdown
   useEffect(() => {
-    const outsideClick = ({ target }: Event) => {
-      if (anchor && menuRef.current && !anchor.contains(target as Node) && !menuRef.current.contains(target as Node)) {
-        onClose()
+    const outsideClick = (event: MouseEvent) => {
+      if (
+        anchor &&
+        menuRef.current &&
+        !anchor.contains(event.target as Node) &&
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        onClose(event)
       }
     }
 

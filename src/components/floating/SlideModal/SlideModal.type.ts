@@ -2,7 +2,7 @@ import { Shape } from '../../../types'
 
 export interface SlideModalProps extends React.ComponentPropsWithoutRef<'div'> {
   isOpen: boolean
-  onClose: () => void
+  onClose: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
   maxWidth?: string | number
   fullWidth?: boolean
   closeButton?: boolean
